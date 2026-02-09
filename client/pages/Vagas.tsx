@@ -134,35 +134,32 @@ export default function Vagas() {
                 <h3 className="text-sm font-semibold text-gray-700 mb-3">Tipos de contrato</h3>
                 <div className="space-y-3">
                   <label className="flex items-center gap-3 cursor-pointer group">
-                    <div className="relative">
+                    <div className="relative flex items-center justify-center">
                       <input type="checkbox" className="peer sr-only" defaultChecked />
-                      <div className="w-5 h-5 border-2 border-brand-green rounded bg-brand-green/10 peer-checked:bg-brand-green/10 peer-checked:border-brand-green transition flex items-center justify-center">
-                        <svg className="w-3 h-3 text-brand-green opacity-0 peer-checked:opacity-100" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                        </svg>
-                      </div>
+                      <div className="w-5 h-5 border-2 border-gray-300 rounded bg-white peer-checked:bg-brand-green/10 peer-checked:border-brand-green transition"></div>
+                      <svg className="w-3 h-3 text-brand-green absolute opacity-0 peer-checked:opacity-100 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                      </svg>
                     </div>
                     <span className="text-sm text-gray-700 group-hover:text-brand-blue font-medium">Estágio</span>
                   </label>
                   <label className="flex items-center gap-3 cursor-pointer group">
-                    <div className="relative">
+                    <div className="relative flex items-center justify-center">
                       <input type="checkbox" className="peer sr-only" />
-                      <div className="w-5 h-5 border-2 border-gray-300 rounded bg-white peer-checked:bg-brand-green/10 peer-checked:border-brand-green transition flex items-center justify-center">
-                        <svg className="w-3 h-3 text-brand-green opacity-0 peer-checked:opacity-100" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                        </svg>
-                      </div>
+                      <div className="w-5 h-5 border-2 border-gray-300 rounded bg-white peer-checked:bg-brand-green/10 peer-checked:border-brand-green transition"></div>
+                      <svg className="w-3 h-3 text-brand-green absolute opacity-0 peer-checked:opacity-100 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                      </svg>
                     </div>
                     <span className="text-sm text-gray-600 group-hover:text-brand-blue">Freelancer</span>
                   </label>
                   <label className="flex items-center gap-3 cursor-pointer group">
-                    <div className="relative">
+                    <div className="relative flex items-center justify-center">
                       <input type="checkbox" className="peer sr-only" />
-                      <div className="w-5 h-5 border-2 border-gray-300 rounded bg-white peer-checked:bg-brand-green/10 peer-checked:border-brand-green transition flex items-center justify-center">
-                        <svg className="w-3 h-3 text-brand-green opacity-0 peer-checked:opacity-100" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                        </svg>
-                      </div>
+                      <div className="w-5 h-5 border-2 border-gray-300 rounded bg-white peer-checked:bg-brand-green/10 peer-checked:border-brand-green transition"></div>
+                      <svg className="w-3 h-3 text-brand-green absolute opacity-0 peer-checked:opacity-100 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                      </svg>
                     </div>
                     <span className="text-sm text-gray-600 group-hover:text-brand-blue">Tempo integral</span>
                   </label>
@@ -268,13 +265,15 @@ export default function Vagas() {
                       </span>
                     </div>
 
-                    <div className="flex items-center gap-3">
-                      <button className="px-6 py-2.5 bg-brand-blue/90 text-white text-sm font-semibold rounded-full hover:opacity-90 transition">
-                        Auxiliar Administrativo
-                      </button>
-                      <button className="px-6 py-2.5 bg-brand-blue text-white text-sm font-semibold rounded-full hover:opacity-90 transition">
-                        Candidatar-se
-                      </button>
+                    <div className="flex items-center">
+                      <div className="flex items-center rounded-full overflow-hidden" style={{backgroundColor: '#7D8ADF'}}>
+                        <span className="px-5 py-2.5 text-white text-sm font-semibold">
+                          Auxiliar Administrativo
+                        </span>
+                        <button className="px-5 py-2.5 text-white text-sm font-semibold rounded-full hover:opacity-90 transition" style={{backgroundColor: '#25348F'}}>
+                          Candidatar-se
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -287,7 +286,7 @@ export default function Vagas() {
                   <div className="bg-brand-blue" style={{width: '25%'}}></div>
                   <div className="bg-brand-yellow" style={{width: '10%'}}></div>
                 </div>
-                
+
                 <div className="px-8 py-6">
                   <div className="flex justify-between items-start mb-4">
                     <div className="flex-1">
@@ -296,14 +295,14 @@ export default function Vagas() {
                           Auxiliar Administrativo Nível Pleno | Vaga Afirmativa para Mulheres - Presencial em Florianópolis/SC
                         </h3>
                       </Link>
-                      
+
                       <div className="flex items-center gap-1 text-sm text-gray-500 mb-3">
                         <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                           <circle cx="10" cy="10" r="8"/>
                         </svg>
                         <span>Localiza&Co</span>
                       </div>
-                      
+
                       <div className="flex items-center gap-4 text-sm mb-4">
                         <div className="flex items-center gap-1.5">
                           <svg className="w-3.5 h-3.5" fill="#51B84C" viewBox="0 0 20 20">
@@ -319,7 +318,7 @@ export default function Vagas() {
                         </div>
                       </div>
                     </div>
-                    
+
                     <div className="ml-8 text-right">
                       <div className="text-xs text-brand-green font-semibold mb-0.5">Recrutador On-line</div>
                       <div className="text-xs text-gray-500">32 pessoas aplicaram nesta vaga</div>
@@ -341,13 +340,15 @@ export default function Vagas() {
                       </span>
                     </div>
 
-                    <div className="flex items-center gap-3">
-                      <button className="px-6 py-2.5 bg-brand-blue/90 text-white text-sm font-semibold rounded-full hover:opacity-90 transition">
-                        Auxiliar Administrativo
-                      </button>
-                      <button className="px-6 py-2.5 bg-brand-blue text-white text-sm font-semibold rounded-full hover:opacity-90 transition">
-                        Candidatar-se
-                      </button>
+                    <div className="flex items-center">
+                      <div className="flex items-center rounded-full overflow-hidden" style={{backgroundColor: '#7D8ADF'}}>
+                        <span className="px-5 py-2.5 text-white text-sm font-semibold">
+                          Auxiliar Administrativo
+                        </span>
+                        <button className="px-5 py-2.5 text-white text-sm font-semibold rounded-full hover:opacity-90 transition" style={{backgroundColor: '#25348F'}}>
+                          Candidatar-se
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -360,7 +361,7 @@ export default function Vagas() {
                   <div className="bg-brand-blue" style={{width: '25%'}}></div>
                   <div className="bg-brand-yellow" style={{width: '10%'}}></div>
                 </div>
-                
+
                 <div className="px-8 py-6">
                   <div className="flex justify-between items-start mb-4">
                     <div className="flex-1">
@@ -369,14 +370,14 @@ export default function Vagas() {
                           Operador de Telemarketing - Vaga Afirmativa para pessoa com Deficiência - PCD | Home Office em São Paulo/SP
                         </h3>
                       </Link>
-                      
+
                       <div className="flex items-center gap-1 text-sm text-gray-500 mb-3">
                         <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                           <circle cx="10" cy="10" r="8"/>
                         </svg>
                         <span>Confidencial</span>
                       </div>
-                      
+
                       <div className="flex items-center gap-4 text-sm mb-4">
                         <div className="flex items-center gap-1.5">
                           <svg className="w-3.5 h-3.5" fill="#51B84C" viewBox="0 0 20 20">
@@ -392,7 +393,7 @@ export default function Vagas() {
                         </div>
                       </div>
                     </div>
-                    
+
                     <div className="ml-8 text-right">
                       <div className="text-xs text-brand-green font-semibold mb-0.5">Recrutador On-line</div>
                       <div className="text-xs text-gray-500">16 pessoas aplicaram nesta vaga</div>
@@ -414,13 +415,15 @@ export default function Vagas() {
                       </span>
                     </div>
 
-                    <div className="flex items-center gap-3">
-                      <button className="px-6 py-2.5 bg-brand-blue/90 text-white text-sm font-semibold rounded-full hover:opacity-90 transition">
-                        Operador Telemarketing
-                      </button>
-                      <button className="px-6 py-2.5 bg-brand-blue text-white text-sm font-semibold rounded-full hover:opacity-90 transition">
-                        Candidatar-se
-                      </button>
+                    <div className="flex items-center">
+                      <div className="flex items-center rounded-full overflow-hidden" style={{backgroundColor: '#7D8ADF'}}>
+                        <span className="px-5 py-2.5 text-white text-sm font-semibold">
+                          Operador Telemarketing
+                        </span>
+                        <button className="px-5 py-2.5 text-white text-sm font-semibold rounded-full hover:opacity-90 transition" style={{backgroundColor: '#25348F'}}>
+                          Candidatar-se
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>

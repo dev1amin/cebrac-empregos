@@ -77,18 +77,18 @@ export default function Index() {
           </div>
 
           <div className="flex items-center gap-8">
-            <a
-              href="#"
+            <Link
+              to="/"
               className="text-white text-sm font-medium hover:opacity-80 transition"
             >
               Home
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/vagas"
               className="text-white text-sm font-medium hover:opacity-80 transition"
             >
               Vagas
-            </a>
+            </Link>
             <a
               href="#"
               className="text-white text-sm font-medium hover:opacity-80 transition"

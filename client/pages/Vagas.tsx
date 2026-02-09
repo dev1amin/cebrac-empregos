@@ -129,27 +129,27 @@ export default function Vagas() {
                 </div>
               </div>
 
-              {/* Checkboxes with green border and light green background */}
+              {/* Checkboxes with green border and light green background - Square style */}
               <div className="mb-6">
                 <h3 className="text-sm font-semibold text-gray-700 mb-3">Tipos de contrato</h3>
                 <div className="space-y-3">
                   <label className="flex items-center gap-3 cursor-pointer group">
                     <div className="relative">
                       <input type="checkbox" className="peer sr-only" defaultChecked />
-                      <div className="w-4 h-4 border border-brand-green rounded bg-brand-green-light peer-checked:bg-brand-green-light peer-checked:border-brand-green transition flex items-center justify-center">
-                        <svg className="w-2.5 h-2.5 text-brand-green opacity-0 peer-checked:opacity-100" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M5 13l4 4L19 7" />
+                      <div className="w-5 h-5 border-2 border-brand-green rounded bg-brand-green/10 peer-checked:bg-brand-green/10 peer-checked:border-brand-green transition flex items-center justify-center">
+                        <svg className="w-3 h-3 text-brand-green opacity-0 peer-checked:opacity-100" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
                     </div>
-                    <span className="text-sm text-brand-green group-hover:text-brand-blue font-medium">Estágio</span>
+                    <span className="text-sm text-gray-700 group-hover:text-brand-blue font-medium">Estágio</span>
                   </label>
                   <label className="flex items-center gap-3 cursor-pointer group">
                     <div className="relative">
                       <input type="checkbox" className="peer sr-only" />
-                      <div className="w-4 h-4 border border-gray-300 rounded bg-white peer-checked:bg-brand-green-light peer-checked:border-brand-green transition flex items-center justify-center">
-                        <svg className="w-2.5 h-2.5 text-brand-green opacity-0 peer-checked:opacity-100" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M5 13l4 4L19 7" />
+                      <div className="w-5 h-5 border-2 border-gray-300 rounded bg-white peer-checked:bg-brand-green/10 peer-checked:border-brand-green transition flex items-center justify-center">
+                        <svg className="w-3 h-3 text-brand-green opacity-0 peer-checked:opacity-100" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
                     </div>
@@ -158,9 +158,9 @@ export default function Vagas() {
                   <label className="flex items-center gap-3 cursor-pointer group">
                     <div className="relative">
                       <input type="checkbox" className="peer sr-only" />
-                      <div className="w-4 h-4 border border-gray-300 rounded bg-white peer-checked:bg-brand-green-light peer-checked:border-brand-green transition flex items-center justify-center">
-                        <svg className="w-2.5 h-2.5 text-brand-green opacity-0 peer-checked:opacity-100" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M5 13l4 4L19 7" />
+                      <div className="w-5 h-5 border-2 border-gray-300 rounded bg-white peer-checked:bg-brand-green/10 peer-checked:border-brand-green transition flex items-center justify-center">
+                        <svg className="w-3 h-3 text-brand-green opacity-0 peer-checked:opacity-100" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
                     </div>

@@ -85,7 +85,7 @@ export default function Index() {
         </nav>
 
         {/* Hero Content */}
-        <div className="relative z-10 px-10 pb-20">
+        <div className="relative z-10 px-10" style={{paddingBottom: '120px'}}>
           <div className="flex justify-between items-start">
             {/* Left Side */}
             <div className="max-w-2xl">

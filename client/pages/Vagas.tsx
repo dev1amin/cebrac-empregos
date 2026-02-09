@@ -49,13 +49,13 @@ export default function Vagas() {
       </nav>
 
       {/* Page Header */}
-      <div className="max-w-7xl mx-auto px-6 mt-12 mb-8">
+      <div className="mx-6 mt-12 mb-8">
         <h1 className="text-brand-blue text-4xl font-bold mb-2">Vagas</h1>
         <p className="text-gray-600">Encontre a oportunidade para sua carreira</p>
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="mx-6">
         <div className="grid grid-cols-12 gap-8">
           {/* Sidebar Filters */}
           <aside className="col-span-3">
@@ -431,7 +431,7 @@ export default function Vagas() {
       </div>
 
       {/* "Isso é tudo" Section */}
-      <section className="max-w-7xl mx-auto px-6 mt-20 mb-16">
+      <section className="mx-6 mt-20 mb-16">
         <div className="grid grid-cols-2 gap-12 items-start">
           <div>
             <h2 className="text-5xl font-bold text-gray-900 mb-6">
@@ -493,7 +493,7 @@ export default function Vagas() {
 
       {/* Company Partner Section with gray background */}
       <section className="bg-brand-gray py-12 mt-16">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="mx-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-6">
               <svg width="58" height="30" viewBox="0 0 58 30" fill="none">
@@ -519,8 +519,8 @@ export default function Vagas() {
       </section>
 
       {/* Footer - Same as homepage */}
-      <footer className="bg-brand-blue rounded-t-[25px] px-10 pt-16 pb-8 relative mt-16">
-        <div className="max-w-7xl mx-auto">
+      <footer className="bg-brand-blue rounded-t-[25px] mx-6 px-8 pt-16 pb-8 relative mt-16">
+        <div>
           {/* Footer Navigation - Half in, half out */}
           <div className="absolute -top-5 left-0 right-0 flex items-center justify-center gap-3">
             <Link to="/para-empresas" className="flex items-center gap-2 bg-brand-green text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition">

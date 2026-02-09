@@ -57,6 +57,17 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        brand: {
+          blue: "hsl(var(--brand-blue))",
+          "blue-dark": "hsl(var(--brand-blue-dark))",
+          "blue-darker": "hsl(var(--brand-blue-darker))",
+          green: "hsl(var(--brand-green))",
+          "green-light": "hsl(var(--brand-green-light))",
+          yellow: "hsl(var(--brand-yellow))",
+          gray: "hsl(var(--brand-gray))",
+          "gray-text": "hsl(var(--brand-gray-text))",
+          "gray-border": "hsl(var(--brand-gray-border))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

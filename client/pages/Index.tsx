@@ -140,14 +140,14 @@ export default function Index() {
       {/* Statistics Section */}
       <section className="px-10 py-20">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-4 gap-8">
+          <div className="grid grid-cols-5 gap-6 items-center">
             {/* Stat 1 */}
             <div className="text-center">
               <h3 className="text-brand-blue-dark text-5xl font-extrabold mb-4 tracking-tight">
                 5.172
               </h3>
               <div className="border border-brand-blue-dark rounded-full px-6 py-2 inline-block">
-                <p className="text-brand-blue-dark text-sm">Vagas Ativas</p>
+                <p className="text-brand-blue-dark text-sm whitespace-nowrap">Vagas Ativas</p>
               </div>
             </div>
 
@@ -157,7 +157,7 @@ export default function Index() {
                 +3.9k
               </h3>
               <div className="border border-brand-blue-dark rounded-full px-6 py-2 inline-block">
-                <p className="text-brand-blue-dark text-sm">Currículos</p>
+                <p className="text-brand-blue-dark text-sm whitespace-nowrap">Currículos</p>
               </div>
             </div>
 
@@ -175,21 +175,19 @@ export default function Index() {
                 +13.5k
               </h3>
               <div className="border border-brand-blue-dark rounded-full px-6 py-2 inline-block">
-                <p className="text-brand-blue-dark text-sm">
+                <p className="text-brand-blue-dark text-sm whitespace-nowrap">
                   Empresas Parceiras
                 </p>
               </div>
             </div>
 
-            {/* Stat 4 - placed in second row, last column to match design */}
-          </div>
-          <div className="flex justify-end mt-8 pr-20">
+            {/* Stat 4 */}
             <div className="text-center">
               <h3 className="text-brand-blue-dark text-5xl font-extrabold mb-4 tracking-tight">
                 +21k
               </h3>
               <div className="border border-brand-blue-dark rounded-full px-6 py-2 inline-block">
-                <p className="text-brand-blue-dark text-sm">Contratações</p>
+                <p className="text-brand-blue-dark text-sm whitespace-nowrap">Contratações</p>
               </div>
             </div>
           </div>

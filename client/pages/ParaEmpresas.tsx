@@ -28,7 +28,7 @@ export default function ParaEmpresas() {
           <Link to="/" className="text-white text-sm font-medium hover:opacity-80 transition">Home</Link>
           <Link to="/vagas" className="text-white text-sm font-medium hover:opacity-80 transition">Vagas</Link>
           <Link to="/para-empresas" className="text-white text-sm font-medium hover:opacity-80 transition">Para empresas</Link>
-          <a href="#" className="text-white text-sm font-medium hover:opacity-80 transition">Sobre</a>
+          <Link to="/sobre" className="text-white text-sm font-medium hover:opacity-80 transition">Sobre</Link>
           <a href="#" className="text-white text-sm font-medium hover:opacity-80 transition">FAQ</a>
         </div>
 

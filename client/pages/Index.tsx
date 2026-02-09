@@ -5,9 +5,9 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-white p-[39px]">
       {/* Hero Section */}
-      <section className="relative rounded-[25px] overflow-visible pb-8 mt-4">
+      <section className="relative rounded-[25px] overflow-visible pb-16 mt-4" style={{minHeight: '700px'}}>
         {/* Background Image with rounded corners */}
-        <div className="absolute inset-0 rounded-[25px] overflow-hidden">
+        <div className="absolute inset-0 rounded-[25px] overflow-hidden" style={{marginBottom: '80px'}}>
           <img
             src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2F9ca2f76aac7244e59ada473eb7d44ff1"
             alt="Hero Background"
@@ -16,7 +16,7 @@ export default function Index() {
         </div>
 
         {/* Navigation with Glass Effect */}
-        <nav className="relative z-10 mx-10 mt-6 mb-32 flex items-center justify-between px-8 py-4 rounded-full bg-white/10 backdrop-blur-md border border-white/20">
+        <nav className="relative z-10 mx-10 mb-32 flex items-center justify-between px-8 py-4 rounded-full bg-white/10 backdrop-blur-md border border-white/20" style={{top: '30px'}}>
           <div className="flex items-center gap-6">
             {/* First Logo */}
             <div className="flex items-center gap-2">

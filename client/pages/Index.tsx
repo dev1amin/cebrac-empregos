@@ -1,4 +1,5 @@
 import { ArrowUpRight, Search, FileText, TrendingUp, Eye } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Index() {
   return (

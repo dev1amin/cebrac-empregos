@@ -5,7 +5,7 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-white p-[39px]">
       {/* Hero Section */}
-      <section className="relative rounded-[25px] overflow-visible pb-8">
+      <section className="relative rounded-[25px] overflow-visible pb-8 mt-4">
         {/* Background Image with rounded corners */}
         <div className="absolute inset-0 rounded-[25px] overflow-hidden">
           <img
@@ -126,14 +126,16 @@ export default function Index() {
           </div>
         </div>
 
-        {/* Hero Bottom Bubble */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 z-20">
-          <div className="bg-white rounded-full p-4 shadow-lg">
-            <svg width="35" height="30" viewBox="0 0 35 30" fill="none">
-              <ellipse cx="17.5" cy="15" rx="17.5" ry="15" fill="#25348F" />
-              <circle cx="17.5" cy="15" r="8" fill="white" />
-            </svg>
-          </div>
+        {/* Speech Bubble Tail */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[60%] z-20 flex flex-col items-center">
+          {/* Tail triangle */}
+          <div className="w-0 h-0 border-l-[20px] border-r-[20px] border-t-[16px] border-l-transparent border-r-transparent border-t-brand-blue"></div>
+          {/* Logo circle */}
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2Fdb82e6e7b46b43df9803960450149299"
+            alt="Cebrac Logo"
+            className="w-14 h-14 rounded-full mt-2 shadow-lg"
+          />
         </div>
       </section>
 

@@ -49,7 +49,7 @@ export default function JobDetail() {
       </nav>
 
       {/* Back to search button - Smaller with blue arrow in white circle */}
-      <div className="max-w-7xl mx-auto px-6 mt-8 mb-6">
+      <div className="mx-6 mt-8 mb-6">
         <Link to="/vagas" className="inline-flex items-center gap-2 text-brand-blue text-sm font-medium hover:opacity-80 transition">
           <div className="flex items-center justify-center w-6 h-6 bg-white border-2 border-brand-blue rounded-full">
             <svg className="w-3 h-3 text-brand-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -62,7 +62,7 @@ export default function JobDetail() {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="mx-6">
         <div className="grid grid-cols-12 gap-8">
           {/* Main Job Content */}
           <main className="col-span-8">
@@ -419,7 +419,7 @@ export default function JobDetail() {
       </div>
 
       {/* "Isso é tudo" Section */}
-      <section className="max-w-7xl mx-auto px-6 mt-20 mb-16">
+      <section className="mx-6 mt-20 mb-16">
         <div className="grid grid-cols-2 gap-12 items-start">
           <div>
             <h2 className="text-5xl font-bold text-gray-900 mb-6">
@@ -481,7 +481,7 @@ export default function JobDetail() {
 
       {/* Company Partner Section with gray background - Same as Vagas page */}
       <section className="bg-brand-gray py-12 mt-16">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="mx-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-6">
               <svg width="58" height="30" viewBox="0 0 58 30" fill="none">
@@ -507,8 +507,8 @@ export default function JobDetail() {
       </section>
 
       {/* Footer - Same as Vagas page */}
-      <footer className="bg-brand-blue rounded-t-[25px] px-10 pt-16 pb-8 relative mt-16">
-        <div className="max-w-7xl mx-auto">
+      <footer className="bg-brand-blue rounded-t-[25px] mx-6 px-8 pt-16 pb-8 relative mt-16">
+        <div>
           {/* Footer Navigation - Half in, half out */}
           <div className="absolute -top-5 left-0 right-0 flex items-center justify-center gap-3">
             <Link to="/para-empresas" className="flex items-center gap-2 bg-brand-green text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition">

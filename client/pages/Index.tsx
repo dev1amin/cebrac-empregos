@@ -497,12 +497,12 @@ export default function Index() {
         <div className="max-w-7xl mx-auto text-center">
           {/* Decorative lines */}
           <div className="flex items-center justify-center gap-8 mb-8">
-            <div className="h-px bg-gray-300 w-60"></div>
+            <div className="h-px bg-gray-300 flex-1 max-w-md"></div>
             <svg width="35" height="30" viewBox="0 0 35 30" fill="none">
               <ellipse cx="17.5" cy="15" rx="17.5" ry="15" fill="#25348F" />
               <circle cx="17.5" cy="15" r="8" fill="white" />
             </svg>
-            <div className="h-px bg-gray-300 w-60"></div>
+            <div className="h-px bg-gray-300 flex-1 max-w-md"></div>
           </div>
 
           <h2 className="text-5xl font-medium text-brand-gray-text mb-4 tracking-tight">
@@ -587,28 +587,46 @@ export default function Index() {
 
           {/* Learning Paths */}
           <div className="grid grid-cols-3 gap-6">
-            {/* Path 1 */}
-            <div className="bg-brand-blue rounded-2xl overflow-hidden">
-              <div className="h-32 bg-gradient-to-br from-blue-400 to-blue-600"></div>
-              <div className="p-6 text-left text-white">
+            {/* Path 1 - Aprendizado Acelerado */}
+            <div className="bg-white border-2 border-gray-100 rounded-2xl overflow-hidden shadow-sm">
+              <div className="h-32 bg-white flex items-center justify-center p-6">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2F93805e6d58ab4ca38186bf95ac87ae0b"
+                  alt="Aprendizado Acelerado"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div className="p-6 text-left bg-brand-blue text-white">
                 <h4 className="text-lg font-extrabold mb-2">
                   Aprendizado Acelerado
                 </h4>
               </div>
             </div>
 
-            {/* Path 2 */}
-            <div className="bg-brand-blue rounded-2xl overflow-hidden">
-              <div className="h-32 bg-gradient-to-br from-blue-400 to-blue-600"></div>
-              <div className="p-6 text-left text-white">
+            {/* Path 2 - Foco no Mercado */}
+            <div className="bg-white border-2 border-gray-100 rounded-2xl overflow-hidden shadow-sm">
+              <div className="h-32 bg-white flex items-center justify-center p-6">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2F059f599bc32148b6bc570b39c5bca33a"
+                  alt="Foco no Mercado"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div className="p-6 text-left bg-brand-blue text-white">
                 <h4 className="text-lg font-extrabold mb-2">Foco no Mercado</h4>
               </div>
             </div>
 
-            {/* Path 3 */}
-            <div className="bg-brand-blue rounded-2xl overflow-hidden">
-              <div className="h-32 bg-gradient-to-br from-blue-400 to-blue-600"></div>
-              <div className="p-6 text-left text-white">
+            {/* Path 3 - Mentoria Personalizada */}
+            <div className="bg-white border-2 border-gray-100 rounded-2xl overflow-hidden shadow-sm">
+              <div className="h-32 bg-white flex items-center justify-center p-6">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2Ff4077626edde43f5977f8890fd728430"
+                  alt="Mentoria Personalizada"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div className="p-6 text-left bg-brand-blue text-white">
                 <h4 className="text-lg font-extrabold mb-2">
                   Mentoria Personalizada
                 </h4>

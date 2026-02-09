@@ -570,50 +570,50 @@ export default function Index() {
               </div>
             </div>
 
-            {/* Learning Paths - No cards, gray background, image + text */}
+            {/* Learning Paths - image + text, left-aligned */}
             <div className="bg-brand-gray rounded-2xl p-10">
               <div className="grid grid-cols-3 gap-8">
                 {/* Path 1 */}
-                <div className="text-center">
-                  <p className="text-gray-500 text-sm mb-2">Metodologia otimizada</p>
-                  <div className="rounded-2xl overflow-hidden mb-4">
+                <div className="flex flex-col items-start">
+                  <div className="w-full mb-4">
                     <img
                       src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2F93805e6d58ab4ca38186bf95ac87ae0b"
                       alt="Aprendizado Acelerado"
-                      className="w-full h-48 object-cover"
+                      className="w-full h-32 object-contain"
                     />
                   </div>
-                  <h4 className="text-brand-blue text-lg font-extrabold">
+                  <p className="text-gray-600 text-sm mb-2">Metodologia otimizada</p>
+                  <h4 className="text-brand-blue text-[28px] font-bold leading-tight tracking-tight">
                     Aprendizado Acelerado
                   </h4>
                 </div>
 
                 {/* Path 2 */}
-                <div className="text-center">
-                  <p className="text-gray-500 text-sm mb-2">Currículo desenvolvido de verdade</p>
-                  <div className="rounded-2xl overflow-hidden mb-4">
+                <div className="flex flex-col items-start">
+                  <div className="w-full mb-4">
                     <img
                       src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2F059f599bc32148b6bc570b39c5bca33a"
                       alt="Foco no Mercado"
-                      className="w-full h-48 object-cover"
+                      className="w-full h-32 object-contain"
                     />
                   </div>
-                  <h4 className="text-brand-blue text-lg font-extrabold">
+                  <p className="text-gray-600 text-sm mb-2">Currículo desenvolvido de verdade</p>
+                  <h4 className="text-brand-blue text-[28px] font-bold leading-tight tracking-tight">
                     Foco no Mercado
                   </h4>
                 </div>
 
                 {/* Path 3 */}
-                <div className="text-center">
-                  <p className="text-gray-500 text-sm mb-2">Acompanhamento individual</p>
-                  <div className="rounded-2xl overflow-hidden mb-4">
+                <div className="flex flex-col items-start">
+                  <div className="w-full mb-4">
                     <img
                       src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2Ff4077626edde43f5977f8890fd728430"
                       alt="Mentoria Personalizada"
-                      className="w-full h-48 object-cover"
+                      className="w-full h-32 object-contain"
                     />
                   </div>
-                  <h4 className="text-brand-blue text-lg font-extrabold">
+                  <p className="text-gray-600 text-sm mb-2">Acompanhamento individual</p>
+                  <h4 className="text-brand-blue text-[28px] font-bold leading-tight tracking-tight">
                     Mentoria Personalizada
                   </h4>
                 </div>

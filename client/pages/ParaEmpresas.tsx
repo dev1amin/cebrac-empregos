@@ -51,29 +51,31 @@ export default function ParaEmpresas() {
         </div>
       </nav>
 
-      {/* Hero Section - Updated */}
-      <section className="relative bg-brand-blue rounded-t-[40px] mx-6 mt-12 overflow-hidden">
-        <div className="relative z-10 px-12 py-12">
+      {/* Hero Section - Same size as home balloon */}
+      <section className="relative bg-brand-blue rounded-t-[40px] mx-6 mt-6 overflow-hidden h-[79vh] flex flex-col">
+        <div className="relative z-10 px-12 flex-1 flex flex-col">
           {/* "Grandes Oportunidades" badge - Top Right */}
-          <div className="flex justify-end mb-8">
+          <div className="flex justify-end pt-8">
             <button className="px-6 py-2.5 border-2 border-white/30 text-white rounded-full font-semibold text-sm hover:bg-white/10 transition">
               Grandes Oportunidades
             </button>
           </div>
 
-          {/* Main Hero Content - Full Width */}
-          <div className="w-full">
-            <h1 className="text-white text-5xl font-bold mb-6">
-              Encontre os Melhores Talentos para sua Empresa
-            </h1>
-            <div className="flex items-start gap-3">
-              <p className="text-white/90 text-lg leading-relaxed flex-1">
-                Nossa plataforma conecta sua empresa aos profissionais mais qualificados do mercado. Publique vagas, receba 
-                candidaturas qualificadas e encontre o talento ideal para sua equipe.
-              </p>
-              <button className="flex-shrink-0 w-12 h-12 rounded-full bg-white flex items-center justify-center hover:bg-opacity-90 transition">
-                <ArrowUpRight className="w-5 h-5 text-brand-blue" />
-              </button>
+          {/* Main Hero Content - Inside a card at bottom */}
+          <div className="flex-1 flex items-end pb-10">
+            <div className="bg-white/10 backdrop-blur-md border-2 border-white/20 rounded-3xl p-10 w-full">
+              <h1 className="text-white text-5xl font-bold mb-6">
+                Encontre os Melhores Talentos para sua Empresa
+              </h1>
+              <div className="flex items-start gap-3">
+                <p className="text-white/90 text-lg leading-relaxed flex-1">
+                  Nossa plataforma conecta sua empresa aos profissionais mais qualificados do mercado. Publique vagas, receba
+                  candidaturas qualificadas e encontre o talento ideal para sua equipe.
+                </p>
+                <button className="flex-shrink-0 w-12 h-12 rounded-full bg-white flex items-center justify-center hover:bg-opacity-90 transition">
+                  <ArrowUpRight className="w-5 h-5 text-brand-blue" />
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -114,13 +116,11 @@ export default function ParaEmpresas() {
       {/* Features Section - Updated Grid */}
       <section className="mx-6 mb-20">
         <div className="grid grid-cols-4 gap-6">
-          {/* Card 1 - Candidatos Qualificados - Takes 2 columns, text below */}
-          <div className="col-span-2 bg-brand-green rounded-3xl p-8 text-white shadow-lg hover:shadow-xl transition flex flex-col justify-between">
-            <div className="mb-6">
-              <h3 className="text-4xl font-bold mb-6">
-                Candidatos Qualificados
-              </h3>
-            </div>
+          {/* Card 1 - Candidatos Qualificados - Takes 2 columns, title at bottom */}
+          <div className="col-span-2 bg-brand-green rounded-3xl p-8 text-white shadow-lg hover:shadow-xl transition flex flex-col justify-end min-h-[280px]">
+            <h3 className="text-4xl font-bold mb-3">
+              Candidatos Qualificados
+            </h3>
             <p className="text-white/90 text-sm leading-relaxed">
               Acesso a uma base de profissionais pré-selecionados e qualificados, com perfis detalhados e competências validadas.
             </p>
@@ -173,25 +173,28 @@ export default function ParaEmpresas() {
 
           {/* Right Side - Steps with Accordion */}
           <div className="space-y-4">
-            {/* Step 1 */}
-            <div className="bg-white border-2 border-gray-200 rounded-2xl overflow-hidden">
-              <button 
+            {/* Step 1 - Pre-opened by default */}
+            <div className={`rounded-2xl overflow-hidden transition-colors ${
+              openStep === 1 ? 'bg-brand-blue' : 'bg-gray-100'
+            }`}>
+              <button
                 onClick={() => setOpenStep(openStep === 1 ? null : 1)}
-                className="w-full p-6 flex items-center justify-between hover:bg-gray-50 transition"
+                className="w-full p-6 flex items-center justify-between"
               >
-                <div className="flex items-center gap-4">
-                  <h3 className="text-xl font-bold text-gray-900">Publique sua vaga</h3>
-                  <div className="flex-shrink-0">
-                    <div className="w-8 h-8 rounded-lg bg-brand-blue flex items-center justify-center">
-                      <span className="text-white font-bold text-sm">1</span>
-                    </div>
-                  </div>
+                <h3 className={`text-xl font-bold ${
+                  openStep === 1 ? 'text-white' : 'text-gray-900'
+                }`}>Publique sua vaga</h3>
+                <div className={`w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 ${
+                  openStep === 1 ? 'bg-white/20' : 'bg-gray-300'
+                }`}>
+                  <span className={`font-bold text-sm ${
+                    openStep === 1 ? 'text-white' : 'text-gray-700'
+                  }`}>1</span>
                 </div>
-                <ChevronDown className={`w-5 h-5 text-gray-400 transition-transform ${openStep === 1 ? 'rotate-180' : ''}`} />
               </button>
               {openStep === 1 && (
                 <div className="px-6 pb-6 pt-0">
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-white/90 text-sm leading-relaxed">
                     Acesso a uma base de profissionais pré-selecionados e qualificados, com perfis detalhados e competências validadas pelo Cebrac.
                   </p>
                 </div>
@@ -199,24 +202,27 @@ export default function ParaEmpresas() {
             </div>
 
             {/* Step 2 */}
-            <div className="bg-white border-2 border-gray-200 rounded-2xl overflow-hidden">
-              <button 
+            <div className={`rounded-2xl overflow-hidden transition-colors ${
+              openStep === 2 ? 'bg-brand-blue' : 'bg-gray-100'
+            }`}>
+              <button
                 onClick={() => setOpenStep(openStep === 2 ? null : 2)}
-                className="w-full p-6 flex items-center justify-between hover:bg-gray-50 transition"
+                className="w-full p-6 flex items-center justify-between"
               >
-                <div className="flex items-center gap-4">
-                  <h3 className="text-xl font-bold text-gray-900">Receba candidaturas</h3>
-                  <div className="flex-shrink-0">
-                    <div className="w-8 h-8 rounded-lg bg-gray-300 flex items-center justify-center">
-                      <span className="text-gray-700 font-bold text-sm">2</span>
-                    </div>
-                  </div>
+                <h3 className={`text-xl font-bold ${
+                  openStep === 2 ? 'text-white' : 'text-gray-900'
+                }`}>Receba candidaturas</h3>
+                <div className={`w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 ${
+                  openStep === 2 ? 'bg-white/20' : 'bg-gray-300'
+                }`}>
+                  <span className={`font-bold text-sm ${
+                    openStep === 2 ? 'text-white' : 'text-gray-700'
+                  }`}>2</span>
                 </div>
-                <ChevronDown className={`w-5 h-5 text-gray-400 transition-transform ${openStep === 2 ? 'rotate-180' : ''}`} />
               </button>
               {openStep === 2 && (
                 <div className="px-6 pb-6 pt-0">
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-white/90 text-sm leading-relaxed">
                     Acesso a uma base de profissionais pré-selecionados e qualificados, com perfis detalhados e competências validadas pelo Cebrac.
                   </p>
                 </div>
@@ -224,24 +230,27 @@ export default function ParaEmpresas() {
             </div>
 
             {/* Step 3 */}
-            <div className="bg-white border-2 border-gray-200 rounded-2xl overflow-hidden">
-              <button 
+            <div className={`rounded-2xl overflow-hidden transition-colors ${
+              openStep === 3 ? 'bg-brand-blue' : 'bg-gray-100'
+            }`}>
+              <button
                 onClick={() => setOpenStep(openStep === 3 ? null : 3)}
-                className="w-full p-6 flex items-center justify-between hover:bg-gray-50 transition"
+                className="w-full p-6 flex items-center justify-between"
               >
-                <div className="flex items-center gap-4">
-                  <h3 className="text-xl font-bold text-gray-900">Contrate o ideal</h3>
-                  <div className="flex-shrink-0">
-                    <div className="w-8 h-8 rounded-lg bg-gray-300 flex items-center justify-center">
-                      <span className="text-gray-700 font-bold text-sm">3</span>
-                    </div>
-                  </div>
+                <h3 className={`text-xl font-bold ${
+                  openStep === 3 ? 'text-white' : 'text-gray-900'
+                }`}>Contrate o ideal</h3>
+                <div className={`w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 ${
+                  openStep === 3 ? 'bg-white/20' : 'bg-gray-300'
+                }`}>
+                  <span className={`font-bold text-sm ${
+                    openStep === 3 ? 'text-white' : 'text-gray-700'
+                  }`}>3</span>
                 </div>
-                <ChevronDown className={`w-5 h-5 text-gray-400 transition-transform ${openStep === 3 ? 'rotate-180' : ''}`} />
               </button>
               {openStep === 3 && (
                 <div className="px-6 pb-6 pt-0">
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-white/90 text-sm leading-relaxed">
                     Acesso a uma base de profissionais pré-selecionados e qualificados, com perfis detalhados e competências validadas pelo Cebrac.
                   </p>
                 </div>

@@ -34,26 +34,31 @@ function FAQItem({ question, answer }: FAQItemProps) {
 export default function FAQ() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Navbar - Reused */}
+      {/* Navbar - Same as Vagas page with 2 logos */}
       <nav className="bg-brand-blue rounded-[40px] mx-6 mt-6 px-8 py-4 flex items-center justify-between">
         <div className="flex items-center gap-6">
-          <Link to="/" className="flex items-center gap-3">
-            <svg width="44" height="23" viewBox="0 0 58 30" fill="none">
-              <path d="M26.8526 27.6548H3.0879C1.38501 27.6548 0 26.4462 0 24.9602V4.88985C0 3.40389 1.38501 2.19531 3.0879 2.19531H26.8526V27.6482V27.6548Z" fill="#11B000"/>
-              <path d="M33.7552 0.537425C32.514 -0.175836 30.5916 -0.18244 29.3428 0.537425L6.68311 13.6337C5.44189 14.3469 5.44189 15.5093 6.68311 16.2292L29.305 29.3188C30.5159 30.0189 32.5064 30.0189 33.7174 29.3188L56.3695 16.2226C57.6107 15.5093 57.6107 14.3469 56.3695 13.6271L33.7476 0.537425H33.7552Z" fill="#FFCA00"/>
-              <path d="M26.4598 2.20215L6.69116 13.6275C5.44995 14.3408 5.44995 15.5031 6.69116 16.223L26.4522 27.655C36.2684 21.1762 36.276 8.4696 26.4673 2.20215" fill="#25348F"/>
-            </svg>
-            <div className="flex items-center gap-2">
-              <div className="h-6 w-px bg-white/20"></div>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                <circle cx="12" cy="12" r="10" fill="#FFCA00"/>
-                <path d="M12 8v8M8 12h8" stroke="#25348F" strokeWidth="2" strokeLinecap="round"/>
-              </svg>
-              <span className="text-white font-bold text-sm uppercase tracking-wide">Cebrac Empregos</span>
-            </div>
+          {/* First Logo */}
+          <Link to="/" className="flex items-center gap-2">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2Fefd6f08e8c3b4872bd6e38bdef2fc67d"
+              alt="Cebrac Logo"
+              className="h-6"
+            />
+          </Link>
+
+          {/* Divider */}
+          <div className="h-8 w-px bg-white/30"></div>
+
+          {/* Second Logo */}
+          <Link to="/" className="flex items-center gap-2">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2Fde0f743057674fdfaef58afdb6bd8369"
+              alt="Cebrac Empresa Logo"
+              className="h-6"
+            />
           </Link>
         </div>
-        
+
         <div className="flex items-center gap-8">
           <Link to="/" className="text-white text-sm font-medium hover:opacity-80 transition">Home</Link>
           <Link to="/vagas" className="text-white text-sm font-medium hover:opacity-80 transition">Vagas</Link>
@@ -64,15 +69,11 @@ export default function FAQ() {
 
         <div className="flex items-center gap-4">
           <button className="text-white hover:opacity-80 transition">
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg>
+            <Search className="w-5 h-5" />
           </button>
-          <button className="flex items-center gap-2 bg-white text-brand-blue px-6 py-3 rounded-full font-bold text-sm hover:bg-opacity-90 transition">
+          <button className="flex items-center gap-2 bg-white text-brand-blue px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-opacity-90 transition">
             Acessar Vagas
-            <div className="bg-brand-blue rounded-full p-1">
-              <ArrowUpRight className="w-3 h-3 text-white" />
-            </div>
+            <ArrowUpRight className="w-4 h-4" />
           </button>
         </div>
       </nav>
@@ -250,38 +251,36 @@ export default function FAQ() {
         </div>
       </section>
 
-      {/* Blue Background Spacer */}
-      <div className="bg-brand-blue h-24"></div>
-
-      {/* Footer - Reused */}
-      <footer className="bg-brand-blue px-10 py-12 -mt-24">
+      {/* Footer - Same as Vagas page */}
+      <footer className="bg-brand-blue rounded-t-[25px] px-10 pt-16 pb-8 relative mt-16">
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-center justify-center gap-3 mb-8">
-            <Link to="/para-empresas" className="flex items-center gap-2 bg-brand-green text-white px-5 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition">
+          {/* Footer Navigation - Half in, half out */}
+          <div className="absolute -top-5 left-0 right-0 flex items-center justify-center gap-3">
+            <Link to="/para-empresas" className="flex items-center gap-2 bg-brand-green text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition">
               Para empresas
               <div className="bg-white rounded-full p-1">
                 <ArrowUpRight className="w-3 h-3 text-brand-green" />
               </div>
             </Link>
-            <Link to="/" className="flex items-center gap-2 bg-brand-green text-white px-5 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition">
+            <Link to="/" className="flex items-center gap-2 bg-brand-green text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition">
               Home
               <div className="bg-white rounded-full p-1">
                 <ArrowUpRight className="w-3 h-3 text-brand-green" />
               </div>
             </Link>
-            <Link to="/vagas" className="flex items-center gap-2 bg-brand-green text-white px-5 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition">
+            <Link to="/vagas" className="flex items-center gap-2 bg-brand-green text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition">
               Vagas
               <div className="bg-white rounded-full p-1">
                 <ArrowUpRight className="w-3 h-3 text-brand-green" />
               </div>
             </Link>
-            <Link to="/sobre" className="flex items-center gap-2 bg-brand-green text-white px-5 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition">
+            <Link to="/sobre" className="flex items-center gap-2 bg-brand-green text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition">
               Sobre
               <div className="bg-white rounded-full p-1">
                 <ArrowUpRight className="w-3 h-3 text-brand-green" />
               </div>
             </Link>
-            <Link to="/faq" className="flex items-center gap-2 bg-brand-green text-white px-5 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition">
+            <Link to="/faq" className="flex items-center gap-2 bg-brand-green text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition">
               FAQ
               <div className="bg-white rounded-full p-1">
                 <ArrowUpRight className="w-3 h-3 text-brand-green" />
@@ -289,7 +288,7 @@ export default function FAQ() {
             </Link>
           </div>
 
-          <div className="border-t border-white/20 pt-6">
+          <div className="border-t border-white/20 pt-6 mt-8">
             <div className="flex items-center justify-between text-white text-sm">
               <p>©2026, Cebrac Franchising. Todos os direitos reservados.</p>
               <div className="flex gap-8">

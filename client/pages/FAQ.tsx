@@ -105,9 +105,9 @@ export default function FAQ() {
       {/* FAQ Sections */}
       <section className="mx-6 mb-20">
         {/* Cursos e Certificações - Section 1 */}
-        <div className="grid grid-cols-2 gap-8 mb-12">
-          <div className="bg-gray-200 border border-gray-300 rounded-2xl px-10 py-6">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Cursos e Certificações</h2>
+        <div className="bg-gray-200 border border-gray-300 rounded-2xl px-10 py-6 mb-12">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Cursos e Certificações</h2>
+          <div className="grid grid-cols-2 gap-8">
             <div className="space-y-3">
               <FAQItem 
                 question="O que é o Cebrac?" 
@@ -126,10 +126,7 @@ export default function FAQ() {
                 answer="Estamos presentes em todo o território nacional, com unidades físicas e cursos online que atendem todas as regiões do Brasil."
               />
             </div>
-          </div>
 
-          <div className="bg-gray-200 border border-gray-300 rounded-2xl px-10 py-6">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Cursos e Certificações</h2>
             <div className="space-y-3">
               <FAQItem 
                 question="Que cursos o CEBRAC oferece?" 
@@ -152,56 +149,58 @@ export default function FAQ() {
         </div>
 
         {/* Para Candidatos / Para Empresas */}
-        <div className="grid grid-cols-2 gap-8">
-          <div className="bg-gray-200 border border-gray-300 rounded-2xl px-10 py-6">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Para Candidatos</h2>
-            <div className="space-y-3">
-              <FAQItem 
-                question="Como criar meu perfil de candidato?" 
-                answer="Clique em 'Criar meu Perfil', preencha seus dados pessoais, experiências profissionais e qualificações. Quanto mais completo seu perfil, maiores as chances de match com vagas."
-              />
-              <FAQItem 
-                question="Como buscar vagas?" 
-                answer="Use nossa ferramenta de busca com filtros por área, localização, tipo de contrato e senioridade. Você também pode salvar buscas para receber alertas de novas vagas."
-              />
-              <FAQItem 
-                question="Como me candidatar a uma vaga?" 
-                answer="Acesse a vaga de interesse, leia atentamente os requisitos e clique em 'Candidatar-se'. Seu perfil será enviado automaticamente para o recrutador."
-              />
-              <FAQItem 
-                question="Posso acompanhar o status das minhas candidaturas?" 
-                answer="Sim, em seu painel você pode visualizar todas as candidaturas enviadas e acompanhar o status de cada processo seletivo."
-              />
-              <FAQItem 
-                question="Que tipo de suporte vocês oferecem aos candidatos?" 
-                answer="Oferecemos suporte via chat, email e telefone para auxiliar em qualquer dúvida sobre cadastro, vagas ou processo seletivo."
-              />
+        <div className="bg-gray-200 border border-gray-300 rounded-2xl px-10 py-6">
+          <div className="grid grid-cols-2 gap-8">
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">Para Candidatos</h2>
+              <div className="space-y-3">
+                <FAQItem 
+                  question="Como criar meu perfil de candidato?" 
+                  answer="Clique em 'Criar meu Perfil', preencha seus dados pessoais, experiências profissionais e qualificações. Quanto mais completo seu perfil, maiores as chances de match com vagas."
+                />
+                <FAQItem 
+                  question="Como buscar vagas?" 
+                  answer="Use nossa ferramenta de busca com filtros por área, localização, tipo de contrato e senioridade. Você também pode salvar buscas para receber alertas de novas vagas."
+                />
+                <FAQItem 
+                  question="Como me candidatar a uma vaga?" 
+                  answer="Acesse a vaga de interesse, leia atentamente os requisitos e clique em 'Candidatar-se'. Seu perfil será enviado automaticamente para o recrutador."
+                />
+                <FAQItem 
+                  question="Posso acompanhar o status das minhas candidaturas?" 
+                  answer="Sim, em seu painel você pode visualizar todas as candidaturas enviadas e acompanhar o status de cada processo seletivo."
+                />
+                <FAQItem 
+                  question="Que tipo de suporte vocês oferecem aos candidatos?" 
+                  answer="Oferecemos suporte via chat, email e telefone para auxiliar em qualquer dúvida sobre cadastro, vagas ou processo seletivo."
+                />
+              </div>
             </div>
-          </div>
 
-          <div className="bg-gray-200 border border-gray-300 rounded-2xl px-10 py-6">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Para Empresas</h2>
-            <div className="space-y-3">
-              <FAQItem 
-                question="Como minha empresa pode usar a plataforma?" 
-                answer="Cadastre sua empresa, escolha o plano adequado e comece a publicar vagas. Nossa IA ajuda a filtrar os melhores candidatos para suas necessidades."
-              />
-              <FAQItem 
-                question="Que tipo de profissionais posso encontrar?" 
-                answer="Nossa base tem profissionais de diversas áreas e níveis de senioridade, todos com formação qualificada pelo CEBRAC ou experiência comprovada."
-              />
-              <FAQItem 
-                question="Como funciona o processo de seleção?" 
-                answer="Você publica a vaga, recebe candidaturas qualificadas pela nossa IA, analisa perfis e agenda entrevistas diretamente pela plataforma."
-              />
-              <FAQItem 
-                question="Vocês oferecem suporte na seleção?" 
-                answer="Sim, nossa equipe de RH especializada pode auxiliar em todo o processo seletivo, desde a triagem até a contratação."
-              />
-              <FAQItem 
-                question="Qual o prazo médio para preenchimento de vagas?" 
-                answer="Em média, nossas vagas são preenchidas em até 72 horas, graças ao nosso sistema de match inteligente e base qualificada de candidatos."
-              />
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">Para Empresas</h2>
+              <div className="space-y-3">
+                <FAQItem 
+                  question="Como minha empresa pode usar a plataforma?" 
+                  answer="Cadastre sua empresa, escolha o plano adequado e comece a publicar vagas. Nossa IA ajuda a filtrar os melhores candidatos para suas necessidades."
+                />
+                <FAQItem 
+                  question="Que tipo de profissionais posso encontrar?" 
+                  answer="Nossa base tem profissionais de diversas áreas e níveis de senioridade, todos com formação qualificada pelo CEBRAC ou experiência comprovada."
+                />
+                <FAQItem 
+                  question="Como funciona o processo de seleção?" 
+                  answer="Você publica a vaga, recebe candidaturas qualificadas pela nossa IA, analisa perfis e agenda entrevistas diretamente pela plataforma."
+                />
+                <FAQItem 
+                  question="Vocês oferecem suporte na seleção?" 
+                  answer="Sim, nossa equipe de RH especializada pode auxiliar em todo o processo seletivo, desde a triagem até a contratação."
+                />
+                <FAQItem 
+                  question="Qual o prazo médio para preenchimento de vagas?" 
+                  answer="Em média, nossas vagas são preenchidas em até 72 horas, graças ao nosso sistema de match inteligente e base qualificada de candidatos."
+                />
+              </div>
             </div>
           </div>
         </div>

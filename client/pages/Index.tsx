@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 export default function Index() {
   return (
-    <div className="min-h-screen bg-white p-[39px] overflow-x-hidden">
+    <div className="min-h-screen bg-white p-[39px] overflow-x-hidden flex flex-col">
       {/* Hero Section */}
-      <section className="relative rounded-[25px] overflow-hidden pb-16 mt-4 min-h-[100vh]">
+      <section className="relative rounded-[25px] overflow-hidden pb-16 min-h-[100vh]">
         {/* Background Image with rounded corners */}
         <div className="absolute inset-0 rounded-[25px] overflow-hidden" style={{marginBottom: '80px'}}>
           <img
@@ -760,7 +760,7 @@ export default function Index() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-brand-blue rounded-t-[25px] px-8 pt-16 pb-8 relative">
+      <footer className="bg-brand-blue rounded-t-[25px] px-8 pt-16 pb-8 relative mt-auto">
         <div>
           {/* Footer Navigation - Half in, half out */}
           <div className="absolute -top-5 left-0 right-0 flex items-center justify-center gap-3">

@@ -1,4 +1,3 @@
-import { ArrowUpRight, Target, Users, TrendingUp } from "lucide-react";
 import { ArrowUpRight, Target, Users, TrendingUp, Search } from "lucide-react";
 import { Link } from "react-router-dom";
 

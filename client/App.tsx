@@ -10,6 +10,7 @@ import Index from "./pages/Index";
 import Vagas from "./pages/Vagas";
 import JobDetail from "./pages/JobDetail";
 import ParaEmpresas from "./pages/ParaEmpresas";
+import Sobre from "./pages/Sobre";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();

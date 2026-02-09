@@ -301,8 +301,8 @@ export default function ParaEmpresas() {
       </section>
 
       {/* Footer - Same as Vagas page */}
-      <footer className="bg-brand-blue rounded-t-[25px] px-10 pt-16 pb-8 relative mt-16">
-        <div className="max-w-7xl mx-auto">
+      <footer className="bg-brand-blue rounded-t-[25px] mx-6 px-8 pt-16 pb-8 relative mt-16">
+        <div>
           {/* Footer Navigation - Half in, half out */}
           <div className="absolute -top-5 left-0 right-0 flex items-center justify-center gap-3">
             <Link to="/para-empresas" className="flex items-center gap-2 bg-brand-green text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition">

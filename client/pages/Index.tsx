@@ -629,7 +629,7 @@ export default function Index() {
           <div className="grid grid-cols-2 gap-16">
             {/* Left - Heading */}
             <div>
-              <h2 className="text-5xl font-medium text-brand-gray-text mb-6 tracking-tight leading-tight">
+              <h2 className="text-5xl font-medium text-gray-900 mb-6 tracking-tight leading-tight">
                 Veja tudo o que nossos mais de{" "}
                 <span className="font-extrabold">2 milhões de alunos</span>{" "}
                 dizem!

@@ -697,7 +697,7 @@ export default function Index() {
           <div className="grid grid-cols-2 gap-16">
             {/* Left - CTA */}
             <div>
-              <h2 className="text-5xl font-medium text-brand-gray-text mb-6 tracking-tight leading-tight">
+              <h2 className="text-5xl font-medium text-gray-900 mb-6 tracking-tight leading-tight">
                 Está pronto para transformar sua carreira?
               </h2>
               <p className="text-brand-gray-text text-sm mb-8">

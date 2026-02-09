@@ -1,4 +1,5 @@
 import { ArrowUpRight, TrendingUp } from "lucide-react";
+import { ArrowUpRight, Check, Target, Users, TrendingUp, Search } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function ParaEmpresas() {

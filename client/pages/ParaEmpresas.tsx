@@ -174,27 +174,29 @@ export default function ParaEmpresas() {
           {/* Right Side - Steps with Accordion */}
           <div className="space-y-4">
             {/* Step 1 - Pre-opened by default */}
-            <div className={`rounded-2xl overflow-hidden transition-colors ${
-              openStep === 1 ? 'bg-brand-blue' : 'bg-gray-100'
-            }`}>
-              <button
-                onClick={() => setOpenStep(openStep === 1 ? null : 1)}
-                className="w-full p-6 flex items-center justify-between"
-              >
-                <h3 className={`text-xl font-bold ${
-                  openStep === 1 ? 'text-white' : 'text-gray-900'
-                }`}>Publique sua vaga</h3>
-                <div className={`w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 ${
-                  openStep === 1 ? 'bg-white/20' : 'bg-gray-300'
-                }`}>
-                  <span className={`font-bold text-sm ${
-                    openStep === 1 ? 'text-white' : 'text-gray-700'
-                  }`}>1</span>
-                </div>
-              </button>
+            <div>
+              <div className={`rounded-2xl transition-colors ${
+                openStep === 1 ? 'bg-brand-blue' : 'bg-gray-100'
+              }`}>
+                <button
+                  onClick={() => setOpenStep(openStep === 1 ? null : 1)}
+                  className="w-full p-6 flex items-center justify-between"
+                >
+                  <h3 className={`text-xl font-bold ${
+                    openStep === 1 ? 'text-white' : 'text-gray-900'
+                  }`}>Publique sua vaga</h3>
+                  <div className={`w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 ${
+                    openStep === 1 ? 'bg-white/20' : 'bg-gray-300'
+                  }`}>
+                    <span className={`font-bold text-sm ${
+                      openStep === 1 ? 'text-white' : 'text-gray-700'
+                    }`}>1</span>
+                  </div>
+                </button>
+              </div>
               {openStep === 1 && (
-                <div className="px-6 pb-6 pt-0">
-                  <p className="text-white/90 text-sm leading-relaxed">
+                <div className="px-6 py-4">
+                  <p className="text-gray-600 text-sm leading-relaxed">
                     Acesso a uma base de profissionais pré-selecionados e qualificados, com perfis detalhados e competências validadas pelo Cebrac.
                   </p>
                 </div>
@@ -202,27 +204,29 @@ export default function ParaEmpresas() {
             </div>
 
             {/* Step 2 */}
-            <div className={`rounded-2xl overflow-hidden transition-colors ${
-              openStep === 2 ? 'bg-brand-blue' : 'bg-gray-100'
-            }`}>
-              <button
-                onClick={() => setOpenStep(openStep === 2 ? null : 2)}
-                className="w-full p-6 flex items-center justify-between"
-              >
-                <h3 className={`text-xl font-bold ${
-                  openStep === 2 ? 'text-white' : 'text-gray-900'
-                }`}>Receba candidaturas</h3>
-                <div className={`w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 ${
-                  openStep === 2 ? 'bg-white/20' : 'bg-gray-300'
-                }`}>
-                  <span className={`font-bold text-sm ${
-                    openStep === 2 ? 'text-white' : 'text-gray-700'
-                  }`}>2</span>
-                </div>
-              </button>
+            <div>
+              <div className={`rounded-2xl transition-colors ${
+                openStep === 2 ? 'bg-brand-blue' : 'bg-gray-100'
+              }`}>
+                <button
+                  onClick={() => setOpenStep(openStep === 2 ? null : 2)}
+                  className="w-full p-6 flex items-center justify-between"
+                >
+                  <h3 className={`text-xl font-bold ${
+                    openStep === 2 ? 'text-white' : 'text-gray-900'
+                  }`}>Receba candidaturas</h3>
+                  <div className={`w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 ${
+                    openStep === 2 ? 'bg-white/20' : 'bg-gray-300'
+                  }`}>
+                    <span className={`font-bold text-sm ${
+                      openStep === 2 ? 'text-white' : 'text-gray-700'
+                    }`}>2</span>
+                  </div>
+                </button>
+              </div>
               {openStep === 2 && (
-                <div className="px-6 pb-6 pt-0">
-                  <p className="text-white/90 text-sm leading-relaxed">
+                <div className="px-6 py-4">
+                  <p className="text-gray-600 text-sm leading-relaxed">
                     Acesso a uma base de profissionais pré-selecionados e qualificados, com perfis detalhados e competências validadas pelo Cebrac.
                   </p>
                 </div>
@@ -230,27 +234,29 @@ export default function ParaEmpresas() {
             </div>
 
             {/* Step 3 */}
-            <div className={`rounded-2xl overflow-hidden transition-colors ${
-              openStep === 3 ? 'bg-brand-blue' : 'bg-gray-100'
-            }`}>
-              <button
-                onClick={() => setOpenStep(openStep === 3 ? null : 3)}
-                className="w-full p-6 flex items-center justify-between"
-              >
-                <h3 className={`text-xl font-bold ${
-                  openStep === 3 ? 'text-white' : 'text-gray-900'
-                }`}>Contrate o ideal</h3>
-                <div className={`w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 ${
-                  openStep === 3 ? 'bg-white/20' : 'bg-gray-300'
-                }`}>
-                  <span className={`font-bold text-sm ${
-                    openStep === 3 ? 'text-white' : 'text-gray-700'
-                  }`}>3</span>
-                </div>
-              </button>
+            <div>
+              <div className={`rounded-2xl transition-colors ${
+                openStep === 3 ? 'bg-brand-blue' : 'bg-gray-100'
+              }`}>
+                <button
+                  onClick={() => setOpenStep(openStep === 3 ? null : 3)}
+                  className="w-full p-6 flex items-center justify-between"
+                >
+                  <h3 className={`text-xl font-bold ${
+                    openStep === 3 ? 'text-white' : 'text-gray-900'
+                  }`}>Contrate o ideal</h3>
+                  <div className={`w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 ${
+                    openStep === 3 ? 'bg-white/20' : 'bg-gray-300'
+                  }`}>
+                    <span className={`font-bold text-sm ${
+                      openStep === 3 ? 'text-white' : 'text-gray-700'
+                    }`}>3</span>
+                  </div>
+                </button>
+              </div>
               {openStep === 3 && (
-                <div className="px-6 pb-6 pt-0">
-                  <p className="text-white/90 text-sm leading-relaxed">
+                <div className="px-6 py-4">
+                  <p className="text-gray-600 text-sm leading-relaxed">
                     Acesso a uma base de profissionais pré-selecionados e qualificados, com perfis detalhados e competências validadas pelo Cebrac.
                   </p>
                 </div>

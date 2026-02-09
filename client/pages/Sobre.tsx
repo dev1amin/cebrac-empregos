@@ -110,34 +110,33 @@ export default function Sobre() {
         </div>
       </section>
 
-      {/* Mission, Vision, Values - Nossa Missão wider with icon on side */}
+      {/* Mission, Vision, Values - All side by side: 60% / 20% / 20% */}
       <section className="mx-6 mb-20">
-        {/* Nossa Missão - Full width with icon on right */}
-        <div className="bg-brand-blue rounded-3xl p-10 text-white shadow-lg hover:shadow-xl transition flex items-center gap-8 mb-6">
-          <div className="flex-1">
-            <h3 className="text-4xl font-bold mb-4">Nossa Missão</h3>
-            <p className="text-white/90 text-base leading-relaxed">
-              Capacitar profissionais com conhecimentos práticos e atualizados, preparando-os para os desafios do mercado de trabalho moderno.
-            </p>
+        <div className="flex gap-6">
+          {/* Nossa Missão - 60% */}
+          <div className="w-[60%] bg-brand-blue rounded-3xl p-10 text-white shadow-lg hover:shadow-xl transition flex items-center gap-8">
+            <div className="flex-1">
+              <h3 className="text-4xl font-bold mb-4">Nossa Missão</h3>
+              <p className="text-white/90 text-base leading-relaxed">
+                Capacitar profissionais com conhecimentos práticos e atualizados, preparando-os para os desafios do mercado de trabalho moderno.
+              </p>
+            </div>
+            <div className="flex-shrink-0 w-24 h-24 rounded-full bg-yellow-400 flex items-center justify-center">
+              <Target className="w-12 h-12 text-brand-blue" />
+            </div>
           </div>
-          <div className="flex-shrink-0 w-24 h-24 rounded-full bg-yellow-400 flex items-center justify-center">
-            <Target className="w-12 h-12 text-brand-blue" />
-          </div>
-        </div>
 
-        {/* Vision and Values - Side by side */}
-        <div className="grid grid-cols-2 gap-6">
-          {/* Nossa Visão */}
-          <div className="bg-gray-100 rounded-3xl p-8">
-            <h3 className="text-brand-blue text-2xl font-bold mb-3">Nossa Visão</h3>
+          {/* Nossa Visão - 20% */}
+          <div className="w-[20%] bg-gray-100 rounded-3xl p-6 flex flex-col justify-center">
+            <h3 className="text-brand-blue text-xl font-bold mb-3">Nossa Visão</h3>
             <p className="text-gray-600 text-sm leading-relaxed">
               Ser referência nacional em educação profissional e empregabilidade.
             </p>
           </div>
 
-          {/* Nossos Valores */}
-          <div className="bg-gray-100 rounded-3xl p-8">
-            <h3 className="text-brand-blue text-2xl font-bold mb-3">Nossos Valores</h3>
+          {/* Nossos Valores - 20% */}
+          <div className="w-[20%] bg-gray-100 rounded-3xl p-6 flex flex-col justify-center">
+            <h3 className="text-brand-blue text-xl font-bold mb-3">Nossos Valores</h3>
             <p className="text-gray-600 text-sm leading-relaxed">
               Qualidade, inovação, ética e compromisso com resultados.
             </p>

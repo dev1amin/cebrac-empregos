@@ -95,14 +95,18 @@ export default function FAQ() {
         </div>
         
         {/* Gradient bar */}
-        <div className="h-1.5 bg-gradient-to-r from-brand-yellow via-brand-blue to-brand-green rounded-full mt-4"></div>
+        <div className="h-1.5 flex rounded-full mt-4 overflow-hidden">
+          <div className="w-1/3 bg-brand-yellow"></div>
+          <div className="w-1/3 bg-brand-blue"></div>
+          <div className="w-1/3 bg-brand-green"></div>
+        </div>
       </section>
 
       {/* FAQ Sections */}
       <section className="mx-6 mb-20">
         {/* Cursos e Certificações - Section 1 */}
         <div className="grid grid-cols-2 gap-8 mb-12">
-          <div>
+          <div className="bg-gray-200 border border-gray-300 rounded-2xl px-10 py-6">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Cursos e Certificações</h2>
             <div className="space-y-3">
               <FAQItem 
@@ -124,7 +128,7 @@ export default function FAQ() {
             </div>
           </div>
 
-          <div>
+          <div className="bg-gray-200 border border-gray-300 rounded-2xl px-10 py-6">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Cursos e Certificações</h2>
             <div className="space-y-3">
               <FAQItem 
@@ -149,7 +153,7 @@ export default function FAQ() {
 
         {/* Para Candidatos / Para Empresas */}
         <div className="grid grid-cols-2 gap-8">
-          <div>
+          <div className="bg-gray-200 border border-gray-300 rounded-2xl px-10 py-6">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Para Candidatos</h2>
             <div className="space-y-3">
               <FAQItem 
@@ -175,7 +179,7 @@ export default function FAQ() {
             </div>
           </div>
 
-          <div>
+          <div className="bg-gray-200 border border-gray-300 rounded-2xl px-10 py-6">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Para Empresas</h2>
             <div className="space-y-3">
               <FAQItem 

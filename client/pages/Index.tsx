@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 export default function Index() {
   return (
-    <div className="min-h-screen bg-white p-[39px]">
+    <div className="min-h-screen bg-white p-[39px] overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative rounded-[25px] overflow-visible pb-16 mt-4 h-[100vh]">
+      <section className="relative rounded-[25px] overflow-hidden pb-16 mt-4 min-h-[100vh]">
         {/* Background Image with rounded corners */}
         <div className="absolute inset-0 rounded-[25px] overflow-hidden" style={{marginBottom: '80px'}}>
           <img
@@ -94,7 +94,7 @@ export default function Index() {
                 <span className="text-white text-sm">Cebrac Empregos</span>
               </div>
 
-              <h1 className="text-white text-[62px] font-light leading-[1.1] tracking-tight mb-6">
+              <h1 className="text-white text-[clamp(36px,4vw,62px)] font-light leading-[1.1] tracking-tight mb-6">
                 Diariamente,
                 <br />
                 conectamos talentos

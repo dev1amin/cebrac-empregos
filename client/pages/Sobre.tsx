@@ -1,4 +1,4 @@
-import { ArrowUpRight, Target, Users, TrendingUp, Search } from "lucide-react";
+import { ArrowUpRight, Target, Users, TrendingUp, Search, Settings, Briefcase } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function Sobre() {
@@ -28,7 +28,7 @@ export default function Sobre() {
             />
           </Link>
         </div>
-
+        
         <div className="flex items-center gap-8">
           <Link to="/" className="text-white text-sm font-medium hover:opacity-80 transition">Home</Link>
           <Link to="/vagas" className="text-white text-sm font-medium hover:opacity-80 transition">Vagas</Link>
@@ -48,33 +48,41 @@ export default function Sobre() {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="relative bg-brand-blue rounded-[40px] mx-6 mt-12 overflow-hidden">
-        <div className="relative z-10 px-12 py-24">
-          {/* "Grandes Oportunidades" badge */}
-          <div className="flex justify-end mb-12">
+      {/* Hero Section - Same as ParaEmpresas */}
+      <section className="relative bg-brand-blue rounded-t-[40px] mx-6 mt-6 overflow-hidden h-[79vh] flex flex-col">
+        <div className="relative z-10 px-12 flex-1 flex flex-col">
+          {/* "Grandes Oportunidades" badge - Top Right */}
+          <div className="flex justify-end pt-8">
             <button className="px-6 py-2.5 border-2 border-white/30 text-white rounded-full font-semibold text-sm hover:bg-white/10 transition">
               Grandes Oportunidades
             </button>
           </div>
 
-          {/* Main Hero Card */}
-          <div className="bg-white/10 backdrop-blur-md border-2 border-white/20 rounded-3xl p-10 max-w-4xl">
-            <h1 className="text-white text-5xl font-bold mb-6">
-              Busca pela Transformação de Vidas e Carreiras
-            </h1>
-            <p className="text-white/90 text-lg mb-8 leading-relaxed">
-              Há mais de 30 anos, o CEBRAC é referência em educação profissional, conectando talentos às melhores 
-              oportunidades do mercado de trabalho brasileiro.
-            </p>
-            <button className="flex items-center gap-2 bg-white text-brand-blue px-8 py-4 rounded-full font-bold hover:bg-opacity-90 transition">
-              <ArrowUpRight className="w-5 h-5" />
-            </button>
+          {/* Main Hero Content - Inside a card at bottom */}
+          <div className="flex-1 flex items-end pb-10">
+            <div className="bg-white/10 backdrop-blur-md border-2 border-white/20 rounded-3xl p-10 w-full">
+              <h1 className="text-white text-5xl font-bold mb-6">
+                Busca pela Transformação de Vidas e Carreiras
+              </h1>
+              <div className="flex items-start gap-3">
+                <p className="text-white/90 text-lg leading-relaxed flex-1">
+                  Há mais de 30 anos, o CEBRAC é referência em educação profissional, conectando talentos às melhores 
+                  oportunidades do mercado de trabalho brasileiro.
+                </p>
+                <button className="flex-shrink-0 w-12 h-12 rounded-full bg-white flex items-center justify-center hover:bg-opacity-90 transition">
+                  <ArrowUpRight className="w-5 h-5 text-brand-blue" />
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Gradient bar at bottom */}
-        <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-r from-brand-yellow via-brand-blue to-brand-green"></div>
+        {/* Gradient bar at bottom - 33% yellow, 33% blue, 33% green */}
+        <div className="flex h-3">
+          <div className="bg-brand-yellow" style={{width: '33.33%'}}></div>
+          <div className="bg-brand-blue" style={{width: '33.33%'}}></div>
+          <div className="bg-brand-green" style={{width: '33.34%'}}></div>
+        </div>
       </section>
 
       {/* Company Partner Banner */}
@@ -102,42 +110,45 @@ export default function Sobre() {
         </div>
       </section>
 
-      {/* Mission, Vision, Values */}
+      {/* Mission, Vision, Values - Nossa Missão wider with icon on side */}
       <section className="mx-6 mb-20">
         <div className="grid grid-cols-3 gap-6">
-          {/* Nossa Missão */}
-          <div className="bg-brand-blue rounded-3xl p-8 text-white shadow-lg hover:shadow-xl transition">
-            <div className="flex justify-between items-start mb-6">
-              <h3 className="text-3xl font-bold">Nossa Missão</h3>
-              <div className="w-16 h-16 rounded-full bg-yellow-400 flex items-center justify-center">
-                <Target className="w-8 h-8 text-brand-blue" />
-              </div>
+          {/* Nossa Missão - Wider with icon on the side */}
+          <div className="col-span-2 bg-brand-blue rounded-3xl p-10 text-white shadow-lg hover:shadow-xl transition flex items-center gap-8">
+            <div className="flex-1">
+              <h3 className="text-4xl font-bold mb-4">Nossa Missão</h3>
+              <p className="text-white/90 text-base leading-relaxed">
+                Capacitar profissionais com conhecimentos práticos e atualizados, preparando-os para os desafios do mercado de trabalho moderno.
+              </p>
             </div>
-            <p className="text-white/90 text-sm leading-relaxed">
-              Capacitar profissionais com conhecimentos práticos e atualizados, preparando-os para os desafios do mercado de trabalho moderno.
-            </p>
+            <div className="flex-shrink-0 w-24 h-24 rounded-full bg-yellow-400 flex items-center justify-center">
+              <Target className="w-12 h-12 text-brand-blue" />
+            </div>
           </div>
 
-          {/* Nossa Visão */}
-          <div className="bg-white border-2 border-gray-100 rounded-3xl p-8 shadow-sm hover:shadow-md transition">
-            <h3 className="text-brand-blue text-3xl font-bold mb-4">Nossa Visão</h3>
-            <p className="text-gray-600 text-sm leading-relaxed">
-              Publique vagas em minutos e receba candidaturas organizadas. Nossa IA ajuda a filtrar os melhores perfis para sua empresa.
-            </p>
-          </div>
+          {/* Grid for Vision and Values */}
+          <div className="flex flex-col gap-6">
+            {/* Nossa Visão */}
+            <div className="bg-gray-100 rounded-3xl p-6 flex-1">
+              <h3 className="text-brand-blue text-xl font-bold mb-3">Nossa Visão</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Ser referência nacional em educação profissional e empregabilidade.
+              </p>
+            </div>
 
-          {/* Nossos Valores */}
-          <div className="bg-white border-2 border-gray-100 rounded-3xl p-8 shadow-sm hover:shadow-md transition">
-            <h3 className="text-brand-blue text-3xl font-bold mb-4">Nossos Valores</h3>
-            <p className="text-gray-600 text-sm leading-relaxed">
-              Nossa equipe de especialistas em RH está sempre disponível para ajudar você a encontrar o candidato perfeito.
-            </p>
+            {/* Nossos Valores */}
+            <div className="bg-gray-100 rounded-3xl p-6 flex-1">
+              <h3 className="text-brand-blue text-xl font-bold mb-3">Nossos Valores</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Qualidade, inovação, ética e compromisso com resultados.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Nossa História */}
-      <section className="mx-6 mb-20">
+      {/* Nossa História - Increased lateral padding */}
+      <section className="mx-24 mb-20">
         <div className="grid grid-cols-2 gap-12 items-start">
           {/* Left Side - Text */}
           <div>
@@ -211,73 +222,80 @@ export default function Sobre() {
         </div>
       </section>
 
-      {/* What Makes Cebrac Unique */}
+      {/* Image Gallery - Right after Nossa História */}
+      <section className="mx-24 mb-20">
+        <div className="grid grid-cols-4 gap-6">
+          <div className="bg-gray-200 rounded-3xl aspect-video"></div>
+          <div className="bg-gray-200 rounded-3xl aspect-video"></div>
+          <div className="bg-gray-200 rounded-3xl aspect-video"></div>
+          <div className="bg-gray-200 rounded-3xl aspect-video"></div>
+        </div>
+      </section>
+
+      {/* What Makes Cebrac Unique - Redesigned with larger cards */}
       <section className="mx-6 mb-20">
         <div className="mb-12">
           <h2 className="text-5xl font-bold text-gray-900 mb-4">
-            Descubra que torna o<br />Cebrac <span className="font-bold">uma rede única!</span>
+            Descubra que torna o<br />Cebrac uma rede única!
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl">
             Combinamos tradição educacional com inovação tecnológica para oferecer a melhor experiência de aprendizado.
           </p>
         </div>
 
-        <div className="grid grid-cols-3 gap-6 mb-6">
+        {/* First Row - Metodologia Prática (large) */}
+        <div className="mb-6">
+          <div className="bg-brand-green rounded-3xl p-10 text-white shadow-lg flex items-center gap-8">
+            <div className="flex-shrink-0 w-32 h-32 rounded-3xl bg-white/20 flex items-center justify-center">
+              <Settings className="w-16 h-16 text-white" />
+            </div>
+            <div className="flex-1">
+              <h3 className="text-4xl font-bold mb-4">Metodologia Prática</h3>
+              <p className="text-white/90 text-lg leading-relaxed">
+                Aprendizado baseado em projetos reais e situações do mercado de trabalho.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Second Row - Acompanhamento Personalizado (large) */}
+        <div className="mb-6">
+          <div className="bg-brand-blue rounded-3xl p-10 text-white shadow-lg flex items-center gap-8">
+            <div className="flex-shrink-0 w-32 h-32 rounded-3xl bg-white/20 flex items-center justify-center">
+              <Briefcase className="w-16 h-16 text-white" />
+            </div>
+            <div className="flex-1">
+              <h3 className="text-4xl font-bold mb-4">Acompanhamento Personalizado</h3>
+              <p className="text-white/90 text-lg leading-relaxed">
+                Mentoria individual e suporte contínuo durante toda a jornada.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Third Row - Three smaller cards */}
+        <div className="grid grid-cols-3 gap-6">
           {/* Foco na Empregabilidade */}
-          <div className="bg-gray-50 rounded-3xl p-8 border-2 border-gray-100">
+          <div className="bg-gray-100 rounded-3xl p-8">
             <h3 className="text-xl font-bold text-gray-900 mb-3">Foco na Empregabilidade</h3>
-            <p className="text-gray-600 text-sm">
+            <p className="text-gray-600 text-sm leading-relaxed">
               Cursos desenvolvidos em parceria com empresas para atender demandas reais.
             </p>
           </div>
 
-          {/* Metodologia Prática */}
-          <div className="bg-brand-green rounded-3xl p-8 text-white shadow-lg">
-            <div className="w-16 h-16 rounded-2xl bg-white/20 flex items-center justify-center mb-4">
-              <svg className="w-8 h-8" fill="white" viewBox="0 0 24 24">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-              </svg>
-            </div>
-            <h3 className="text-xl font-bold mb-3">Metodologia Prática</h3>
-            <p className="text-white/90 text-sm">
-              Aprendizado baseado em projetos reais e situações do mercado de trabalho.
-            </p>
-          </div>
-
           {/* Certificação Reconhecida */}
-          <div className="bg-gray-50 rounded-3xl p-8 border-2 border-gray-100">
+          <div className="bg-gray-100 rounded-3xl p-8">
             <h3 className="text-xl font-bold text-gray-900 mb-3">Certificação Reconhecida</h3>
-            <p className="text-gray-600 text-sm">
+            <p className="text-gray-600 text-sm leading-relaxed">
               Certificados valorizados pelo mercado e reconhecidos nacionalmente.
-            </p>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-3 gap-6">
-          {/* Acompanhamento Personalizado */}
-          <div className="bg-brand-blue rounded-3xl p-8 text-white shadow-lg">
-            <div className="w-16 h-16 rounded-2xl bg-white/20 flex items-center justify-center mb-4">
-              <Users className="w-8 h-8" />
-            </div>
-            <h3 className="text-xl font-bold mb-3">Acompanhamento Personalizado</h3>
-            <p className="text-white/90 text-sm">
-              Mentoria individual e suporte contínuo durante toda a jornada.
             </p>
           </div>
 
           {/* Inovação Constante */}
-          <div className="bg-gray-50 rounded-3xl p-8 border-2 border-gray-100">
+          <div className="bg-gray-100 rounded-3xl p-8">
             <h3 className="text-xl font-bold text-gray-900 mb-3">Inovação Constante</h3>
-            <p className="text-gray-600 text-sm">
+            <p className="text-gray-600 text-sm leading-relaxed">
               Sempre atualizados com as últimas tendências e tecnologias do mercado.
-            </p>
-          </div>
-
-          {/* Resultados Comprovados */}
-          <div className="bg-gray-50 rounded-3xl p-8 border-2 border-gray-100">
-            <h3 className="text-xl font-bold text-gray-900 mb-3">Resultados Comprovados</h3>
-            <p className="text-gray-600 text-sm">
-              Histórico sólido de sucesso na colocação profissional dos nossos alunos.
             </p>
           </div>
         </div>
@@ -302,9 +320,7 @@ export default function Sobre() {
             <button className="w-full flex items-center justify-between bg-brand-green text-white px-8 py-5 rounded-2xl font-bold hover:opacity-90 transition group">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center">
-                  <svg className="w-6 h-6" fill="white" viewBox="0 0 24 24">
-                    <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-                  </svg>
+                  <Search className="w-6 h-6 text-white" />
                 </div>
                 <div className="text-left">
                   <div className="font-bold text-lg">Explorar oportunidades</div>
@@ -332,16 +348,6 @@ export default function Sobre() {
               </div>
             </button>
           </div>
-        </div>
-      </section>
-
-      {/* Image Gallery Placeholders */}
-      <section className="mx-6 mb-20">
-        <div className="grid grid-cols-4 gap-6">
-          <div className="bg-gray-200 rounded-3xl aspect-video"></div>
-          <div className="bg-gray-200 rounded-3xl aspect-video"></div>
-          <div className="bg-gray-200 rounded-3xl aspect-video"></div>
-          <div className="bg-gray-200 rounded-3xl aspect-video"></div>
         </div>
       </section>
 

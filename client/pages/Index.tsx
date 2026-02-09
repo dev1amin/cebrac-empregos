@@ -5,9 +5,9 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-white p-[39px]">
       {/* Hero Section */}
-      <section className="relative overflow-hidden rounded-b-[25px]">
-        {/* Background Image */}
-        <div className="absolute inset-0">
+      <section className="relative rounded-[25px] overflow-visible pb-8">
+        {/* Background Image with rounded corners */}
+        <div className="absolute inset-0 rounded-[25px] overflow-hidden">
           <img
             src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2F9ca2f76aac7244e59ada473eb7d44ff1"
             alt="Hero Background"
@@ -20,31 +20,11 @@ export default function Index() {
           <div className="flex items-center gap-6">
             {/* First Logo */}
             <div className="flex items-center gap-2">
-              <svg
-                width="44"
-                height="23"
-                viewBox="0 0 58 30"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M26.8526 27.6548H3.0879C1.38501 27.6548 0 26.4462 0 24.9602V4.88985C0 3.40389 1.38501 2.19531 3.0879 2.19531H26.8526V27.6482V27.6548Z"
-                  fill="#11B000"
-                />
-                <path
-                  d="M33.7552 0.537425C32.514 -0.175836 30.5916 -0.18244 29.3428 0.537425L6.68311 13.6337C5.44189 14.3469 5.44189 15.5093 6.68311 16.2292L29.305 29.3188C30.5159 30.0189 32.5064 30.0189 33.7174 29.3188L56.3695 16.2226C57.6107 15.5093 57.6107 14.3469 56.3695 13.6271L33.7476 0.537425H33.7552Z"
-                  fill="#FFCA00"
-                />
-                <path
-                  d="M26.4598 2.20215L6.69116 13.6275C5.44995 14.3408 5.44995 15.5031 6.69116 16.223L26.4522 27.655C36.2684 21.1762 36.276 8.4696 26.4673 2.20215"
-                  fill="#25348F"
-                />
-              </svg>
-              <div className="text-white">
-                <div className="text-xs font-semibold leading-tight">
-                  cebrac
-                </div>
-              </div>
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2Fefd6f08e8c3b4872bd6e38bdef2fc67d"
+                alt="Cebrac Logo"
+                className="h-6"
+              />
             </div>
 
             {/* Divider */}
@@ -52,27 +32,11 @@ export default function Index() {
 
             {/* Second Logo */}
             <div className="flex items-center gap-2">
-              <svg
-                width="44"
-                height="23"
-                viewBox="0 0 58 30"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M26.8526 27.6548H3.0879C1.38501 27.6548 0 26.4462 0 24.9602V4.88985C0 3.40389 1.38501 2.19531 3.0879 2.19531H26.8526V27.6482V27.6548Z"
-                  fill="#11B000"
-                />
-                <path
-                  d="M33.7552 0.537425C32.514 -0.175836 30.5916 -0.18244 29.3428 0.537425L6.68311 13.6337C5.44189 14.3469 5.44189 15.5093 6.68311 16.2292L29.305 29.3188C30.5159 30.0189 32.5064 30.0189 33.7174 29.3188L56.3695 16.2226C57.6107 15.5093 57.6107 14.3469 56.3695 13.6271L33.7476 0.537425H33.7552Z"
-                  fill="#FFCA00"
-                />
-                <path
-                  d="M26.4598 2.20215L6.69116 13.6275C5.44995 14.3408 5.44995 15.5031 6.69116 16.223L26.4522 27.655C36.2684 21.1762 36.276 8.4696 26.4673 2.20215"
-                  fill="#25348F"
-                />
-              </svg>
-              <div className="text-white text-xs font-semibold">EMPRESA</div>
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2Fde0f743057674fdfaef58afdb6bd8369"
+                alt="Cebrac Empresa Logo"
+                className="h-6"
+              />
             </div>
           </div>
 
@@ -121,7 +85,7 @@ export default function Index() {
         </nav>
 
         {/* Hero Content */}
-        <div className="relative z-10 px-10 pb-32">
+        <div className="relative z-10 px-10 pb-20">
           <div className="flex justify-between items-start">
             {/* Left Side */}
             <div className="max-w-2xl">
@@ -143,8 +107,8 @@ export default function Index() {
               </h1>
             </div>
 
-            {/* Right Side */}
-            <div className="max-w-sm mt-16">
+            {/* Right Side - positioned lower */}
+            <div className="max-w-sm mt-32">
               <p className="text-white text-right text-base mb-8 leading-relaxed">
                 Mais de 5.000 vagas disponíveis e cursos profissionalizantes
                 para impulsionar sua carreira. Junte-se a milhares de

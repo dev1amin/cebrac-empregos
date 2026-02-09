@@ -95,12 +95,12 @@ export default function Index() {
             >
               Para empresas
             </Link>
-            <a
-              href="#"
+            <Link
+              to="/sobre"
               className="text-white text-sm font-medium hover:opacity-80 transition"
             >
               Sobre
-            </a>
+            </Link>
             <a
               href="#"
               className="text-white text-sm font-medium hover:opacity-80 transition"

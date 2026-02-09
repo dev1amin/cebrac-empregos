@@ -346,43 +346,44 @@ export default function Sobre() {
         </div>
       </section>
 
-      {/* Footer - Reused */}
-      <footer className="bg-brand-blue rounded-t-[40px] mt-16 px-10 py-12">
+      {/* Footer - Same as Vagas page */}
+      <footer className="bg-brand-blue rounded-t-[25px] px-10 pt-16 pb-8 relative mt-16">
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-center justify-center gap-3 mb-8">
-            <Link to="/" className="flex items-center gap-2 bg-brand-green text-white px-5 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition">
-              Home
-              <div className="bg-white rounded-full p-1">
-                <ArrowUpRight className="w-3 h-3 text-brand-green" />
-              </div>
-            </Link>
-            <Link to="/vagas" className="flex items-center gap-2 bg-brand-green text-white px-5 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition">
-              Vagas
-              <div className="bg-white rounded-full p-1">
-                <ArrowUpRight className="w-3 h-3 text-brand-green" />
-              </div>
-            </Link>
-            <Link to="/para-empresas" className="flex items-center gap-2 bg-brand-green text-white px-5 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition">
+          {/* Footer Navigation - Half in, half out */}
+          <div className="absolute -top-5 left-0 right-0 flex items-center justify-center gap-3">
+            <Link to="/para-empresas" className="flex items-center gap-2 bg-brand-green text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition">
               Para empresas
               <div className="bg-white rounded-full p-1">
                 <ArrowUpRight className="w-3 h-3 text-brand-green" />
               </div>
             </Link>
-            <Link to="/sobre" className="flex items-center gap-2 bg-brand-green text-white px-5 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition">
+            <Link to="/" className="flex items-center gap-2 bg-brand-green text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition">
+              Home
+              <div className="bg-white rounded-full p-1">
+                <ArrowUpRight className="w-3 h-3 text-brand-green" />
+              </div>
+            </Link>
+            <Link to="/vagas" className="flex items-center gap-2 bg-brand-green text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition">
+              Vagas
+              <div className="bg-white rounded-full p-1">
+                <ArrowUpRight className="w-3 h-3 text-brand-green" />
+              </div>
+            </Link>
+            <Link to="/sobre" className="flex items-center gap-2 bg-brand-green text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition">
               Sobre
               <div className="bg-white rounded-full p-1">
                 <ArrowUpRight className="w-3 h-3 text-brand-green" />
               </div>
             </Link>
-            <a href="#" className="flex items-center gap-2 bg-brand-green text-white px-5 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition">
+            <Link to="/faq" className="flex items-center gap-2 bg-brand-green text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition">
               FAQ
               <div className="bg-white rounded-full p-1">
                 <ArrowUpRight className="w-3 h-3 text-brand-green" />
               </div>
-            </a>
+            </Link>
           </div>
 
-          <div className="border-t border-white/20 pt-6">
+          <div className="border-t border-white/20 pt-6 mt-8">
             <div className="flex items-center justify-between text-white text-sm">
               <p>©2026, Cebrac Franchising. Todos os direitos reservados.</p>
               <div className="flex gap-8">

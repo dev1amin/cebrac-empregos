@@ -5,7 +5,7 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-white p-[39px]">
       {/* Hero Section */}
-      <section className="relative rounded-[25px] overflow-visible pb-16 mt-4 h-[79vh]">
+      <section className="relative rounded-[25px] overflow-visible pb-16 mt-4 h-[100vh]">
         {/* Background Image with rounded corners */}
         <div className="absolute inset-0 rounded-[25px] overflow-hidden" style={{marginBottom: '80px'}}>
           <img

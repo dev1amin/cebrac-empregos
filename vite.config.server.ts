@@ -3,6 +3,10 @@ import path from "path";
 
 // Server build configuration
 export default defineConfig({
+  ssr: {
+    // Force these packages to be bundled instead of externalized
+    noExternal: ["cors", "dotenv"],
+  },
   build: {
     lib: {
       entry: path.resolve(__dirname, "server/node-build.ts"),
@@ -31,7 +35,6 @@ export default defineConfig({
         "child_process",
         // External dependencies that should not be bundled
         "express",
-        "cors",
       ],
       output: {
         format: "es",

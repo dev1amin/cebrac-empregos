@@ -309,7 +309,7 @@ export default function Index() {
       {/* Platform Features Section */}
       <section className="px-10 pb-20">
         <div className="max-w-7xl mx-auto">
-          <div className="bg-brand-gray rounded-b-[25px] p-16">
+          <div className="bg-brand-gray rounded-b-[25px] p-16 relative">
             <div className="flex justify-between mb-12">
               <div>
                 <h2 className="text-brand-gray-text text-[35px] font-extrabold leading-tight tracking-tight max-w-md mb-4">
@@ -324,75 +324,162 @@ export default function Index() {
               </div>
             </div>
 
-            {/* Steps */}
-            <div className="space-y-4">
-              {/* Step 1 - Active */}
-              <div className="bg-white border-2 border-brand-green rounded-[25px] p-6 shadow-sm">
-                <div className="flex items-start gap-6">
-                  <div className="flex items-center gap-4">
-                    <div className="bg-brand-green text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-extrabold">
-                      1
+            <div className="grid grid-cols-2 gap-8">
+              {/* Left - Steps */}
+              <div className="space-y-4">
+                {/* Step 1 - Active */}
+                <div className="bg-white border-2 border-brand-green rounded-[25px] p-6 shadow-sm">
+                  <div className="flex items-start gap-6">
+                    <div className="flex items-center gap-4">
+                      <div className="bg-brand-green text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-extrabold">
+                        1
+                      </div>
+                      <div className="bg-brand-green-light border border-brand-green rounded-xl p-3">
+                        <Search className="w-5 h-5 text-brand-green" />
+                      </div>
                     </div>
-                    <div className="bg-brand-green-light border border-brand-green rounded-xl p-3">
-                      <Search className="w-5 h-5 text-brand-green" />
+                    <div className="flex-1">
+                      <h3 className="text-brand-green text-lg font-extrabold mb-2 tracking-tight">
+                        Selecione sua vaga ideal
+                      </h3>
+                      <p className="text-brand-gray-text text-sm leading-relaxed">
+                        Navegue por milhares de oportunidades filtradas
+                        especialmente para seu perfil. Nossa plataforma usa
+                        inteligência artificial para recomendar as vagas mais
+                        compatíveis com sua experiência e objetivos.
+                      </p>
                     </div>
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-brand-green text-lg font-extrabold mb-2 tracking-tight">
-                      Selecione sua vaga ideal
-                    </h3>
-                    <p className="text-brand-gray-text text-sm leading-relaxed">
-                      Navegue por milhares de oportunidades filtradas
-                      especialmente para seu perfil. Nossa plataforma usa
-                      inteligência artificial para recomendar as vagas mais
-                      compatíveis com sua experiência e objetivos.
+                </div>
+
+                {/* Step 2 */}
+                <div className="bg-white border border-brand-gray-border rounded-[25px] p-6 shadow-sm">
+                  <div className="flex items-start gap-6">
+                    <div className="flex items-center gap-4">
+                      <div className="bg-brand-gray-border text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-extrabold">
+                        2
+                      </div>
+                      <div className="bg-gray-100 border border-brand-gray-border rounded-xl p-3">
+                        <FileText className="w-5 h-5 text-brand-gray-border" />
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-brand-gray-border text-lg font-extrabold tracking-tight">
+                        Análise detalhada do seu currículo
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Step 3 */}
+                <div className="bg-white border border-brand-gray-border rounded-[25px] p-6 shadow-sm">
+                  <div className="flex items-start gap-6">
+                    <div className="flex items-center gap-4">
+                      <div className="bg-brand-gray-border text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-extrabold">
+                        3
+                      </div>
+                      <div className="bg-gray-100 border border-brand-gray-border rounded-xl p-3">
+                        <TrendingUp className="w-5 h-5 text-brand-gray-border" />
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-brand-gray-border text-lg font-extrabold tracking-tight">
+                        Consiga o emprego dos seus sonhos
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right - Job Cards Preview */}
+              <div className="space-y-4">
+                {/* Job Card 1 */}
+                <div className="bg-white border-2 border-brand-green rounded-[25px] p-5 shadow-sm relative overflow-hidden">
+                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-brand-yellow via-brand-blue to-brand-green"></div>
+                  <div className="pl-4">
+                    <div className="flex items-start justify-between mb-3">
+                      <div className="flex-1">
+                        <h3 className="text-brand-gray-text font-bold text-base mb-1">
+                          Desenvolvedor Frontend React
+                        </h3>
+                        <p className="text-brand-gray-text text-xs">TechCorp</p>
+                      </div>
+                      <span className="bg-brand-green text-white text-xs px-3 py-1 rounded-full font-semibold">
+                        Remoto
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-4 text-xs text-brand-gray-text mb-3">
+                      <span>R$ 8.000 - R$12.000</span>
+                      <span>•</span>
+                      <span>São Paulo, SP</span>
+                    </div>
+                    <div className="bg-gray-50 rounded-full h-2 mb-2">
+                      <div className="bg-brand-green h-2 rounded-full" style={{width: '95%'}}></div>
+                    </div>
+                    <p className="text-xs text-brand-gray-text">
+                      <span className="font-semibold">Compatibilidade: 95%</span>
+                    </p>
+                  </div>
+                </div>
+
+                {/* Job Card 2 */}
+                <div className="bg-white border border-gray-200 rounded-[25px] p-5 shadow-sm relative overflow-hidden">
+                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-brand-yellow via-brand-blue to-brand-green"></div>
+                  <div className="pl-4">
+                    <div className="flex items-start justify-between mb-3">
+                      <div className="flex-1">
+                        <h3 className="text-brand-gray-text font-bold text-base mb-1">
+                          UX/UI Designer Sênior
+                        </h3>
+                        <p className="text-brand-gray-text text-xs">DesignStudio</p>
+                      </div>
+                      <span className="bg-gray-200 text-brand-gray-text text-xs px-3 py-1 rounded-full font-semibold">
+                        Híbrido
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-4 text-xs text-brand-gray-text mb-3">
+                      <span>R$ 14.000 - R$19.000</span>
+                      <span>•</span>
+                      <span>Rio de Janeiro, RJ</span>
+                    </div>
+                    <div className="bg-gray-50 rounded-full h-2 mb-2">
+                      <div className="bg-brand-blue h-2 rounded-full" style={{width: '82%'}}></div>
+                    </div>
+                    <p className="text-xs text-brand-gray-text">
+                      <span className="font-semibold">Compatibilidade: 82%</span>
+                    </p>
+                  </div>
+                </div>
+
+                {/* Job Card 3 */}
+                <div className="bg-white border border-gray-200 rounded-[25px] p-5 shadow-sm relative overflow-hidden">
+                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-brand-yellow via-brand-blue to-brand-green"></div>
+                  <div className="pl-4">
+                    <div className="flex items-start justify-between mb-3">
+                      <div className="flex-1">
+                        <h3 className="text-brand-gray-text font-bold text-base mb-1">
+                          Product Manager
+                        </h3>
+                        <p className="text-brand-gray-text text-xs">StartupXYZ</p>
+                      </div>
+                      <span className="bg-gray-200 text-brand-gray-text text-xs px-3 py-1 rounded-full font-semibold">
+                        Presencial
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-4 text-xs text-brand-gray-text mb-3">
+                      <span>R$ 10.000 - R$15.000</span>
+                      <span>•</span>
+                      <span>Curitiba, PR</span>
+                    </div>
+                    <div className="bg-gray-50 rounded-full h-2 mb-2">
+                      <div className="bg-brand-yellow h-2 rounded-full" style={{width: '78%'}}></div>
+                    </div>
+                    <p className="text-xs text-brand-gray-text">
+                      <span className="font-semibold">Compatibilidade: 78%</span>
                     </p>
                   </div>
                 </div>
               </div>
-
-              {/* Step 2 */}
-              <div className="bg-white border border-brand-gray-border rounded-[25px] p-6 shadow-sm">
-                <div className="flex items-start gap-6">
-                  <div className="flex items-center gap-4">
-                    <div className="bg-brand-gray-border text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-extrabold">
-                      2
-                    </div>
-                    <div className="bg-gray-100 border border-brand-gray-border rounded-xl p-3">
-                      <FileText className="w-5 h-5 text-brand-gray-border" />
-                    </div>
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-brand-gray-border text-lg font-extrabold tracking-tight">
-                      Análise detalhada do seu currículo
-                    </h3>
-                  </div>
-                </div>
-              </div>
-
-              {/* Step 3 */}
-              <div className="bg-white border border-brand-gray-border rounded-[25px] p-6 shadow-sm">
-                <div className="flex items-start gap-6">
-                  <div className="flex items-center gap-4">
-                    <div className="bg-brand-gray-border text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-extrabold">
-                      3
-                    </div>
-                    <div className="bg-gray-100 border border-brand-gray-border rounded-xl p-3">
-                      <TrendingUp className="w-5 h-5 text-brand-gray-border" />
-                    </div>
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-brand-gray-border text-lg font-extrabold tracking-tight">
-                      Consiga o emprego dos seus sonhos
-                    </h3>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Right side preview */}
-            <div className="absolute right-10 top-0 w-1/3">
-              {/* Job card preview would go here */}
             </div>
 
             {/* Color bars at bottom */}

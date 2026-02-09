@@ -197,55 +197,71 @@ export default function Index() {
       {/* Company Logos Section */}
       <section className="px-10 pb-20">
         <div className="max-w-7xl mx-auto">
-          <div className="bg-brand-gray rounded-[25px] py-6">
-            <div className="flex items-center justify-between px-16">
-              {/* Logo circles */}
-              <div className="relative">
-                <div className="w-[138px] h-[120px] bg-brand-gray rounded-full flex items-center justify-center">
-                  <img
-                    src="https://api.builder.io/api/v1/image/assets/TEMP/a4a7e3655a7f431c460dea7ad9115310b287ec09?width=176"
-                    alt="Agrale"
-                    className="w-20 h-auto"
-                  />
-                </div>
+          <div className="bg-white rounded-[25px] py-8">
+            <div className="flex items-center justify-center gap-6 px-16">
+              {/* Logo 1 */}
+              <div className="w-[138px] h-[120px] bg-brand-gray rounded-full flex items-center justify-center">
+                <img
+                  src="https://api.builder.io/api/v1/image/assets/TEMP/a4a7e3655a7f431c460dea7ad9115310b287ec09?width=176"
+                  alt="Agrale"
+                  className="w-20 h-auto"
+                />
               </div>
 
-              <svg width="15" height="2" viewBox="0 0 15 2" fill="none">
-                <path d="M0 1H15" stroke="#25348F" strokeWidth="2" />
+              {/* Arrow */}
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="flex-shrink-0">
+                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#25348F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
 
-              <div className="relative">
-                <div className="w-[138px] h-[120px] bg-brand-gray rounded-full flex items-center justify-center">
-                  <img
-                    src="https://api.builder.io/api/v1/image/assets/TEMP/51ce4c98fe83fe06e8728c248e7240eb171cd409?width=176"
-                    alt="Ambev"
-                    className="w-20 h-auto"
-                  />
-                </div>
+              {/* Logo 2 */}
+              <div className="w-[138px] h-[120px] bg-brand-gray rounded-full flex items-center justify-center">
+                <img
+                  src="https://api.builder.io/api/v1/image/assets/TEMP/51ce4c98fe83fe06e8728c248e7240eb171cd409?width=176"
+                  alt="Ambev"
+                  className="w-20 h-auto"
+                />
               </div>
 
-              <svg width="15" height="2" viewBox="0 0 15 2" fill="none">
-                <path d="M0 1H15" stroke="#25348F" strokeWidth="2" />
+              {/* Arrow */}
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="flex-shrink-0">
+                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#25348F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
 
-              <div className="relative">
-                <div className="w-[138px] h-[120px] bg-brand-gray rounded-full"></div>
+              {/* Logo 3 */}
+              <div className="w-[138px] h-[120px] bg-brand-gray rounded-full flex items-center justify-center">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2F009c2b4eb8114b6aae90e13b48fbb06d"
+                  alt="Company 3"
+                  className="w-20 h-auto"
+                />
               </div>
 
-              <svg width="15" height="2" viewBox="0 0 15 2" fill="none">
-                <path d="M0 1H15" stroke="#25348F" strokeWidth="2" />
+              {/* Arrow */}
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="flex-shrink-0">
+                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#25348F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
 
-              <div className="relative">
-                <div className="w-[138px] h-[120px] bg-brand-gray rounded-full"></div>
+              {/* Logo 4 */}
+              <div className="w-[138px] h-[120px] bg-brand-gray rounded-full flex items-center justify-center">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2F4c31880b8b44469380788aa76dc641cf"
+                  alt="Company 4"
+                  className="w-16 h-auto"
+                />
               </div>
 
-              <svg width="15" height="2" viewBox="0 0 15 2" fill="none">
-                <path d="M0 1H15" stroke="#25348F" strokeWidth="2" />
+              {/* Arrow */}
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="flex-shrink-0">
+                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#25348F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
 
-              <div className="relative">
-                <div className="w-[138px] h-[120px] bg-brand-gray rounded-full"></div>
+              {/* Logo 5 */}
+              <div className="w-[138px] h-[120px] bg-brand-gray rounded-full flex items-center justify-center">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2F559e8232c6804810870bac86d5747257"
+                  alt="Company 5"
+                  className="w-16 h-auto"
+                />
               </div>
             </div>
           </div>

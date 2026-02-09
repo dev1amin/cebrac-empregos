@@ -475,21 +475,22 @@ export default function Index() {
       <section className="px-10 pb-20">
         <div className="max-w-7xl mx-auto relative">
           {/* Decorative diagonal lines - left */}
-          <div className="absolute -left-16 top-0 bottom-0 w-32 pointer-events-none overflow-hidden">
+          <div className="absolute -left-16 bottom-0 w-32 pointer-events-none overflow-hidden" style={{top: '-130px'}}>
             <div className="absolute top-10 -left-10 w-[300px] h-px bg-gray-200 origin-top-left rotate-[55deg]"></div>
             <div className="absolute top-40 -left-10 w-[300px] h-px bg-gray-200 origin-top-left rotate-[55deg]"></div>
           </div>
           {/* Decorative diagonal lines - right */}
-          <div className="absolute -right-16 top-0 bottom-0 w-32 pointer-events-none overflow-hidden">
+          <div className="absolute -right-16 bottom-0 w-32 pointer-events-none overflow-hidden" style={{top: '-130px'}}>
             <div className="absolute top-10 -right-10 w-[300px] h-px bg-gray-200 origin-top-right -rotate-[55deg]"></div>
             <div className="absolute top-40 -right-10 w-[300px] h-px bg-gray-200 origin-top-right -rotate-[55deg]"></div>
           </div>
 
           <div className="text-center">
-            <h2 className="text-5xl font-extrabold text-gray-900 mb-4 tracking-tight">
-              Desenvolvido para profissionais
+            <h2 className="text-5xl mb-4 tracking-tight">
+              <span className="font-medium text-gray-600">Desenvolvido para</span>{" "}
+              <span className="font-extrabold text-gray-900">profissionais</span>
               <br />
-              modernos
+              <span className="font-extrabold text-gray-900">modernos</span>
             </h2>
             <p className="text-brand-gray-text text-sm max-w-lg mx-auto mb-12">
               O Cebrac forma profissionais com foco, prática e qualidade, prontos

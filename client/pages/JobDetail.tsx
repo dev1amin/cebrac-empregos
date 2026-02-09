@@ -1,4 +1,5 @@
 import { ArrowUpRight, Search, Bookmark, Share2 } from "lucide-react";
+import { ArrowUpRight, Search, Bookmark, Share2 } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function JobDetail() {

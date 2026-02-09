@@ -126,15 +126,12 @@ export default function Index() {
           </div>
         </div>
 
-        {/* Speech Bubble Tail */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[60%] z-20 flex flex-col items-center">
-          {/* Tail triangle */}
-          <div className="w-0 h-0 border-l-[20px] border-r-[20px] border-t-[16px] border-l-transparent border-r-transparent border-t-[#25348F]"></div>
-          {/* Logo circle */}
+        {/* Logo at bottom of balloon */}
+        <div className="absolute left-1/2 -translate-x-1/2 z-20" style={{bottom: '90px'}}>
           <img
             src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2Fdb82e6e7b46b43df9803960450149299"
             alt="Cebrac Logo"
-            className="w-14 h-14 rounded-full mt-1 shadow-lg"
+            className="w-14 h-14 rounded-full shadow-lg"
           />
         </div>
       </section>

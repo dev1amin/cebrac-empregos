@@ -1,4 +1,4 @@
-import { ArrowUpRight, Search, FileText, TrendingUp, Eye } from "lucide-react";
+import { ArrowUpRight, Search, FileText, TrendingUp } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function Index() {
@@ -129,12 +129,12 @@ export default function Index() {
         {/* Speech Bubble Tail */}
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[60%] z-20 flex flex-col items-center">
           {/* Tail triangle */}
-          <div className="w-0 h-0 border-l-[20px] border-r-[20px] border-t-[16px] border-l-transparent border-r-transparent border-t-brand-blue"></div>
+          <div className="w-0 h-0 border-l-[20px] border-r-[20px] border-t-[16px] border-l-transparent border-r-transparent border-t-[#25348F]"></div>
           {/* Logo circle */}
           <img
             src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2Fdb82e6e7b46b43df9803960450149299"
             alt="Cebrac Logo"
-            className="w-14 h-14 rounded-full mt-2 shadow-lg"
+            className="w-14 h-14 rounded-full mt-1 shadow-lg"
           />
         </div>
       </section>
@@ -271,10 +271,10 @@ export default function Index() {
           {/* Company CTA */}
           <div className="bg-brand-gray rounded-[25px] p-6 mt-8 flex items-center justify-between">
             <div className="flex items-center gap-6">
-              <svg width="58" height="30" viewBox="0 0 58 30" fill="none">
+              <svg width="58" height="30" viewBox="0 0 58 30" fill="none" className="flex-shrink-0">
                 <path
                   d="M26.8526 27.6548H3.0879C1.38501 27.6548 0 26.4462 0 24.9602V4.88985C0 3.40389 1.38501 2.19531 3.0879 2.19531H26.8526V27.6482V27.6548Z"
-                  fill="#11B000"
+                  fill="#51B84C"
                 />
                 <path
                   d="M33.7552 0.537425C32.514 -0.175836 30.5916 -0.18244 29.3428 0.537425L6.68311 13.6337C5.44189 14.3469 5.44189 15.5093 6.68311 16.2292L29.305 29.3188C30.5159 30.0189 32.5064 30.0189 33.7174 29.3188L56.3695 16.2226C57.6107 15.5093 57.6107 14.3469 56.3695 13.6271L33.7476 0.537425H33.7552Z"
@@ -285,19 +285,17 @@ export default function Index() {
                   fill="#25348F"
                 />
               </svg>
-              <div>
-                <h3 className="text-brand-gray-text text-[35px] font-extrabold leading-tight tracking-tight">
-                  Sua empresa pode estar aqui!
-                </h3>
-              </div>
+              <h3 className="text-brand-gray-text text-[35px] font-extrabold leading-tight tracking-tight">
+                Sua empresa pode estar aqui!
+              </h3>
             </div>
 
-            <div>
-              <p className="text-brand-gray-text text-sm max-w-sm mb-4">
+            <div className="flex items-center gap-6">
+              <p className="text-brand-gray-text text-sm max-w-xs">
                 Junte-se às mais de 500 empresas que confiam no Cebrac e
                 colabore para a empregabilidade!
               </p>
-              <button className="flex items-center gap-2 bg-brand-green text-white px-6 py-2.5 rounded-full font-semibold text-sm">
+              <button className="flex items-center gap-2 bg-brand-green text-white px-6 py-2.5 rounded-full font-semibold text-sm whitespace-nowrap flex-shrink-0">
                 Seja Parceiro
                 <div className="bg-white rounded-full p-1">
                   <ArrowUpRight className="w-3 h-3 text-brand-green" />
@@ -311,7 +309,7 @@ export default function Index() {
       {/* Platform Features Section */}
       <section className="px-10 pb-20">
         <div className="max-w-7xl mx-auto">
-          <div className="bg-brand-gray rounded-b-[25px] p-16 relative">
+          <div className="bg-brand-gray rounded-b-[25px] pb-0 pt-16 px-16 relative overflow-hidden">
             <div className="flex justify-between mb-12">
               <div>
                 <h2 className="text-brand-gray-text text-[35px] font-extrabold leading-tight tracking-tight max-w-md mb-4">
@@ -326,9 +324,9 @@ export default function Index() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-8">
+            <div className="grid grid-cols-2 gap-8 mb-0">
               {/* Left - Steps */}
-              <div className="space-y-4">
+              <div className="space-y-4 pb-16">
                 {/* Step 1 - Active */}
                 <div className="bg-white border-2 border-brand-green rounded-[25px] p-6 shadow-sm">
                   <div className="flex items-start gap-6">
@@ -394,101 +392,83 @@ export default function Index() {
               </div>
 
               {/* Right - Job Cards Preview */}
-              <div className="space-y-4">
-                {/* Job Card 1 */}
-                <div className="bg-white border-2 border-brand-green rounded-[25px] p-5 shadow-sm relative overflow-hidden">
-                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-brand-yellow via-brand-blue to-brand-green"></div>
-                  <div className="pl-4">
-                    <div className="flex items-start justify-between mb-3">
-                      <div className="flex-1">
-                        <h3 className="text-brand-gray-text font-bold text-base mb-1">
-                          Desenvolvedor Frontend React
-                        </h3>
-                        <p className="text-brand-gray-text text-xs">TechCorp</p>
-                      </div>
-                      <span className="bg-brand-green text-white text-xs px-3 py-1 rounded-full font-semibold">
-                        Remoto
-                      </span>
+              <div className="space-y-4 pb-16">
+                {/* Job Card 1 - green background, perfect match */}
+                <div className="bg-brand-green-light border border-brand-green rounded-[20px] p-5 shadow-sm">
+                  <div className="flex items-center gap-2 mb-3">
+                    <svg className="w-4 h-4 text-brand-green" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                      <path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div className="flex items-start justify-between mb-2">
+                    <div className="flex-1">
+                      <h3 className="text-brand-blue font-bold text-base mb-1">
+                        Desenvolvedor Frontend React
+                      </h3>
+                      <p className="text-gray-500 text-xs">TechCorp</p>
                     </div>
-                    <div className="flex items-center gap-4 text-xs text-brand-gray-text mb-3">
-                      <span>R$ 8.000 - R$12.000</span>
-                      <span>•</span>
-                      <span>São Paulo, SP</span>
-                    </div>
-                    <div className="bg-gray-50 rounded-full h-2 mb-2">
-                      <div className="bg-brand-green h-2 rounded-full" style={{width: '95%'}}></div>
-                    </div>
-                    <p className="text-xs text-brand-gray-text">
-                      <span className="font-semibold">Compatibilidade: 95%</span>
-                    </p>
+                    <span className="bg-brand-green text-white text-xs px-3 py-1 rounded-full font-semibold">
+                      95% match
+                    </span>
+                  </div>
+                  <p className="text-brand-green text-sm font-semibold mb-3">
+                    R$8.000 - R$12.000
+                  </p>
+                  <div className="flex items-center gap-2 mb-2">
+                    <svg className="w-4 h-4 text-brand-green" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-brand-green text-xs font-medium">Perfeito para seu perfil</span>
+                  </div>
+                  <div className="bg-white/60 rounded-full h-2">
+                    <div className="bg-brand-green h-2 rounded-full" style={{width: '95%'}}></div>
                   </div>
                 </div>
 
                 {/* Job Card 2 */}
-                <div className="bg-white border border-gray-200 rounded-[25px] p-5 shadow-sm relative overflow-hidden">
-                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-brand-yellow via-brand-blue to-brand-green"></div>
-                  <div className="pl-4">
-                    <div className="flex items-start justify-between mb-3">
-                      <div className="flex-1">
-                        <h3 className="text-brand-gray-text font-bold text-base mb-1">
-                          UX/UI Designer Sênior
-                        </h3>
-                        <p className="text-brand-gray-text text-xs">DesignStudio</p>
-                      </div>
-                      <span className="bg-gray-200 text-brand-gray-text text-xs px-3 py-1 rounded-full font-semibold">
-                        Híbrido
-                      </span>
+                <div className="bg-white border border-gray-200 rounded-[20px] p-5 shadow-sm">
+                  <div className="flex items-start justify-between mb-2">
+                    <div className="flex-1">
+                      <h3 className="text-brand-blue font-bold text-base mb-1">
+                        UX/UI Designer Sênior
+                      </h3>
+                      <p className="text-gray-500 text-xs">DesignStudio</p>
                     </div>
-                    <div className="flex items-center gap-4 text-xs text-brand-gray-text mb-3">
-                      <span>R$ 14.000 - R$19.000</span>
-                      <span>•</span>
-                      <span>Rio de Janeiro, RJ</span>
-                    </div>
-                    <div className="bg-gray-50 rounded-full h-2 mb-2">
-                      <div className="bg-brand-blue h-2 rounded-full" style={{width: '82%'}}></div>
-                    </div>
-                    <p className="text-xs text-brand-gray-text">
-                      <span className="font-semibold">Compatibilidade: 82%</span>
-                    </p>
+                    <span className="bg-gray-100 text-gray-500 text-xs px-3 py-1 rounded-full font-semibold">
+                      90% match
+                    </span>
                   </div>
+                  <p className="text-brand-green text-sm font-semibold">
+                    R$6.000 - R$9.000
+                  </p>
                 </div>
 
                 {/* Job Card 3 */}
-                <div className="bg-white border border-gray-200 rounded-[25px] p-5 shadow-sm relative overflow-hidden">
-                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-brand-yellow via-brand-blue to-brand-green"></div>
-                  <div className="pl-4">
-                    <div className="flex items-start justify-between mb-3">
-                      <div className="flex-1">
-                        <h3 className="text-brand-gray-text font-bold text-base mb-1">
-                          Product Manager
-                        </h3>
-                        <p className="text-brand-gray-text text-xs">StartupXYZ</p>
-                      </div>
-                      <span className="bg-gray-200 text-brand-gray-text text-xs px-3 py-1 rounded-full font-semibold">
-                        Presencial
-                      </span>
+                <div className="bg-white border border-gray-200 rounded-[20px] p-5 shadow-sm">
+                  <div className="flex items-start justify-between mb-2">
+                    <div className="flex-1">
+                      <h3 className="text-brand-blue font-bold text-base mb-1">
+                        Product Manager
+                      </h3>
+                      <p className="text-gray-500 text-xs">StartupXYZ</p>
                     </div>
-                    <div className="flex items-center gap-4 text-xs text-brand-gray-text mb-3">
-                      <span>R$ 10.000 - R$15.000</span>
-                      <span>•</span>
-                      <span>Curitiba, PR</span>
-                    </div>
-                    <div className="bg-gray-50 rounded-full h-2 mb-2">
-                      <div className="bg-brand-yellow h-2 rounded-full" style={{width: '78%'}}></div>
-                    </div>
-                    <p className="text-xs text-brand-gray-text">
-                      <span className="font-semibold">Compatibilidade: 78%</span>
-                    </p>
+                    <span className="bg-gray-100 text-gray-500 text-xs px-3 py-1 rounded-full font-semibold">
+                      85% match
+                    </span>
                   </div>
+                  <p className="text-brand-green text-sm font-semibold">
+                    R$10.000 - R$15.000
+                  </p>
                 </div>
               </div>
             </div>
 
-            {/* Color bars at bottom */}
-            <div className="flex mt-12 -mx-16">
+            {/* Color bars at very bottom */}
+            <div className="flex -mx-16">
               <div className="h-2 bg-brand-yellow flex-1"></div>
               <div className="h-2 bg-brand-blue flex-1"></div>
-              <div className="h-2 bg-[#11B000] flex-1"></div>
+              <div className="h-2 bg-brand-green flex-1"></div>
             </div>
           </div>
         </div>
@@ -496,142 +476,149 @@ export default function Index() {
 
       {/* Professional Development Section */}
       <section className="px-10 pb-20">
-        <div className="max-w-7xl mx-auto text-center">
-          {/* Decorative lines */}
-          <div className="flex items-center justify-center gap-8 mb-8">
-            <div className="h-px bg-gray-300 flex-1 max-w-md"></div>
-            <svg width="35" height="30" viewBox="0 0 35 30" fill="none">
-              <ellipse cx="17.5" cy="15" rx="17.5" ry="15" fill="#25348F" />
-              <circle cx="17.5" cy="15" r="8" fill="white" />
-            </svg>
-            <div className="h-px bg-gray-300 flex-1 max-w-md"></div>
+        <div className="max-w-7xl mx-auto relative">
+          {/* Decorative diagonal lines - left */}
+          <div className="absolute -left-16 top-0 bottom-0 w-32 pointer-events-none overflow-hidden">
+            <div className="absolute top-10 -left-10 w-[300px] h-px bg-gray-200 origin-top-left rotate-[55deg]"></div>
+            <div className="absolute top-40 -left-10 w-[300px] h-px bg-gray-200 origin-top-left rotate-[55deg]"></div>
+          </div>
+          {/* Decorative diagonal lines - right */}
+          <div className="absolute -right-16 top-0 bottom-0 w-32 pointer-events-none overflow-hidden">
+            <div className="absolute top-10 -right-10 w-[300px] h-px bg-gray-200 origin-top-right -rotate-[55deg]"></div>
+            <div className="absolute top-40 -right-10 w-[300px] h-px bg-gray-200 origin-top-right -rotate-[55deg]"></div>
           </div>
 
-          <h2 className="text-5xl font-medium text-brand-gray-text mb-4 tracking-tight">
-            Desenvolvido para{" "}
-            <span className="font-extrabold">profissionais modernos</span>
-          </h2>
-          <p className="text-brand-gray-text text-sm max-w-lg mx-auto mb-12">
-            O Cebrac forma profissionais com foco, prática e qualidade, prontos
-            para encarar os desafios do mercado de trabalho.
-          </p>
+          <div className="text-center">
+            <h2 className="text-5xl font-extrabold text-gray-900 mb-4 tracking-tight">
+              Desenvolvido para profissionais
+              <br />
+              modernos
+            </h2>
+            <p className="text-brand-gray-text text-sm max-w-lg mx-auto mb-12">
+              O Cebrac forma profissionais com foco, prática e qualidade, prontos
+              para encarar os desafios do mercado de trabalho.
+            </p>
 
-          <button className="bg-brand-blue text-white px-8 py-3 rounded-full font-semibold mb-16 flex items-center gap-2 mx-auto">
-            <Eye className="w-4 h-4" />
-            Visualize cursos para sua carreira
-          </button>
-
-          {/* Stats Cards */}
-          <div className="grid grid-cols-4 gap-6 mb-16">
-            {/* Card 1 - Primary */}
-            <div className="bg-brand-blue text-white rounded-2xl p-8 shadow-lg">
-              <div className="border border-white rounded-full w-10 h-10 flex items-center justify-center mb-12">
-                <span className="text-sm font-medium">01.</span>
+            <button className="bg-brand-blue text-white px-8 py-4 rounded-full font-semibold mb-16 flex items-center gap-4 mx-auto text-base">
+              <div className="bg-white rounded-full p-2">
+                <TrendingUp className="w-5 h-5 text-brand-blue" />
               </div>
-              <div className="text-left">
-                <h3 className="text-4xl font-bold mb-4">72h</h3>
-                <p className="text-sm font-bold mb-2">
-                  Tempo médio para conseguir emprego
-                </p>
-                <p className="text-xs opacity-90">
-                  Nossos alunos conseguem colocação profissional em até 3 dias.
-                </p>
+              Soluções completas para sua carreira
+            </button>
+
+            {/* Stats Cards */}
+            <div className="grid grid-cols-4 gap-6 mb-16">
+              {/* Card 1 - Primary */}
+              <div className="bg-brand-blue text-white rounded-2xl p-8 shadow-lg">
+                <div className="border border-white rounded-full w-10 h-10 flex items-center justify-center mb-12">
+                  <span className="text-sm font-medium">01.</span>
+                </div>
+                <div className="text-left">
+                  <h3 className="text-4xl font-bold mb-4">72h</h3>
+                  <p className="text-sm font-bold mb-2">
+                    Tempo médio para conseguir emprego
+                  </p>
+                  <p className="text-xs opacity-90">
+                    Nossos alunos conseguem colocação profissional em até 3 dias.
+                  </p>
+                </div>
+              </div>
+
+              {/* Card 2 */}
+              <div className="bg-brand-gray border border-brand-blue text-brand-gray-text rounded-2xl p-8">
+                <div className="border border-brand-gray-text rounded-full w-10 h-10 flex items-center justify-center mb-12">
+                  <span className="text-sm font-medium">02.</span>
+                </div>
+                <div className="text-left">
+                  <h3 className="text-4xl font-bold text-brand-blue mb-4">94%</h3>
+                  <p className="text-sm font-bold mb-2">
+                    Cálculo da taxa de empregabilidade
+                  </p>
+                  <p className="text-xs">
+                    Quase todos os nossos formandos conseguem emprego.
+                  </p>
+                </div>
+              </div>
+
+              {/* Card 3 */}
+              <div className="bg-brand-gray border border-brand-blue text-brand-gray-text rounded-2xl p-8">
+                <div className="border border-brand-gray-text rounded-full w-10 h-10 flex items-center justify-center mb-12">
+                  <span className="text-sm font-medium">03.</span>
+                </div>
+                <div className="text-left">
+                  <h3 className="text-4xl font-bold text-brand-blue mb-4">
+                    +45%
+                  </h3>
+                  <p className="text-sm font-bold mb-2">
+                    Crescimento no salário médio
+                  </p>
+                  <p className="text-xs">Aumento significativo após conclusão.</p>
+                </div>
+              </div>
+
+              {/* Card 4 */}
+              <div className="bg-brand-gray border border-brand-blue text-brand-gray-text rounded-2xl p-8">
+                <div className="border border-brand-gray-text rounded-full w-10 h-10 flex items-center justify-center mb-12">
+                  <span className="text-sm font-medium">04.</span>
+                </div>
+                <div className="text-left">
+                  <h3 className="text-4xl font-bold text-brand-blue mb-4">
+                    500+
+                  </h3>
+                  <p className="text-sm font-bold mb-2">
+                    Empresas parceiras no Cebrac Empresa
+                  </p>
+                </div>
               </div>
             </div>
 
-            {/* Card 2 */}
-            <div className="bg-brand-gray border border-brand-blue text-brand-gray-text rounded-2xl p-8">
-              <div className="border border-brand-gray-text rounded-full w-10 h-10 flex items-center justify-center mb-12">
-                <span className="text-sm font-medium">02.</span>
-              </div>
-              <div className="text-left">
-                <h3 className="text-4xl font-bold text-brand-blue mb-4">94%</h3>
-                <p className="text-sm font-bold mb-2">
-                  Cálculo da taxa de empregabilidade
-                </p>
-                <p className="text-xs">
-                  Quase todos os nossos formandos conseguem emprego.
-                </p>
-              </div>
-            </div>
+            {/* Learning Paths - No cards, gray background, image + text */}
+            <div className="bg-brand-gray rounded-2xl p-10">
+              <div className="grid grid-cols-3 gap-8">
+                {/* Path 1 */}
+                <div className="text-center">
+                  <p className="text-gray-500 text-sm mb-2">Metodologia otimizada</p>
+                  <div className="rounded-2xl overflow-hidden mb-4">
+                    <img
+                      src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2F93805e6d58ab4ca38186bf95ac87ae0b"
+                      alt="Aprendizado Acelerado"
+                      className="w-full h-48 object-cover"
+                    />
+                  </div>
+                  <h4 className="text-brand-blue text-lg font-extrabold">
+                    Aprendizado Acelerado
+                  </h4>
+                </div>
 
-            {/* Card 3 */}
-            <div className="bg-brand-gray border border-brand-blue text-brand-gray-text rounded-2xl p-8">
-              <div className="border border-brand-gray-text rounded-full w-10 h-10 flex items-center justify-center mb-12">
-                <span className="text-sm font-medium">03.</span>
-              </div>
-              <div className="text-left">
-                <h3 className="text-4xl font-bold text-brand-blue mb-4">
-                  +45%
-                </h3>
-                <p className="text-sm font-bold mb-2">
-                  Crescimento no salário médio
-                </p>
-                <p className="text-xs">Aumento significativo após conclusão.</p>
-              </div>
-            </div>
+                {/* Path 2 */}
+                <div className="text-center">
+                  <p className="text-gray-500 text-sm mb-2">Currículo desenvolvido de verdade</p>
+                  <div className="rounded-2xl overflow-hidden mb-4">
+                    <img
+                      src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2F059f599bc32148b6bc570b39c5bca33a"
+                      alt="Foco no Mercado"
+                      className="w-full h-48 object-cover"
+                    />
+                  </div>
+                  <h4 className="text-brand-blue text-lg font-extrabold">
+                    Foco no Mercado
+                  </h4>
+                </div>
 
-            {/* Card 4 */}
-            <div className="bg-brand-gray border border-brand-blue text-brand-gray-text rounded-2xl p-8">
-              <div className="border border-brand-gray-text rounded-full w-10 h-10 flex items-center justify-center mb-12">
-                <span className="text-sm font-medium">04.</span>
-              </div>
-              <div className="text-left">
-                <h3 className="text-4xl font-bold text-brand-blue mb-4">
-                  500+
-                </h3>
-                <p className="text-sm font-bold mb-2">
-                  Empresas parceiras no Cebrac Empresa
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Learning Paths */}
-          <div className="grid grid-cols-3 gap-6">
-            {/* Path 1 - Aprendizado Acelerado */}
-            <div className="bg-white border-2 border-gray-100 rounded-2xl overflow-hidden shadow-sm">
-              <div className="h-32 bg-white flex items-center justify-center p-6">
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2F93805e6d58ab4ca38186bf95ac87ae0b"
-                  alt="Aprendizado Acelerado"
-                  className="w-full h-full object-contain"
-                />
-              </div>
-              <div className="p-6 text-left bg-brand-blue text-white">
-                <h4 className="text-lg font-extrabold mb-2">
-                  Aprendizado Acelerado
-                </h4>
-              </div>
-            </div>
-
-            {/* Path 2 - Foco no Mercado */}
-            <div className="bg-white border-2 border-gray-100 rounded-2xl overflow-hidden shadow-sm">
-              <div className="h-32 bg-white flex items-center justify-center p-6">
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2F059f599bc32148b6bc570b39c5bca33a"
-                  alt="Foco no Mercado"
-                  className="w-full h-full object-contain"
-                />
-              </div>
-              <div className="p-6 text-left bg-brand-blue text-white">
-                <h4 className="text-lg font-extrabold mb-2">Foco no Mercado</h4>
-              </div>
-            </div>
-
-            {/* Path 3 - Mentoria Personalizada */}
-            <div className="bg-white border-2 border-gray-100 rounded-2xl overflow-hidden shadow-sm">
-              <div className="h-32 bg-white flex items-center justify-center p-6">
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2Ff4077626edde43f5977f8890fd728430"
-                  alt="Mentoria Personalizada"
-                  className="w-full h-full object-contain"
-                />
-              </div>
-              <div className="p-6 text-left bg-brand-blue text-white">
-                <h4 className="text-lg font-extrabold mb-2">
-                  Mentoria Personalizada
-                </h4>
+                {/* Path 3 */}
+                <div className="text-center">
+                  <p className="text-gray-500 text-sm mb-2">Acompanhamento individual</p>
+                  <div className="rounded-2xl overflow-hidden mb-4">
+                    <img
+                      src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2Ff4077626edde43f5977f8890fd728430"
+                      alt="Mentoria Personalizada"
+                      className="w-full h-48 object-cover"
+                    />
+                  </div>
+                  <h4 className="text-brand-blue text-lg font-extrabold">
+                    Mentoria Personalizada
+                  </h4>
+                </div>
               </div>
             </div>
           </div>
@@ -775,43 +762,43 @@ export default function Index() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-b from-brand-blue-darker to-brand-blue-dark rounded-t-[25px] px-10 py-12">
+      <footer className="bg-brand-blue rounded-t-[25px] px-10 pt-16 pb-8 relative">
         <div className="max-w-7xl mx-auto">
-          {/* Footer Navigation */}
-          <div className="flex items-center justify-center gap-3 mb-8">
-            <button className="flex items-center gap-2 bg-brand-green text-white px-6 py-2 rounded-full font-semibold text-sm">
+          {/* Footer Navigation - Half in, half out */}
+          <div className="absolute -top-5 left-0 right-0 flex items-center justify-center gap-3">
+            <Link to="/para-empresas" className="flex items-center gap-2 bg-brand-green text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition">
               Para empresas
               <div className="bg-white rounded-full p-1">
                 <ArrowUpRight className="w-3 h-3 text-brand-green" />
               </div>
-            </button>
-            <button className="flex items-center gap-2 bg-brand-green text-white px-6 py-2 rounded-full font-semibold text-sm">
+            </Link>
+            <Link to="/" className="flex items-center gap-2 bg-brand-green text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition">
               Home
               <div className="bg-white rounded-full p-1">
                 <ArrowUpRight className="w-3 h-3 text-brand-green" />
               </div>
-            </button>
-            <button className="flex items-center gap-2 bg-brand-green text-white px-6 py-2 rounded-full font-semibold text-sm">
+            </Link>
+            <Link to="/vagas" className="flex items-center gap-2 bg-brand-green text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition">
               Vagas
               <div className="bg-white rounded-full p-1">
                 <ArrowUpRight className="w-3 h-3 text-brand-green" />
               </div>
-            </button>
-            <button className="flex items-center gap-2 bg-brand-green text-white px-6 py-2 rounded-full font-semibold text-sm">
+            </Link>
+            <Link to="/sobre" className="flex items-center gap-2 bg-brand-green text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition">
               Sobre
               <div className="bg-white rounded-full p-1">
                 <ArrowUpRight className="w-3 h-3 text-brand-green" />
               </div>
-            </button>
-            <button className="flex items-center gap-2 bg-brand-green text-white px-6 py-2 rounded-full font-semibold text-sm">
+            </Link>
+            <Link to="/faq" className="flex items-center gap-2 bg-brand-green text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition">
               FAQ
               <div className="bg-white rounded-full p-1">
                 <ArrowUpRight className="w-3 h-3 text-brand-green" />
               </div>
-            </button>
+            </Link>
           </div>
 
-          <div className="border-t border-brand-blue pt-6">
+          <div className="border-t border-white/20 pt-6 mt-8">
             <div className="flex items-center justify-between text-white text-sm">
               <p>©2026, Cebrac Franchising. Todos os direitos reservados.</p>
               <div className="flex gap-8">

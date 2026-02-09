@@ -1,4 +1,4 @@
-import { ArrowUpRight, Target, Users } from "lucide-react";
+import { ArrowUpRight, Target, Users, TrendingUp } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function Sobre() {

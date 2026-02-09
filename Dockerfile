@@ -34,12 +34,12 @@ RUN corepack enable && corepack prepare pnpm@10.14.0 --activate \
 COPY --from=builder /app/dist ./dist
 
 # Porta padrão
-ENV PORT=3000
-EXPOSE 3000
+ENV PORT=6785
+EXPOSE 6785
 
 # Healthcheck
 HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
-  CMD wget -qO- http://localhost:3000/api/ping || exit 1
+  CMD wget -qO- http://localhost:6785/api/ping || exit 1
 
 # Iniciar servidor de produção
 CMD ["node", "dist/server/node-build.mjs"]

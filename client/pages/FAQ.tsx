@@ -78,7 +78,7 @@ export default function FAQ() {
       </nav>
 
       {/* Hero Section */}
-      <section className="max-w-7xl mx-auto px-6 mt-12 mb-12">
+      <section className="mx-6 mt-12 mb-12">
         <div className="bg-gray-50 rounded-3xl p-12 flex items-center justify-between border-2 border-gray-100">
           <div className="flex-1">
             <h1 className="text-5xl font-bold text-gray-900 mb-4">
@@ -99,7 +99,7 @@ export default function FAQ() {
       </section>
 
       {/* FAQ Sections */}
-      <section className="max-w-7xl mx-auto px-6 mb-20">
+      <section className="mx-6 mb-20">
         {/* Cursos e Certificações - Section 1 */}
         <div className="grid grid-cols-2 gap-8 mb-12">
           <div>
@@ -204,7 +204,7 @@ export default function FAQ() {
       </section>
 
       {/* Não Encontrou Sua Resposta */}
-      <section className="max-w-7xl mx-auto px-6 mb-20">
+      <section className="mx-6 mb-20">
         <div className="grid grid-cols-2 gap-12 items-start">
           {/* Left Side */}
           <div>
@@ -251,8 +251,8 @@ export default function FAQ() {
       </section>
 
       {/* Footer - Same as Vagas page */}
-      <footer className="bg-brand-blue rounded-t-[25px] px-10 pt-16 pb-8 relative mt-16">
-        <div className="max-w-7xl mx-auto">
+      <footer className="bg-brand-blue rounded-t-[25px] mx-6 px-8 pt-16 pb-8 relative mt-16">
+        <div>
           {/* Footer Navigation - Half in, half out */}
           <div className="absolute -top-5 left-0 right-0 flex items-center justify-center gap-3">
             <Link to="/para-empresas" className="flex items-center gap-2 bg-brand-green text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition">

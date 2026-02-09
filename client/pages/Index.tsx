@@ -101,12 +101,12 @@ export default function Index() {
             >
               Sobre
             </Link>
-            <a
-              href="#"
+            <Link
+              to="/faq"
               className="text-white text-sm font-medium hover:opacity-80 transition"
             >
               FAQ
-            </a>
+            </Link>
           </div>
 
           <div className="flex items-center gap-4">

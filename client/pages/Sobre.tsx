@@ -112,37 +112,35 @@ export default function Sobre() {
 
       {/* Mission, Vision, Values - Nossa Missão wider with icon on side */}
       <section className="mx-6 mb-20">
-        <div className="grid grid-cols-3 gap-6">
-          {/* Nossa Missão - Wider with icon on the side */}
-          <div className="col-span-2 bg-brand-blue rounded-3xl p-10 text-white shadow-lg hover:shadow-xl transition flex items-center gap-8">
-            <div className="flex-1">
-              <h3 className="text-4xl font-bold mb-4">Nossa Missão</h3>
-              <p className="text-white/90 text-base leading-relaxed">
-                Capacitar profissionais com conhecimentos práticos e atualizados, preparando-os para os desafios do mercado de trabalho moderno.
-              </p>
-            </div>
-            <div className="flex-shrink-0 w-24 h-24 rounded-full bg-yellow-400 flex items-center justify-center">
-              <Target className="w-12 h-12 text-brand-blue" />
-            </div>
+        {/* Nossa Missão - Full width with icon on right */}
+        <div className="bg-brand-blue rounded-3xl p-10 text-white shadow-lg hover:shadow-xl transition flex items-center gap-8 mb-6">
+          <div className="flex-1">
+            <h3 className="text-4xl font-bold mb-4">Nossa Missão</h3>
+            <p className="text-white/90 text-base leading-relaxed">
+              Capacitar profissionais com conhecimentos práticos e atualizados, preparando-os para os desafios do mercado de trabalho moderno.
+            </p>
+          </div>
+          <div className="flex-shrink-0 w-24 h-24 rounded-full bg-yellow-400 flex items-center justify-center">
+            <Target className="w-12 h-12 text-brand-blue" />
+          </div>
+        </div>
+
+        {/* Vision and Values - Side by side */}
+        <div className="grid grid-cols-2 gap-6">
+          {/* Nossa Visão */}
+          <div className="bg-gray-100 rounded-3xl p-8">
+            <h3 className="text-brand-blue text-2xl font-bold mb-3">Nossa Visão</h3>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              Ser referência nacional em educação profissional e empregabilidade.
+            </p>
           </div>
 
-          {/* Grid for Vision and Values */}
-          <div className="flex flex-col gap-6">
-            {/* Nossa Visão */}
-            <div className="bg-gray-100 rounded-3xl p-6 flex-1">
-              <h3 className="text-brand-blue text-xl font-bold mb-3">Nossa Visão</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Ser referência nacional em educação profissional e empregabilidade.
-              </p>
-            </div>
-
-            {/* Nossos Valores */}
-            <div className="bg-gray-100 rounded-3xl p-6 flex-1">
-              <h3 className="text-brand-blue text-xl font-bold mb-3">Nossos Valores</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Qualidade, inovação, ética e compromisso com resultados.
-              </p>
-            </div>
+          {/* Nossos Valores */}
+          <div className="bg-gray-100 rounded-3xl p-8">
+            <h3 className="text-brand-blue text-2xl font-bold mb-3">Nossos Valores</h3>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              Qualidade, inovação, ética e compromisso com resultados.
+            </p>
           </div>
         </div>
       </section>
@@ -223,7 +221,7 @@ export default function Sobre() {
       </section>
 
       {/* Image Gallery - Right after Nossa História */}
-      <section className="mx-24 mb-20">
+      <section className="mx-6 mb-20">
         <div className="grid grid-cols-4 gap-6">
           <div className="bg-gray-200 rounded-3xl aspect-video"></div>
           <div className="bg-gray-200 rounded-3xl aspect-video"></div>
@@ -243,59 +241,66 @@ export default function Sobre() {
           </p>
         </div>
 
-        {/* First Row - Metodologia Prática (large) */}
-        <div className="mb-6">
-          <div className="bg-brand-green rounded-3xl p-10 text-white shadow-lg flex items-center gap-8">
-            <div className="flex-shrink-0 w-32 h-32 rounded-3xl bg-white/20 flex items-center justify-center">
-              <Settings className="w-16 h-16 text-white" />
-            </div>
-            <div className="flex-1">
-              <h3 className="text-4xl font-bold mb-4">Metodologia Prática</h3>
-              <p className="text-white/90 text-lg leading-relaxed">
-                Aprendizado baseado em projetos reais e situações do mercado de trabalho.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Second Row - Acompanhamento Personalizado (large) */}
-        <div className="mb-6">
-          <div className="bg-brand-blue rounded-3xl p-10 text-white shadow-lg flex items-center gap-8">
-            <div className="flex-shrink-0 w-32 h-32 rounded-3xl bg-white/20 flex items-center justify-center">
-              <Briefcase className="w-16 h-16 text-white" />
-            </div>
-            <div className="flex-1">
-              <h3 className="text-4xl font-bold mb-4">Acompanhamento Personalizado</h3>
-              <p className="text-white/90 text-lg leading-relaxed">
-                Mentoria individual e suporte contínuo durante toda a jornada.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Third Row - Three smaller cards */}
-        <div className="grid grid-cols-3 gap-6">
-          {/* Foco na Empregabilidade */}
-          <div className="bg-gray-100 rounded-3xl p-8">
+        {/* Row 1: Foco (small) | Metodologia (large green) | Certificação (small) */}
+        <div className="grid grid-cols-3 gap-6 mb-6">
+          {/* Foco na Empregabilidade - Normal */}
+          <div className="bg-gray-100 rounded-3xl p-8 flex flex-col justify-center">
             <h3 className="text-xl font-bold text-gray-900 mb-3">Foco na Empregabilidade</h3>
             <p className="text-gray-600 text-sm leading-relaxed">
               Cursos desenvolvidos em parceria com empresas para atender demandas reais.
             </p>
           </div>
 
-          {/* Certificação Reconhecida */}
-          <div className="bg-gray-100 rounded-3xl p-8">
+          {/* Metodologia Prática - Large green with icon */}
+          <div className="bg-brand-green rounded-3xl p-8 text-white shadow-lg flex items-center gap-6">
+            <div className="flex-shrink-0 w-20 h-20 rounded-2xl bg-white/20 flex items-center justify-center">
+              <Settings className="w-10 h-10 text-white" />
+            </div>
+            <div className="flex-1">
+              <h3 className="text-xl font-bold mb-2">Metodologia Prática</h3>
+              <p className="text-white/90 text-sm leading-relaxed">
+                Aprendizado baseado em projetos reais e situações do mercado de trabalho.
+              </p>
+            </div>
+          </div>
+
+          {/* Certificação Reconhecida - Normal */}
+          <div className="bg-gray-100 rounded-3xl p-8 flex flex-col justify-center">
             <h3 className="text-xl font-bold text-gray-900 mb-3">Certificação Reconhecida</h3>
             <p className="text-gray-600 text-sm leading-relaxed">
               Certificados valorizados pelo mercado e reconhecidos nacionalmente.
             </p>
           </div>
+        </div>
 
-          {/* Inovação Constante */}
-          <div className="bg-gray-100 rounded-3xl p-8">
+        {/* Row 2: Acompanhamento (large blue) | Inovação (small) | Resultados (small) */}
+        <div className="grid grid-cols-3 gap-6">
+          {/* Acompanhamento Personalizado - Large blue with icon */}
+          <div className="bg-brand-blue rounded-3xl p-8 text-white shadow-lg flex items-center gap-6">
+            <div className="flex-shrink-0 w-20 h-20 rounded-2xl bg-white/20 flex items-center justify-center">
+              <Briefcase className="w-10 h-10 text-white" />
+            </div>
+            <div className="flex-1">
+              <h3 className="text-xl font-bold mb-2">Acompanhamento Personalizado</h3>
+              <p className="text-white/90 text-sm leading-relaxed">
+                Mentoria individual e suporte contínuo durante toda a jornada.
+              </p>
+            </div>
+          </div>
+
+          {/* Inovação Constante - Normal */}
+          <div className="bg-gray-100 rounded-3xl p-8 flex flex-col justify-center">
             <h3 className="text-xl font-bold text-gray-900 mb-3">Inovação Constante</h3>
             <p className="text-gray-600 text-sm leading-relaxed">
               Sempre atualizados com as últimas tendências e tecnologias do mercado.
+            </p>
+          </div>
+
+          {/* Resultados Comprovados - Normal */}
+          <div className="bg-gray-100 rounded-3xl p-8 flex flex-col justify-center">
+            <h3 className="text-xl font-bold text-gray-900 mb-3">Resultados Comprovados</h3>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              Histórico sólido de sucesso na colocação profissional dos nossos alunos.
             </p>
           </div>
         </div>

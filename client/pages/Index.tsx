@@ -137,8 +137,8 @@ export default function Index() {
       </section>
 
       {/* Statistics Section */}
-      <section className="px-10 py-20">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-20">
+        <div>
           <div className="grid grid-cols-5 gap-6 items-center">
             {/* Stat 1 */}
             <div className="text-center">
@@ -194,8 +194,8 @@ export default function Index() {
       </section>
 
       {/* Company Logos Section */}
-      <section className="px-10 pb-20">
-        <div className="max-w-7xl mx-auto">
+      <section className="pb-20">
+        <div>
           <div className="bg-white rounded-[25px] py-8">
             <div className="flex items-center justify-center gap-6 px-16">
               {/* Logo 1 */}
@@ -304,8 +304,8 @@ export default function Index() {
       </section>
 
       {/* Platform Features Section */}
-      <section className="px-10 pb-20">
-        <div className="max-w-7xl mx-auto">
+      <section className="pb-20">
+        <div>
           <div className="bg-brand-gray rounded-b-[25px] pb-0 pt-16 px-16 relative overflow-hidden">
             <div className="flex justify-between mb-12">
               <div>
@@ -472,8 +472,8 @@ export default function Index() {
       </section>
 
       {/* Professional Development Section */}
-      <section className="px-10 pb-20">
-        <div className="max-w-7xl mx-auto relative">
+      <section className="pb-20">
+        <div className="relative">
           {/* Decorative diagonal lines - left */}
           <div className="absolute -left-16 bottom-0 w-32 pointer-events-none overflow-hidden" style={{top: '-130px'}}>
             <div className="absolute top-10 -left-10 w-[300px] h-px bg-gray-200 origin-top-left rotate-[55deg]"></div>
@@ -624,8 +624,8 @@ export default function Index() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="px-10 pb-20">
-        <div className="max-w-7xl mx-auto">
+      <section className="pb-20">
+        <div>
           <div className="grid grid-cols-2 gap-16">
             {/* Left - Heading */}
             <div>
@@ -692,8 +692,8 @@ export default function Index() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-10 pb-20">
-        <div className="max-w-7xl mx-auto">
+      <section className="pb-20">
+        <div>
           <div className="grid grid-cols-2 gap-16">
             {/* Left - CTA */}
             <div>
@@ -760,8 +760,8 @@ export default function Index() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-brand-blue rounded-t-[25px] px-10 pt-16 pb-8 relative">
-        <div className="max-w-7xl mx-auto">
+      <footer className="bg-brand-blue rounded-t-[25px] px-8 pt-16 pb-8 relative">
+        <div>
           {/* Footer Navigation - Half in, half out */}
           <div className="absolute -top-5 left-0 right-0 flex items-center justify-center gap-3">
             <Link to="/para-empresas" className="flex items-center gap-2 bg-brand-green text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition">

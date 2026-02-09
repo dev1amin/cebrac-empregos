@@ -89,12 +89,12 @@ export default function Index() {
             >
               Vagas
             </Link>
-            <a
-              href="#"
+            <Link
+              to="/para-empresas"
               className="text-white text-sm font-medium hover:opacity-80 transition"
             >
               Para empresas
-            </a>
+            </Link>
             <a
               href="#"
               className="text-white text-sm font-medium hover:opacity-80 transition"

@@ -1,4 +1,5 @@
 import { ArrowUpRight, ChevronDown, MessageCircle, Mail, Search } from "lucide-react";
+import { ArrowUpRight, ChevronDown, MessageCircle, Mail, Search } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 

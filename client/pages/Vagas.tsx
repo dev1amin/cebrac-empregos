@@ -375,9 +375,11 @@ export default function Vagas() {
                 <div className="p-6">
                   <div className="flex justify-between items-start">
                     <div className="flex-1">
-                      <h3 className="text-xl font-bold text-brand-blue mb-3">
-                        Assistente Administrativo | Compras - Vaga Afirmativa para pessoa com Deficiência - PCD
-                      </h3>
+                      <Link to="/vagas/1">
+                        <h3 className="text-xl font-bold text-brand-blue mb-3 hover:underline cursor-pointer">
+                          Assistente Administrativo | Compras - Vaga Afirmativa para pessoa com Deficiência - PCD
+                        </h3>
+                      </Link>
                       
                       <div className="flex items-center gap-1 text-sm text-gray-500 mb-2">
                         <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">

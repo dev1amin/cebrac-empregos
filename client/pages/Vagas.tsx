@@ -27,7 +27,7 @@ export default function Vagas() {
         <div className="flex items-center gap-8">
           <Link to="/" className="text-white text-sm font-medium hover:opacity-80 transition">Home</Link>
           <Link to="/vagas" className="text-white text-sm font-medium hover:opacity-80 transition">Vagas</Link>
-          <a href="#" className="text-white text-sm font-medium hover:opacity-80 transition">Para empresas</a>
+          <Link to="/para-empresas" className="text-white text-sm font-medium hover:opacity-80 transition">Para empresas</Link>
           <a href="#" className="text-white text-sm font-medium hover:opacity-80 transition">Sobre</a>
           <a href="#" className="text-white text-sm font-medium hover:opacity-80 transition">FAQ</a>
         </div>

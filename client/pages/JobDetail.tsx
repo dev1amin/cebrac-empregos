@@ -22,7 +22,7 @@ export default function JobDetail() {
           {/* Second Logo */}
           <Link to="/" className="flex items-center gap-2">
             <img
-              src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2Fde0f743057674fdfaef58afdb6bd8369"
+              src="/image.png"
               alt="Cebrac Empresa Logo"
               className="h-6"
             />

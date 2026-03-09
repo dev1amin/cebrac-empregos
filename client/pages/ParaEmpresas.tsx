@@ -27,7 +27,7 @@ export default function ParaEmpresas() {
           {/* Second Logo */}
           <Link to="/" className="flex items-center gap-2">
             <img
-              src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2Fde0f743057674fdfaef58afdb6bd8369"
+              src="/image.png"
               alt="Cebrac Empresa Logo"
               className="h-6"
             />
@@ -117,7 +117,7 @@ export default function ParaEmpresas() {
 
       {/* Features Section - Updated Grid */}
       <section className="mx-6 mb-20">
-        <div className="flex gap-6" style={{ minHeight: 280 }}>
+        <div className="flex gap-6 h-[280px]">
           {[
             { id: 0, num: "01.", title: "Candidatos Qualificados", desc: "Acesso a uma base de profissionais pre-selecionados e qualificados, com perfis detalhados e competencias validadas." },
             { id: 1, num: "02.", title: "Processo Agil", desc: "Publique vagas em minutos e receba candidaturas organizadas. Nossa IA ajuda a filtrar os melhores perfis para sua empresa." },
@@ -128,19 +128,19 @@ export default function ParaEmpresas() {
               <div
                 key={card.id}
                 onMouseEnter={() => setActiveFeature(card.id)}
-                className={`rounded-3xl p-8 cursor-pointer flex flex-col justify-end min-h-[280px] transition-all duration-500 ease-out ${
+                className={`rounded-3xl p-8 cursor-pointer flex flex-col justify-end h-full overflow-hidden transition-all duration-500 ease-out ${
                   isActive
                     ? "flex-[2] bg-brand-green text-white shadow-xl"
                     : "flex-1 bg-white border-2 border-gray-100 shadow-sm"
                 }`}
               >
-                {!isActive && (
-                  <div className="w-12 h-12 rounded-full border-2 border-gray-300 flex items-center justify-center mb-4 transition-all duration-300">
-                    <span className="text-gray-600 font-bold">{card.num}</span>
-                  </div>
-                )}
-                <h3 className={`text-3xl font-bold mb-4 transition-colors duration-500 ${
-                  isActive ? "text-white text-4xl" : "text-brand-blue"
+                <div className={`w-12 h-12 rounded-full border-2 border-gray-300 flex items-center justify-center mb-4 transition-all duration-500 ${
+                  isActive ? "opacity-0 h-0 mb-0" : "opacity-100"
+                }`}>
+                  <span className="text-gray-600 font-bold">{card.num}</span>
+                </div>
+                <h3 className={`font-bold mb-4 transition-all duration-500 ${
+                  isActive ? "text-white text-4xl" : "text-brand-blue text-3xl"
                 }`}>
                   {card.title}
                 </h3>

@@ -31,7 +31,7 @@ export default function Sobre() {
           {/* Second Logo */}
           <Link to="/" className="flex items-center gap-2">
             <img
-              src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2Fde0f743057674fdfaef58afdb6bd8369"
+              src="/image.png"
               alt="Cebrac Empresa Logo"
               className="h-6"
             />
@@ -121,7 +121,7 @@ export default function Sobre() {
 
       {/* Mission, Vision, Values - All side by side with swap */}
       <section className="mx-6 mb-20">
-        <div className="flex gap-6" style={{ minHeight: 200 }}>
+        <div className="flex gap-6 h-[200px]">
           {valueCards.map((card) => {
             const isActive = activeValue === card.id;
             const Icon = card.icon;
@@ -129,28 +129,27 @@ export default function Sobre() {
               <div
                 key={card.id}
                 onMouseEnter={() => setActiveValue(card.id)}
-                className={`rounded-3xl cursor-pointer overflow-hidden transition-all duration-500 ease-out ${
+                className={`rounded-3xl cursor-pointer overflow-hidden h-full transition-all duration-500 ease-out ${
                   isActive
                     ? "flex-[3] bg-brand-blue text-white shadow-xl p-10 flex items-center gap-8"
                     : "flex-1 bg-gray-100 p-6 flex flex-col justify-center"
                 }`}
               >
-                {isActive ? (
-                  <>
-                    <div className="flex-1">
-                      <h3 className="text-4xl font-bold mb-4">{card.title}</h3>
-                      <p className="text-white/90 text-base leading-relaxed">{card.desc}</p>
-                    </div>
-                    <div className="flex-shrink-0 w-24 h-24 rounded-full bg-yellow-400 flex items-center justify-center transition-all duration-500">
-                      <Icon className="w-12 h-12 text-brand-blue" />
-                    </div>
-                  </>
-                ) : (
-                  <>
-                    <h3 className="text-brand-blue text-xl font-bold mb-3">{card.title}</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">{card.desc}</p>
-                  </>
-                )}
+                <div className={`transition-all duration-500 ${isActive ? "flex-1" : ""}`}>
+                  <h3 className={`font-bold transition-all duration-500 ${
+                    isActive ? "text-4xl text-white mb-4" : "text-xl text-brand-blue mb-3"
+                  }`}>{card.title}</h3>
+                  <p className={`leading-relaxed transition-all duration-500 ${
+                    isActive ? "text-base text-white/90" : "text-sm text-gray-600"
+                  }`}>{card.desc}</p>
+                </div>
+                <div className={`flex-shrink-0 rounded-full bg-yellow-400 flex items-center justify-center transition-all duration-500 ${
+                  isActive ? "w-24 h-24 opacity-100" : "w-0 h-0 opacity-0"
+                }`}>
+                  <Icon className={`text-brand-blue transition-all duration-500 ${
+                    isActive ? "w-12 h-12" : "w-0 h-0"
+                  }`} />
+                </div>
               </div>
             );
           })}

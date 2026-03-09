@@ -15,8 +15,8 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-white pt-[39px] px-[39px] pb-0 overflow-x-hidden flex flex-col">
       {/* Hero Section */}
-      <section className="relative pb-16">
-        <div className="relative rounded-[25px] overflow-hidden min-h-[100vh]">
+      <section className="relative" style={{height: 'calc(100vh - 39px)'}}>
+        <div className="relative rounded-[25px] overflow-hidden h-full flex flex-col">
           <div className="absolute inset-0">
             <video
               src="https://i.imgur.com/Hq9YdTA.mp4"
@@ -28,9 +28,9 @@ export default function Index() {
             />
           </div>
 
-          <div className="absolute inset-x-0 bottom-0 h-[40%] bg-gradient-to-t from-[hsl(231,59%,35%)] to-transparent"></div>
+          <div className="absolute inset-x-0 bottom-0 h-[50%] bg-gradient-to-t from-[hsl(231,59%,35%)] via-[hsl(231,59%,35%,0.7)] to-transparent"></div>
 
-          <nav className="relative z-10 mx-10 mb-32 flex items-center justify-between px-8 py-4 rounded-full bg-white/10 backdrop-blur-md border border-white/20" style={{top: '30px'}}>
+          <nav className="relative z-10 mx-10 flex items-center justify-between px-8 py-4 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mt-[30px]">
             <div className="flex items-center gap-6">
               <div className="flex items-center gap-2">
                 <img
@@ -68,14 +68,14 @@ export default function Index() {
             </div>
           </nav>
 
-          <div className="relative z-10 px-10" style={{paddingBottom: '120px'}}>
-            <div className="flex justify-between items-start">
+          <div className="relative z-10 px-10 mt-auto pb-10">
+            <div className="flex justify-between items-end">
               <div className="max-w-2xl">
-                <div className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-white/15 backdrop-blur-md border border-white/20 mb-8">
+                <div className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-white/15 backdrop-blur-md border border-white/20 mb-6">
                   <span className="text-white text-sm">Cebrac Talentos</span>
                 </div>
 
-                <h1 className="text-white text-[clamp(36px,4vw,62px)] font-light leading-[1.1] tracking-tight mb-6">
+                <h1 className="text-white text-[clamp(36px,4vw,62px)] font-light leading-[1.1] tracking-tight">
                   Diariamente,
                   <br />
                   conectamos talentos
@@ -88,7 +88,7 @@ export default function Index() {
                 </h1>
               </div>
 
-              <div className="max-w-sm mt-32">
+              <div className="max-w-sm pb-2">
                 <p className="text-white text-right text-base mb-8 leading-relaxed">
                   Mais de 5.000 vagas disponíveis e cursos profissionalizantes
                   para impulsionar sua carreira. Junte-se a milhares de
@@ -107,17 +107,17 @@ export default function Index() {
           </div>
         </div>
 
-        <div className="flex justify-center">
-          <div className="relative -mt-px">
-            <svg width="120" height="60" viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0 0H120L70 50C65.5 54.5 54.5 54.5 50 50L0 0Z" fill="hsl(231, 59%, 35%)" />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full z-20">
+          <div className="relative">
+            <svg width="160" height="70" viewBox="0 0 160 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 0H160C160 0 120 0 100 30C90 47 85 62 80 70C75 62 70 47 60 30C40 0 0 0 0 0Z" fill="hsl(231, 59%, 35%)" />
             </svg>
-            <div className="absolute top-2 left-1/2 -translate-x-1/2">
-              <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-lg">
+            <div className="absolute top-1 left-1/2 -translate-x-1/2">
+              <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center shadow-lg">
                 <img
-                  src="/Group_(1).png"
+                  src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2Fdb82e6e7b46b43df9803960450149299"
                   alt="Cebrac Logo"
-                  className="w-7 h-7 object-contain"
+                  className="w-14 h-14 rounded-full"
                 />
               </div>
             </div>
@@ -126,7 +126,7 @@ export default function Index() {
       </section>
 
       {/* Statistics Section */}
-      <section className="py-20">
+      <section className="pt-24 pb-20">
         <div>
           <div className="grid grid-cols-5 gap-6 items-center">
             <a href="https://www.cebrac.com.br/" target="_blank" rel="noopener noreferrer" className="text-center hover:scale-105 transition-transform duration-300 cursor-pointer">

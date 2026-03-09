@@ -18,10 +18,13 @@ export default function Index() {
       <section className="relative rounded-[25px] overflow-hidden pb-16 min-h-[100vh]">
         {/* Background Image with rounded corners */}
         <div className="absolute inset-0 rounded-[25px] overflow-hidden" style={{marginBottom: '80px'}}>
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2F9ca2f76aac7244e59ada473eb7d44ff1"
-            alt="Hero Background"
-            className="w-full h-full object-fill"
+          <video
+            src="https://i.imgur.com/Hq9YdTA.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
           />
         </div>
 

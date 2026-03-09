@@ -13,7 +13,7 @@ export default function Index() {
   ];
 
   return (
-    <div className="min-h-screen bg-white pt-[39px] px-[39px] pb-0 overflow-x-hidden flex flex-col">
+    <div className="min-h-screen bg-white pt-[18px] px-[39px] pb-0 overflow-x-hidden flex flex-col">
       {/* Hero Section */}
       <section className="relative" style={{height: 'calc(100vh - 39px)'}}>
         <div className="relative rounded-[25px] overflow-hidden h-full flex flex-col">

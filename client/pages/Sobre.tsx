@@ -1,4 +1,4 @@
-import { ArrowUpRight, Target, Users, TrendingUp, Search, Settings, Briefcase } from "lucide-react";
+import { ArrowUpRight, Target, Users, TrendingUp, Search, Settings, Briefcase, Eye, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function Sobre() {
@@ -113,12 +113,11 @@ export default function Sobre() {
       {/* Mission, Vision, Values - All side by side: 60% / 20% / 20% */}
       <section className="mx-6 mb-20">
         <div className="flex gap-6">
-          {/* Nossa Missão - 60% */}
-          <div className="w-[60%] bg-brand-blue rounded-3xl p-10 text-white shadow-lg hover:shadow-xl transition flex items-center gap-8">
+          <div className="w-[60%] bg-brand-blue rounded-3xl p-10 text-white shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-500 ease-out flex items-center gap-8 cursor-pointer">
             <div className="flex-1">
-              <h3 className="text-4xl font-bold mb-4">Nossa Missão</h3>
+              <h3 className="text-4xl font-bold mb-4">Nossa Missao</h3>
               <p className="text-white/90 text-base leading-relaxed">
-                Capacitar profissionais com conhecimentos práticos e atualizados, preparando-os para os desafios do mercado de trabalho moderno.
+                Capacitar profissionais com conhecimentos praticos e atualizados, preparando-os para os desafios do mercado de trabalho moderno.
               </p>
             </div>
             <div className="flex-shrink-0 w-24 h-24 rounded-full bg-yellow-400 flex items-center justify-center">
@@ -126,20 +125,24 @@ export default function Sobre() {
             </div>
           </div>
 
-          {/* Nossa Visão - 20% */}
-          <div className="w-[20%] bg-gray-100 rounded-3xl p-6 flex flex-col justify-center">
-            <h3 className="text-brand-blue text-xl font-bold mb-3">Nossa Visão</h3>
-            <p className="text-gray-600 text-sm leading-relaxed">
-              Ser referência nacional em educação profissional e empregabilidade.
+          <div className="group w-[20%] bg-gray-100 rounded-3xl p-6 flex flex-col justify-center hover:bg-brand-blue hover:scale-[1.04] hover:shadow-xl transition-all duration-500 ease-out cursor-pointer overflow-hidden">
+            <h3 className="text-brand-blue text-xl font-bold mb-3 transition-colors duration-500 group-hover:text-white">Nossa Visao</h3>
+            <p className="text-gray-600 text-sm leading-relaxed transition-colors duration-500 group-hover:text-white/90">
+              Ser referencia nacional em educacao profissional e empregabilidade.
             </p>
+            <div className="w-14 h-14 rounded-full bg-yellow-400 flex items-center justify-center mt-4 opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-20 transition-all duration-500 ease-out">
+              <Eye className="w-7 h-7 text-brand-blue" />
+            </div>
           </div>
 
-          {/* Nossos Valores - 20% */}
-          <div className="w-[20%] bg-gray-100 rounded-3xl p-6 flex flex-col justify-center">
-            <h3 className="text-brand-blue text-xl font-bold mb-3">Nossos Valores</h3>
-            <p className="text-gray-600 text-sm leading-relaxed">
-              Qualidade, inovação, ética e compromisso com resultados.
+          <div className="group w-[20%] bg-gray-100 rounded-3xl p-6 flex flex-col justify-center hover:bg-brand-blue hover:scale-[1.04] hover:shadow-xl transition-all duration-500 ease-out cursor-pointer overflow-hidden">
+            <h3 className="text-brand-blue text-xl font-bold mb-3 transition-colors duration-500 group-hover:text-white">Nossos Valores</h3>
+            <p className="text-gray-600 text-sm leading-relaxed transition-colors duration-500 group-hover:text-white/90">
+              Qualidade, inovacao, etica e compromisso com resultados.
             </p>
+            <div className="w-14 h-14 rounded-full bg-yellow-400 flex items-center justify-center mt-4 opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-20 transition-all duration-500 ease-out">
+              <Heart className="w-7 h-7 text-brand-blue" />
+            </div>
           </div>
         </div>
       </section>

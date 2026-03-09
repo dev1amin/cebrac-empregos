@@ -140,36 +140,32 @@ export default function Index() {
       <section className="py-20">
         <div>
           <div className="grid grid-cols-5 gap-6 items-center">
-            {/* Stat 1 */}
-            <div className="text-center">
+            <a href="https://www.cebrac.com.br/" target="_blank" rel="noopener noreferrer" className="text-center hover:scale-105 transition-transform duration-300 cursor-pointer">
               <h3 className="text-brand-blue-dark text-5xl font-extrabold mb-4 tracking-tight">
                 5.172
               </h3>
               <div className="border border-brand-blue-dark rounded-full px-6 py-2 inline-block">
                 <p className="text-brand-blue-dark text-sm whitespace-nowrap">Vagas Ativas</p>
               </div>
-            </div>
+            </a>
 
-            {/* Stat 2 */}
-            <div className="text-center">
+            <a href="https://www.cebrac.com.br/" target="_blank" rel="noopener noreferrer" className="text-center hover:scale-105 transition-transform duration-300 cursor-pointer">
               <h3 className="text-brand-blue-dark text-5xl font-extrabold mb-4 tracking-tight">
                 +3.9k
               </h3>
               <div className="border border-brand-blue-dark rounded-full px-6 py-2 inline-block">
-                <p className="text-brand-blue-dark text-sm whitespace-nowrap">Currículos</p>
+                <p className="text-brand-blue-dark text-sm whitespace-nowrap">Curriculos</p>
               </div>
-            </div>
+            </a>
 
-            {/* Central Message */}
-            <div className="text-center flex flex-col items-center justify-center">
+            <a href="https://www.cebrac.com.br/" target="_blank" rel="noopener noreferrer" className="text-center flex flex-col items-center justify-center hover:scale-105 transition-transform duration-300 cursor-pointer">
               <p className="text-brand-blue-dark text-lg font-extrabold max-w-[190px] leading-tight">
                 A melhor escola profissionalizante{" "}
-                <span className="font-extrabold">da América Latina!</span>
+                <span className="font-extrabold">da America Latina!</span>
               </p>
-            </div>
+            </a>
 
-            {/* Stat 3 */}
-            <div className="text-center">
+            <a href="https://www.cebrac.com.br/" target="_blank" rel="noopener noreferrer" className="text-center hover:scale-105 transition-transform duration-300 cursor-pointer">
               <h3 className="text-brand-blue-dark text-5xl font-extrabold mb-4 tracking-tight">
                 +13.5k
               </h3>
@@ -178,17 +174,16 @@ export default function Index() {
                   Empresas Parceiras
                 </p>
               </div>
-            </div>
+            </a>
 
-            {/* Stat 4 */}
-            <div className="text-center">
+            <a href="https://www.cebrac.com.br/" target="_blank" rel="noopener noreferrer" className="text-center hover:scale-105 transition-transform duration-300 cursor-pointer">
               <h3 className="text-brand-blue-dark text-5xl font-extrabold mb-4 tracking-tight">
                 +21k
               </h3>
               <div className="border border-brand-blue-dark rounded-full px-6 py-2 inline-block">
-                <p className="text-brand-blue-dark text-sm whitespace-nowrap">Contratações</p>
+                <p className="text-brand-blue-dark text-sm whitespace-nowrap">Contratacoes</p>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </section>
@@ -506,68 +501,42 @@ export default function Index() {
 
             {/* Stats Cards */}
             <div className="grid grid-cols-4 gap-6 mb-16">
-              {/* Card 1 - Primary */}
-              <div className="bg-brand-blue text-white rounded-2xl p-8 shadow-lg">
-                <div className="border border-white rounded-full w-10 h-10 flex items-center justify-center mb-12">
-                  <span className="text-sm font-medium">01.</span>
+              {[
+                { num: "01.", value: "72h", title: "Tempo médio para conseguir emprego", desc: "Nossos alunos conseguem colocação profissional em até 3 dias.", isFirst: true },
+                { num: "02.", value: "94%", title: "Cálculo da taxa de empregabilidade", desc: "Quase todos os nossos formandos conseguem emprego." },
+                { num: "03.", value: "+45%", title: "Crescimento no salário médio", desc: "Aumento significativo após conclusão." },
+                { num: "04.", value: "500+", title: "Empresas parceiras no Cebrac Empresa", desc: "" },
+              ].map((card) => (
+                <div
+                  key={card.num}
+                  className={`group rounded-2xl p-8 cursor-pointer transition-all duration-500 ease-out hover:scale-[1.04] hover:shadow-xl hover:bg-brand-blue hover:text-white ${
+                    card.isFirst
+                      ? "bg-brand-blue text-white shadow-lg"
+                      : "bg-brand-gray border border-brand-blue text-brand-gray-text hover:border-brand-blue"
+                  }`}
+                >
+                  <div className={`border rounded-full w-10 h-10 flex items-center justify-center mb-12 transition-colors duration-500 ${
+                    card.isFirst ? "border-white" : "border-brand-gray-text group-hover:border-white"
+                  }`}>
+                    <span className={`text-sm font-medium transition-colors duration-500 ${
+                      card.isFirst ? "" : "group-hover:text-white"
+                    }`}>{card.num}</span>
+                  </div>
+                  <div className="text-left">
+                    <h3 className={`text-4xl font-bold mb-4 transition-colors duration-500 ${
+                      card.isFirst ? "" : "text-brand-blue group-hover:text-white"
+                    }`}>{card.value}</h3>
+                    <p className={`text-sm font-bold mb-2 transition-colors duration-500 ${
+                      card.isFirst ? "" : "group-hover:text-white"
+                    }`}>{card.title}</p>
+                    {card.desc && (
+                      <p className={`text-xs transition-colors duration-500 ${
+                        card.isFirst ? "opacity-90" : "group-hover:text-white/90"
+                      }`}>{card.desc}</p>
+                    )}
+                  </div>
                 </div>
-                <div className="text-left">
-                  <h3 className="text-4xl font-bold mb-4">72h</h3>
-                  <p className="text-sm font-bold mb-2">
-                    Tempo médio para conseguir emprego
-                  </p>
-                  <p className="text-xs opacity-90">
-                    Nossos alunos conseguem colocação profissional em até 3 dias.
-                  </p>
-                </div>
-              </div>
-
-              {/* Card 2 */}
-              <div className="bg-brand-gray border border-brand-blue text-brand-gray-text rounded-2xl p-8">
-                <div className="border border-brand-gray-text rounded-full w-10 h-10 flex items-center justify-center mb-12">
-                  <span className="text-sm font-medium">02.</span>
-                </div>
-                <div className="text-left">
-                  <h3 className="text-4xl font-bold text-brand-blue mb-4">94%</h3>
-                  <p className="text-sm font-bold mb-2">
-                    Cálculo da taxa de empregabilidade
-                  </p>
-                  <p className="text-xs">
-                    Quase todos os nossos formandos conseguem emprego.
-                  </p>
-                </div>
-              </div>
-
-              {/* Card 3 */}
-              <div className="bg-brand-gray border border-brand-blue text-brand-gray-text rounded-2xl p-8">
-                <div className="border border-brand-gray-text rounded-full w-10 h-10 flex items-center justify-center mb-12">
-                  <span className="text-sm font-medium">03.</span>
-                </div>
-                <div className="text-left">
-                  <h3 className="text-4xl font-bold text-brand-blue mb-4">
-                    +45%
-                  </h3>
-                  <p className="text-sm font-bold mb-2">
-                    Crescimento no salário médio
-                  </p>
-                  <p className="text-xs">Aumento significativo após conclusão.</p>
-                </div>
-              </div>
-
-              {/* Card 4 */}
-              <div className="bg-brand-gray border border-brand-blue text-brand-gray-text rounded-2xl p-8">
-                <div className="border border-brand-gray-text rounded-full w-10 h-10 flex items-center justify-center mb-12">
-                  <span className="text-sm font-medium">04.</span>
-                </div>
-                <div className="text-left">
-                  <h3 className="text-4xl font-bold text-brand-blue mb-4">
-                    500+
-                  </h3>
-                  <p className="text-sm font-bold mb-2">
-                    Empresas parceiras no Cebrac Empresa
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
 
             {/* Learning Paths - image + text, left-aligned */}

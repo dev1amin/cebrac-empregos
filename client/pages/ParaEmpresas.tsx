@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function ParaEmpresas() {
   const [openStep, setOpenStep] = useState<number | null>(1);
+  const [activeFeature, setActiveFeature] = useState(0);
 
   return (
     <div className="min-h-screen bg-white">
@@ -116,39 +117,41 @@ export default function ParaEmpresas() {
 
       {/* Features Section - Updated Grid */}
       <section className="mx-6 mb-20">
-        <div className="grid grid-cols-4 gap-6">
-          <div className="col-span-2 bg-brand-green rounded-3xl p-8 text-white shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-500 ease-out flex flex-col justify-end min-h-[280px] cursor-pointer">
-            <h3 className="text-4xl font-bold mb-3">
-              Candidatos Qualificados
-            </h3>
-            <p className="text-white/90 text-sm leading-relaxed">
-              Acesso a uma base de profissionais pré-selecionados e qualificados, com perfis detalhados e competências validadas.
-            </p>
-          </div>
-
-          <div className="group bg-white border-2 border-gray-100 rounded-3xl p-8 shadow-sm hover:bg-brand-green hover:border-brand-green hover:shadow-xl hover:scale-[1.04] transition-all duration-500 ease-out cursor-pointer flex flex-col justify-end min-h-[280px]">
-            <div className="w-12 h-12 rounded-full border-2 border-gray-300 flex items-center justify-center mb-4 transition-all duration-500 group-hover:opacity-0 group-hover:h-0 group-hover:w-0 group-hover:mb-0 group-hover:overflow-hidden">
-              <span className="text-gray-600 font-bold">02.</span>
-            </div>
-            <h3 className="text-brand-blue text-3xl font-bold mb-4 transition-colors duration-500 group-hover:text-white">
-              Processo<br />Ágil
-            </h3>
-            <p className="text-gray-600 text-sm leading-relaxed transition-colors duration-500 group-hover:text-white/90">
-              Publique vagas em minutos e receba candidaturas organizadas. Nossa IA ajuda a filtrar os melhores perfis para sua empresa.
-            </p>
-          </div>
-
-          <div className="group bg-white border-2 border-gray-100 rounded-3xl p-8 shadow-sm hover:bg-brand-green hover:border-brand-green hover:shadow-xl hover:scale-[1.04] transition-all duration-500 ease-out cursor-pointer flex flex-col justify-end min-h-[280px]">
-            <div className="w-12 h-12 rounded-full border-2 border-gray-300 flex items-center justify-center mb-4 transition-all duration-500 group-hover:opacity-0 group-hover:h-0 group-hover:w-0 group-hover:mb-0 group-hover:overflow-hidden">
-              <span className="text-gray-600 font-bold">03.</span>
-            </div>
-            <h3 className="text-brand-blue text-3xl font-bold mb-4 transition-colors duration-500 group-hover:text-white">
-              Suporte<br />Especializado
-            </h3>
-            <p className="text-gray-600 text-sm leading-relaxed transition-colors duration-500 group-hover:text-white/90">
-              Nossa equipe de especialistas em RH está sempre disponível para ajudar você a encontrar o candidato perfeito.
-            </p>
-          </div>
+        <div className="flex gap-6" style={{ minHeight: 280 }}>
+          {[
+            { id: 0, num: "01.", title: "Candidatos Qualificados", desc: "Acesso a uma base de profissionais pre-selecionados e qualificados, com perfis detalhados e competencias validadas." },
+            { id: 1, num: "02.", title: "Processo Agil", desc: "Publique vagas em minutos e receba candidaturas organizadas. Nossa IA ajuda a filtrar os melhores perfis para sua empresa." },
+            { id: 2, num: "03.", title: "Suporte Especializado", desc: "Nossa equipe de especialistas em RH esta sempre disponivel para ajudar voce a encontrar o candidato perfeito." },
+          ].map((card) => {
+            const isActive = activeFeature === card.id;
+            return (
+              <div
+                key={card.id}
+                onMouseEnter={() => setActiveFeature(card.id)}
+                className={`rounded-3xl p-8 cursor-pointer flex flex-col justify-end min-h-[280px] transition-all duration-500 ease-out ${
+                  isActive
+                    ? "flex-[2] bg-brand-green text-white shadow-xl"
+                    : "flex-1 bg-white border-2 border-gray-100 shadow-sm"
+                }`}
+              >
+                {!isActive && (
+                  <div className="w-12 h-12 rounded-full border-2 border-gray-300 flex items-center justify-center mb-4 transition-all duration-300">
+                    <span className="text-gray-600 font-bold">{card.num}</span>
+                  </div>
+                )}
+                <h3 className={`text-3xl font-bold mb-4 transition-colors duration-500 ${
+                  isActive ? "text-white text-4xl" : "text-brand-blue"
+                }`}>
+                  {card.title}
+                </h3>
+                <p className={`text-sm leading-relaxed transition-colors duration-500 ${
+                  isActive ? "text-white/90" : "text-gray-600"
+                }`}>
+                  {card.desc}
+                </p>
+              </div>
+            );
+          })}
         </div>
       </section>
 

@@ -1,7 +1,17 @@
 import { ArrowUpRight, Search, FileText, TrendingUp } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 export default function Index() {
+  const [activeCard, setActiveCard] = useState(0);
+
+  const statsCards = [
+    { num: "01.", value: "72h", title: "Tempo medio para conseguir emprego", desc: "Nossos alunos conseguem colocacao profissional em ate 3 dias." },
+    { num: "02.", value: "94%", title: "Calculo da taxa de empregabilidade", desc: "Quase todos os nossos formandos conseguem emprego." },
+    { num: "03.", value: "+45%", title: "Crescimento no salario medio", desc: "Aumento significativo apos conclusao." },
+    { num: "04.", value: "500+", title: "Empresas parceiras no Cebrac Empresa", desc: "" },
+  ];
+
   return (
     <div className="min-h-screen bg-white pt-[39px] px-[39px] pb-0 overflow-x-hidden flex flex-col">
       {/* Hero Section */}
@@ -501,42 +511,41 @@ export default function Index() {
 
             {/* Stats Cards */}
             <div className="grid grid-cols-4 gap-6 mb-16">
-              {[
-                { num: "01.", value: "72h", title: "Tempo médio para conseguir emprego", desc: "Nossos alunos conseguem colocação profissional em até 3 dias.", isFirst: true },
-                { num: "02.", value: "94%", title: "Cálculo da taxa de empregabilidade", desc: "Quase todos os nossos formandos conseguem emprego." },
-                { num: "03.", value: "+45%", title: "Crescimento no salário médio", desc: "Aumento significativo após conclusão." },
-                { num: "04.", value: "500+", title: "Empresas parceiras no Cebrac Empresa", desc: "" },
-              ].map((card) => (
-                <div
-                  key={card.num}
-                  className={`group rounded-2xl p-8 cursor-pointer transition-all duration-500 ease-out hover:scale-[1.04] hover:shadow-xl hover:bg-brand-blue hover:text-white ${
-                    card.isFirst
-                      ? "bg-brand-blue text-white shadow-lg"
-                      : "bg-brand-gray border border-brand-blue text-brand-gray-text hover:border-brand-blue"
-                  }`}
-                >
-                  <div className={`border rounded-full w-10 h-10 flex items-center justify-center mb-12 transition-colors duration-500 ${
-                    card.isFirst ? "border-white" : "border-brand-gray-text group-hover:border-white"
-                  }`}>
-                    <span className={`text-sm font-medium transition-colors duration-500 ${
-                      card.isFirst ? "" : "group-hover:text-white"
-                    }`}>{card.num}</span>
+              {statsCards.map((card, index) => {
+                const isActive = activeCard === index;
+                return (
+                  <div
+                    key={card.num}
+                    onMouseEnter={() => setActiveCard(index)}
+                    className={`rounded-2xl p-8 cursor-pointer transition-all duration-500 ease-out ${
+                      isActive
+                        ? "bg-brand-blue text-white shadow-xl scale-[1.04]"
+                        : "bg-brand-gray border border-brand-blue text-brand-gray-text"
+                    }`}
+                  >
+                    <div className={`border rounded-full w-10 h-10 flex items-center justify-center mb-12 transition-colors duration-500 ${
+                      isActive ? "border-white" : "border-brand-gray-text"
+                    }`}>
+                      <span className={`text-sm font-medium transition-colors duration-500 ${
+                        isActive ? "text-white" : ""
+                      }`}>{card.num}</span>
+                    </div>
+                    <div className="text-left">
+                      <h3 className={`text-4xl font-bold mb-4 transition-colors duration-500 ${
+                        isActive ? "text-white" : "text-brand-blue"
+                      }`}>{card.value}</h3>
+                      <p className={`text-sm font-bold mb-2 transition-colors duration-500 ${
+                        isActive ? "text-white" : ""
+                      }`}>{card.title}</p>
+                      {card.desc && (
+                        <p className={`text-xs transition-colors duration-500 ${
+                          isActive ? "text-white/90" : ""
+                        }`}>{card.desc}</p>
+                      )}
+                    </div>
                   </div>
-                  <div className="text-left">
-                    <h3 className={`text-4xl font-bold mb-4 transition-colors duration-500 ${
-                      card.isFirst ? "" : "text-brand-blue group-hover:text-white"
-                    }`}>{card.value}</h3>
-                    <p className={`text-sm font-bold mb-2 transition-colors duration-500 ${
-                      card.isFirst ? "" : "group-hover:text-white"
-                    }`}>{card.title}</p>
-                    {card.desc && (
-                      <p className={`text-xs transition-colors duration-500 ${
-                        card.isFirst ? "opacity-90" : "group-hover:text-white/90"
-                      }`}>{card.desc}</p>
-                    )}
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
 
             {/* Learning Paths - image + text, left-aligned */}

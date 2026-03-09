@@ -15,137 +15,113 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-white pt-[39px] px-[39px] pb-0 overflow-x-hidden flex flex-col">
       {/* Hero Section */}
-      <section className="relative rounded-[25px] overflow-hidden pb-16 min-h-[100vh]">
-        {/* Background Image with rounded corners */}
-        <div className="absolute inset-0 rounded-[25px] overflow-hidden" style={{marginBottom: '80px'}}>
-          <video
-            src="https://i.imgur.com/Hq9YdTA.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover"
-          />
-        </div>
+      <section className="relative pb-16">
+        <div className="relative rounded-[25px] overflow-hidden min-h-[100vh]">
+          <div className="absolute inset-0">
+            <video
+              src="https://i.imgur.com/Hq9YdTA.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover"
+            />
+          </div>
 
-        {/* Navigation with Glass Effect */}
-        <nav className="relative z-10 mx-10 mb-32 flex items-center justify-between px-8 py-4 rounded-full bg-white/10 backdrop-blur-md border border-white/20" style={{top: '30px'}}>
-          <div className="flex items-center gap-6">
-            {/* First Logo */}
-            <div className="flex items-center gap-2">
-              <img
-                src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2Fefd6f08e8c3b4872bd6e38bdef2fc67d"
-                alt="Cebrac Logo"
-                className="h-6"
-              />
+          <div className="absolute inset-x-0 bottom-0 h-[40%] bg-gradient-to-t from-[hsl(231,59%,35%)] to-transparent"></div>
+
+          <nav className="relative z-10 mx-10 mb-32 flex items-center justify-between px-8 py-4 rounded-full bg-white/10 backdrop-blur-md border border-white/20" style={{top: '30px'}}>
+            <div className="flex items-center gap-6">
+              <div className="flex items-center gap-2">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2Fefd6f08e8c3b4872bd6e38bdef2fc67d"
+                  alt="Cebrac Logo"
+                  className="h-6"
+                />
+              </div>
+              <div className="h-8 w-px bg-white/30"></div>
+              <div className="flex items-center gap-2">
+                <img
+                  src="/image.png"
+                  alt="Cebrac Empresa Logo"
+                  className="h-6"
+                />
+              </div>
             </div>
 
-            {/* Divider */}
-            <div className="h-8 w-px bg-white/30"></div>
-
-            {/* Second Logo */}
-            <div className="flex items-center gap-2">
-              <img
-                src="/image.png"
-                alt="Cebrac Empresa Logo"
-                className="h-6"
-              />
+            <div className="flex items-center gap-8">
+              <Link to="/" className="text-white text-sm font-medium hover:opacity-80 transition">Home</Link>
+              <Link to="/vagas" className="text-white text-sm font-medium hover:opacity-80 transition">Vagas</Link>
+              <Link to="/para-empresas" className="text-white text-sm font-medium hover:opacity-80 transition">Para empresas</Link>
+              <Link to="/sobre" className="text-white text-sm font-medium hover:opacity-80 transition">Sobre</Link>
+              <Link to="/faq" className="text-white text-sm font-medium hover:opacity-80 transition">FAQ</Link>
             </div>
-          </div>
 
-          <div className="flex items-center gap-8">
-            <Link
-              to="/"
-              className="text-white text-sm font-medium hover:opacity-80 transition"
-            >
-              Home
-            </Link>
-            <Link
-              to="/vagas"
-              className="text-white text-sm font-medium hover:opacity-80 transition"
-            >
-              Vagas
-            </Link>
-            <Link
-              to="/para-empresas"
-              className="text-white text-sm font-medium hover:opacity-80 transition"
-            >
-              Para empresas
-            </Link>
-            <Link
-              to="/sobre"
-              className="text-white text-sm font-medium hover:opacity-80 transition"
-            >
-              Sobre
-            </Link>
-            <Link
-              to="/faq"
-              className="text-white text-sm font-medium hover:opacity-80 transition"
-            >
-              FAQ
-            </Link>
-          </div>
+            <div className="flex items-center gap-4">
+              <button className="text-white hover:opacity-80 transition">
+                <Search className="w-5 h-5" />
+              </button>
+              <button className="flex items-center gap-2 bg-white text-brand-blue px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-opacity-90 transition">
+                Acessar Vagas
+                <ArrowUpRight className="w-4 h-4" />
+              </button>
+            </div>
+          </nav>
 
-          <div className="flex items-center gap-4">
-            <button className="text-white hover:opacity-80 transition">
-              <Search className="w-5 h-5" />
-            </button>
-            <button className="flex items-center gap-2 bg-white text-brand-blue px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-opacity-90 transition">
-              Acessar Vagas
-              <ArrowUpRight className="w-4 h-4" />
-            </button>
-          </div>
-        </nav>
+          <div className="relative z-10 px-10" style={{paddingBottom: '120px'}}>
+            <div className="flex justify-between items-start">
+              <div className="max-w-2xl">
+                <div className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-white/15 backdrop-blur-md border border-white/20 mb-8">
+                  <span className="text-white text-sm">Cebrac Talentos</span>
+                </div>
 
-        {/* Hero Content */}
-        <div className="relative z-10 px-10" style={{paddingBottom: '120px'}}>
-          <div className="flex justify-between items-start">
-            {/* Left Side */}
-            <div className="max-w-2xl">
-              {/* Cebrac Empregos Badge */}
-              <div className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-white/15 backdrop-blur-md border border-white/20 mb-8">
-                <span className="text-white text-sm">Cebrac Empregos</span>
+                <h1 className="text-white text-[clamp(36px,4vw,62px)] font-light leading-[1.1] tracking-tight mb-6">
+                  Diariamente,
+                  <br />
+                  conectamos talentos
+                  <br />
+                  com as melhores
+                  <br />
+                  <span className="text-brand-yellow font-extrabold">
+                    oportunidades
+                  </span>
+                </h1>
               </div>
 
-              <h1 className="text-white text-[clamp(36px,4vw,62px)] font-light leading-[1.1] tracking-tight mb-6">
-                Diariamente,
-                <br />
-                conectamos talentos
-                <br />
-                com as melhores
-                <br />
-                <span className="text-brand-yellow font-extrabold">
-                  oportunidades
-                </span>
-              </h1>
-            </div>
-
-            {/* Right Side - positioned lower */}
-            <div className="max-w-sm mt-32">
-              <p className="text-white text-right text-base mb-8 leading-relaxed">
-                Mais de 5.000 vagas disponíveis e cursos profissionalizantes
-                para impulsionar sua carreira. Junte-se a milhares de
-                profissionais que encontraram seu futuro conosco.
-              </p>
-              <div className="flex justify-end">
-                <button className="flex items-center gap-8 bg-white text-brand-gray-text px-5 py-3.5 rounded-[35px] font-semibold hover:shadow-lg transition">
-                  Faça agora seu teste vocacional
-                  <div className="bg-brand-blue rounded-full p-1.5">
-                    <ArrowUpRight className="w-5 h-5 text-white" />
-                  </div>
-                </button>
+              <div className="max-w-sm mt-32">
+                <p className="text-white text-right text-base mb-8 leading-relaxed">
+                  Mais de 5.000 vagas disponíveis e cursos profissionalizantes
+                  para impulsionar sua carreira. Junte-se a milhares de
+                  profissionais que encontraram seu futuro conosco.
+                </p>
+                <div className="flex justify-end">
+                  <button className="flex items-center gap-8 bg-white text-brand-gray-text px-5 py-3.5 rounded-[35px] font-semibold hover:shadow-lg transition">
+                    Faça agora seu teste vocacional
+                    <div className="bg-brand-blue rounded-full p-1.5">
+                      <ArrowUpRight className="w-5 h-5 text-white" />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Logo at bottom of balloon */}
-        <div className="absolute left-1/2 -translate-x-1/2 z-20" style={{bottom: '90px'}}>
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2Fdb82e6e7b46b43df9803960450149299"
-            alt="Cebrac Logo"
-            className="w-14 h-14 rounded-full shadow-lg"
-          />
+        <div className="flex justify-center">
+          <div className="relative -mt-px">
+            <svg width="120" height="60" viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 0H120L70 50C65.5 54.5 54.5 54.5 50 50L0 0Z" fill="hsl(231, 59%, 35%)" />
+            </svg>
+            <div className="absolute top-2 left-1/2 -translate-x-1/2">
+              <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-lg">
+                <img
+                  src="/Group_(1).png"
+                  alt="Cebrac Logo"
+                  className="w-7 h-7 object-contain"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

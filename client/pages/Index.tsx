@@ -107,31 +107,32 @@ export default function Index() {
           </div>
         </div>
 
-<div className="absolute bottom-0 left-0 w-full translate-y-[92%] z-20 pointer-events-none">
-  <div className="relative w-full">
+<div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[78%] z-20 pointer-events-none">
+  <div className="relative w-[380px] h-[120px]">
     <svg
-      viewBox="0 0 1440 300"
-      preserveAspectRatio="none"
-      className="block w-full h-[170px]"
+      viewBox="0 0 380 120"
+      className="w-full h-full block"
+      fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M0 0H1440V68
-           C1320 68 1260 148 1180 214
-           C1090 288 965 300 720 300
-           C475 300 350 288 260 214
-           C180 148 120 68 0 68
-           V0Z"
+        d="M0 0
+           C70 0 95 18 122 48
+           C145 74 160 120 190 120
+           C220 120 235 74 258 48
+           C285 18 310 0 380 0
+           L380 0
+           L0 0Z"
         fill="hsl(231, 59%, 35%)"
       />
     </svg>
 
-    <div className="absolute top-[18px] left-1/2 -translate-x-1/2">
-      <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center shadow-xl">
+    <div className="absolute top-[14px] left-1/2 -translate-x-1/2">
+      <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-lg">
         <img
           src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2Fdb82e6e7b46b43df9803960450149299"
           alt="Cebrac Logo"
-          className="w-20 h-20 rounded-full object-cover"
+          className="w-16 h-16 rounded-full object-cover"
         />
       </div>
     </div>

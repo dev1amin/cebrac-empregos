@@ -86,7 +86,7 @@ export default function ParaEmpresas() {
         </div>
 
         {/* Gradient bar at bottom - 33% yellow, 33% blue, 33% green */}
-        <div className="flex h-3">
+        <div className="flex h-3 relative z-[999]">
           <div className="bg-brand-yellow" style={{width: '33.33%'}}></div>
           <div className="bg-brand-blue" style={{width: '33.33%'}}></div>
           <div className="bg-brand-green" style={{width: '33.34%'}}></div>

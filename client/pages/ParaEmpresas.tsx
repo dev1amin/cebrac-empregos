@@ -54,7 +54,10 @@ export default function ParaEmpresas() {
       </nav>
 
       {/* Hero Section - Same size as home balloon */}
-      <section className="relative bg-brand-blue rounded-t-[40px] mx-6 mt-6 overflow-hidden h-[100vh] flex flex-col">
+      <section className="relative rounded-t-[40px] mx-6 mt-6 overflow-hidden h-[100vh] flex flex-col">
+        <video autoPlay muted loop className="absolute inset-0 w-full h-full object-cover rounded-t-[40px]">
+          <source src="https://i.imgur.com/F7UMNBg.mp4" type="video/mp4" />
+        </video>
         <div className="relative z-10 px-12 flex-1 flex flex-col">
           {/* "Grandes Oportunidades" badge - Top Right */}
           <div className="flex justify-end pt-8">

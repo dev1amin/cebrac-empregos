@@ -107,22 +107,36 @@ export default function Index() {
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full z-20">
-          <div className="relative">
-            <svg width="350" height="120" viewBox="0 0 240 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0 0H240C240 0 190 0 160 30C140 50 130 75 120 100C110 75 100 50 80 30C50 0 0 0 0 0Z" fill="hsl(231, 59%, 35%)" />
-            </svg>
-            <div className="absolute top-0 left-1/2 -translate-x-1/2">
-              <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-lg">
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2Fdb82e6e7b46b43df9803960450149299"
-                  alt="Cebrac Logo"
-                  className="w-16 h-16 rounded-full"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
+<div className="absolute bottom-0 left-0 w-full translate-y-[92%] z-20 pointer-events-none">
+  <div className="relative w-full">
+    <svg
+      viewBox="0 0 1440 300"
+      preserveAspectRatio="none"
+      className="block w-full h-[170px]"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0 0H1440V68
+           C1320 68 1260 148 1180 214
+           C1090 288 965 300 720 300
+           C475 300 350 288 260 214
+           C180 148 120 68 0 68
+           V0Z"
+        fill="hsl(231, 59%, 35%)"
+      />
+    </svg>
+
+    <div className="absolute top-[18px] left-1/2 -translate-x-1/2">
+      <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center shadow-xl">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2Fdb82e6e7b46b43df9803960450149299"
+          alt="Cebrac Logo"
+          className="w-20 h-20 rounded-full object-cover"
+        />
+      </div>
+    </div>
+  </div>
+</div>
       </section>
 
       {/* Statistics Section */}

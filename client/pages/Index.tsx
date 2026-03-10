@@ -126,7 +126,7 @@ export default function Index() {
       </section>
 
       {/* Statistics Section */}
-      <section className="pt-24 pb-20">
+      <section className="pt-26 pb-20">
         <div>
           <div className="grid grid-cols-5 gap-6 items-center">
             <a href="https://www.cebrac.com.br/" target="_blank" rel="noopener noreferrer" className="text-center hover:scale-105 transition-transform duration-300 cursor-pointer">

@@ -109,15 +109,15 @@ export default function Index() {
 
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full z-20">
           <div className="relative">
-            <svg width="160" height="70" viewBox="0 0 160 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0 0H160C160 0 120 0 100 30C90 47 85 62 80 70C75 62 70 47 60 30C40 0 0 0 0 0Z" fill="hsl(231, 59%, 35%)" />
+            <svg width="240" height="100" viewBox="0 0 240 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 0H240C240 0 190 0 160 30C140 50 130 75 120 100C110 75 100 50 80 30C50 0 0 0 0 0Z" fill="hsl(231, 59%, 35%)" />
             </svg>
-            <div className="absolute top-1 left-1/2 -translate-x-1/2">
-              <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center shadow-lg">
+            <div className="absolute top-2 left-1/2 -translate-x-1/2">
+              <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-lg">
                 <img
                   src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2Fdb82e6e7b46b43df9803960450149299"
                   alt="Cebrac Logo"
-                  className="w-14 h-14 rounded-full"
+                  className="w-16 h-16 rounded-full"
                 />
               </div>
             </div>

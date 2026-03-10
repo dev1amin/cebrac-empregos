@@ -238,16 +238,16 @@ export default function Sobre() {
       <section className="mx-6 mb-20">
         <div className="grid grid-cols-4 gap-6">
           <div className="bg-gray-200 rounded-3xl aspect-video overflow-hidden">
-            <img src="/01._HERO_1.mp4" alt="Gallery 1" className="w-full h-full object-cover" />
+            <img src="image1.mp4" alt="Gallery 1" className="w-full h-full object-cover" />
           </div>
           <div className="bg-gray-200 rounded-3xl aspect-video overflow-hidden">
-            <img src="/02._PARA_EMPRESAS_1.mp4" alt="Gallery 2" className="w-full h-full object-cover" />
+            <img src="/image2.mp4" alt="Gallery 2" className="w-full h-full object-cover" />
           </div>
           <div className="bg-gray-200 rounded-3xl aspect-video overflow-hidden">
-            <img src="/Section_01_(1).png" alt="Gallery 3" className="w-full h-full object-cover" />
+            <img src="image3.png" alt="Gallery 3" className="w-full h-full object-cover" />
           </div>
           <div className="bg-gray-200 rounded-3xl aspect-video overflow-hidden">
-            <img src="/Group_(1).png" alt="Gallery 4" className="w-full h-full object-cover" />
+            <img src="/image4.png" alt="Gallery 4" className="w-full h-full object-cover" />
           </div>
         </div>
       </section>

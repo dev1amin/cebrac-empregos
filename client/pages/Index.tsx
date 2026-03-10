@@ -112,7 +112,7 @@ export default function Index() {
             <svg width="350" height="120" viewBox="0 0 240 100" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M0 0H240C240 0 190 0 160 30C140 50 130 75 120 100C110 75 100 50 80 30C50 0 0 0 0 0Z" fill="hsl(231, 59%, 35%)" />
             </svg>
-            <div className="absolute left-1/2 -translate-x-1/2">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2">
               <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-lg">
                 <img
                   src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2Fdb82e6e7b46b43df9803960450149299"

@@ -238,7 +238,7 @@ export default function Sobre() {
       <section className="mx-6 mb-20">
         <div className="grid grid-cols-4 gap-6">
           <div className="bg-gray-200 rounded-3xl aspect-video overflow-hidden">
-            <img src="/image1.png" alt="Gallery 1" className="w-full h-full object-cover" />
+            <img src="https://i.imgur.com/SOIWX18.png" alt="Gallery 1" className="w-full h-full object-cover" />
           </div>
           <div className="bg-gray-200 rounded-3xl aspect-video overflow-hidden">
             <img src="/image2.png" alt="Gallery 2" className="w-full h-full object-cover" />

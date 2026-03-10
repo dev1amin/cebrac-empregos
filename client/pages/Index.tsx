@@ -109,7 +109,7 @@ export default function Index() {
 
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full z-20">
           <div className="relative">
-            <svg width="290" height="100" viewBox="0 0 240 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="350" height="100" viewBox="0 0 240 100" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M0 0H240C240 0 190 0 160 30C140 50 130 75 120 100C110 75 100 50 80 30C50 0 0 0 0 0Z" fill="hsl(231, 59%, 35%)" />
             </svg>
             <div className="absolute top-2 left-1/2 -translate-x-1/2">

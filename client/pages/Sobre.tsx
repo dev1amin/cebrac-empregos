@@ -247,7 +247,7 @@ export default function Sobre() {
             <img src="https://i.imgur.com/Gfj5SM0_d.webp?maxwidth=760&fidelity=grand" alt="Gallery 3" className="w-full h-full object-cover" />
           </div>
           <div className="bg-gray-200 rounded-3xl aspect-video overflow-hidden">
-            <img src="https://i.imgur.com/mkO0MQF_d.webp" alt="Gallery 4" className="w-full h-full object-cover" />
+            <img src="https://i.imgur.com/mkO0MQF_d.webp?maxwidth=760&fidelity=grand" alt="Gallery 4" className="w-full h-full object-cover" />
           </div>
         </div>
       </section>

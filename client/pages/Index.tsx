@@ -15,7 +15,7 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-white pt-[18px] px-[39px] pb-0 overflow-x-hidden flex flex-col" style={{zoom: 0.7, paddingLeft: '100px', paddingRight: '100px'}}>
       {/* Hero Section */}
-      <section className="relative" style={{height: 'calc(100vh - 39px)'}}>
+      <section className="relative" style={{height: '120vh'}}>
         <div className="relative rounded-[25px] overflow-hidden h-full flex flex-col">
           <div className="absolute inset-0">
             <video

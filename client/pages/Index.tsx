@@ -107,32 +107,31 @@ export default function Index() {
           </div>
         </div>
 
-<div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[78%] z-20 pointer-events-none">
-  <div className="relative w-[380px] h-[120px]">
+<div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[72%] z-20 pointer-events-none">
+  <div className="relative w-[420px] h-[100px]">
     <svg
-      viewBox="0 0 380 120"
+      viewBox="0 0 420 100"
       className="w-full h-full block"
-      fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
         d="M0 0
-           C70 0 95 18 122 48
-           C145 74 160 120 190 120
-           C220 120 235 74 258 48
-           C285 18 310 0 380 0
-           L380 0
+           C78 0 105 12 132 34
+           C160 57 180 100 210 100
+           C240 100 260 57 288 34
+           C315 12 342 0 420 0
+           L420 0
            L0 0Z"
         fill="hsl(231, 59%, 35%)"
       />
     </svg>
 
-    <div className="absolute top-[14px] left-1/2 -translate-x-1/2">
-      <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-lg">
+    <div className="absolute top-[10px] left-1/2 -translate-x-1/2">
+      <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center shadow-lg">
         <img
           src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2Fdb82e6e7b46b43df9803960450149299"
           alt="Cebrac Logo"
-          className="w-16 h-16 rounded-full object-cover"
+          className="w-14 h-14 rounded-full object-cover"
         />
       </div>
     </div>

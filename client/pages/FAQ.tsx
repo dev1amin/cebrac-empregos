@@ -32,7 +32,7 @@ function FAQItem({ question, answer }: FAQItemProps) {
 
 export default function FAQ() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white" style={{zoom: 0.7, paddingLeft: '100px', paddingRight: '100px'}}>
       {/* Navbar - Same as Vagas page with 2 logos */}
       <nav className="bg-brand-blue rounded-[40px] mx-6 mt-6 px-8 py-4 flex items-center justify-between">
         <div className="flex items-center gap-6">

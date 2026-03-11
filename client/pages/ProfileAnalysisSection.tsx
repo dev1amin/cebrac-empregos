@@ -41,14 +41,16 @@ export default function ProfileAnalysisSection() {
         {/* Main content */}
         <div className="bg-brand-gray-light rounded-b-[25px] pt-12 px-16 pb-0">
           {/* Header */}
-          <div className="flex justify-between mb-12 gap-12">
+          <div className="flex justify-between mb-12 gap-16 items-start">
             <div className="flex-1">
-              <h2 className="text-4xl font-extrabold text-brand-gray-text mb-4 leading-tight tracking-tight">
-                Descubra agora a vaga perfeita para seu perfil!
+              <h2 className="text-[2.75rem] font-extrabold text-brand-gray-text leading-tight tracking-tight">
+                Descubra agora a vaga
+                <br />
+                perfeita para seu perfil!
               </h2>
             </div>
-            <div className="flex-1">
-              <p className="text-brand-gray-text text-sm leading-relaxed">
+            <div className="flex-1 flex items-center" style={{ minHeight: "4rem" }}>
+              <p className="text-brand-gray-text leading-relaxed" style={{ fontSize: "1.45rem" }}>
                 Preencha um formulário simples e deixe a nossa IA fazer o resto.
                 Com um clique, descubra as oportunidades perfeitas para você.
               </p>
@@ -56,20 +58,21 @@ export default function ProfileAnalysisSection() {
           </div>
 
           {/* Two column layout */}
-          <div className="grid grid-cols-2 gap-8 pb-0">
+          <div className="grid grid-cols-2 gap-8 pb-16">
             {/* Left Card - Steps */}
             <div className="rounded-3xl overflow-hidden relative flex flex-col">
               {/* Top light section with IA badge + title */}
-              <div className="bg-[#E9EEFF] rounded-t-3xl px-8 pt-8 pb-6 flex items-start gap-5">
-                <div className="flex-shrink-0 w-[90px] h-[90px] rounded-2xl overflow-hidden">
+              <div className="bg-[#E9EEFF] rounded-t-3xl flex items-stretch">
+                <div className="flex-shrink-0 w-[130px] self-stretch">
                   <img
                     src="/Mask_group.png"
                     alt="IA"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover block"
+                    style={{ display: "block" }}
                   />
                 </div>
-                <div className="flex-1 pt-1">
-                  <h3 className="text-[#25348F] text-xl font-extrabold leading-tight mb-2">
+                <div className="flex-1 px-7 py-7">
+                  <h3 className="text-[#25348F] text-xl font-extrabold leading-tight mb-3">
                     Análise Inteligente de perfil
                   </h3>
                   <p className="text-[#25348F] text-xs leading-relaxed">
@@ -81,29 +84,100 @@ export default function ProfileAnalysisSection() {
               </div>
 
               {/* Bottom dark section with steps + button */}
-              <div className="bg-gradient-to-b from-[#193EE2] to-[#010A5B] px-8 pt-6 pb-8 flex-1 flex flex-col rounded-b-3xl">
+              <div
+                className="px-8 pt-8 pb-8 flex-1 flex flex-col rounded-b-3xl"
+                style={{
+                  background: "linear-gradient(to bottom, #193EE2 0%, #01085B 100%)",
+                }}
+              >
                 {/* Steps */}
                 <div className="space-y-4 mb-8 flex-1">
                   {steps.map((step) => (
                     <div
                       key={step.number}
-                      className="bg-[#2E4DCB] rounded-2xl py-5 px-5 flex items-center gap-4"
+                      className="rounded-[20px] py-6 pr-6 flex items-center gap-0"
+                      style={{
+                        background: "rgba(255,255,255,0.10)",
+                        backdropFilter: "blur(8px)",
+                        WebkitBackdropFilter: "blur(8px)",
+                        border: "1.5px solid transparent",
+                        backgroundImage: `
+                          linear-gradient(rgba(255,255,255,0.10), rgba(255,255,255,0.10)),
+                          linear-gradient(
+                            to bottom,
+                            rgba(255,255,255,0.55) 0%,
+                            rgba(255,255,255,0.10) 33%,
+                            rgba(255,255,255,0.55) 71%,
+                            rgba(255,255,255,0.10) 100%
+                          )
+                        `,
+                        backgroundOrigin: "border-box",
+                        backgroundClip: "padding-box, border-box",
+                      }}
                     >
-                      <div className="flex-shrink-0">
-                        <div className="w-9 h-9 rounded-full border border-white/55 bg-white/15 flex items-center justify-center">
-                          <span className="text-white text-sm font-extrabold">
+                      {/* Number - half outside card */}
+                      <div className="flex-shrink-0 -ml-5 mr-5">
+                        <div
+                          className="w-11 h-11 rounded-full flex items-center justify-center"
+                          style={{
+                            background: "rgba(255,255,255,0.15)",
+                            backdropFilter: "blur(8px)",
+                            WebkitBackdropFilter: "blur(8px)",
+                            border: "1.5px solid transparent",
+                            backgroundImage: `
+                              linear-gradient(rgba(255,255,255,0.15), rgba(255,255,255,0.15)),
+                              linear-gradient(
+                                to bottom,
+                                rgba(255,255,255,0.55) 0%,
+                                rgba(255,255,255,0.10) 33%,
+                                rgba(255,255,255,0.55) 71%,
+                                rgba(255,255,255,0.10) 100%
+                              )
+                            `,
+                            backgroundOrigin: "border-box",
+                            backgroundClip: "padding-box, border-box",
+                          }}
+                        >
+                          <span className="text-white text-base font-extrabold">
                             {step.number}
                           </span>
                         </div>
                       </div>
-                      <div className="flex items-center gap-3 flex-shrink-0 bg-[#3A5AE8] rounded-xl px-4 py-2.5 min-w-[160px]">
-                        <div className="w-2.5 h-2.5 rounded-full bg-brand-yellow flex-shrink-0"></div>
-                        <h3 className="text-white font-semibold text-sm whitespace-nowrap">
+
+                      {/* Title pill with yellow dot */}
+                      <div
+                        className="flex items-center gap-3 flex-shrink-0 px-5 py-3"
+                        style={{
+                          background: "rgba(255,255,255,0.15)",
+                          backdropFilter: "blur(8px)",
+                          WebkitBackdropFilter: "blur(8px)",
+                          borderRadius: "35px",
+                          border: "1.5px solid transparent",
+                          backgroundImage: `
+                            linear-gradient(rgba(255,255,255,0.15), rgba(255,255,255,0.15)),
+                            linear-gradient(
+                              to bottom,
+                              rgba(255,255,255,0.55) 0%,
+                              rgba(255,255,255,0.10) 33%,
+                              rgba(255,255,255,0.55) 71%,
+                              rgba(255,255,255,0.10) 100%
+                            )
+                          `,
+                          backgroundOrigin: "border-box",
+                          backgroundClip: "padding-box, border-box",
+                        }}
+                      >
+                        <div className="w-3 h-3 rounded-full bg-brand-yellow flex-shrink-0"></div>
+                        <h3 className="text-white font-semibold text-base whitespace-nowrap">
                           {step.title}
                         </h3>
                       </div>
-                      <div className="w-px h-8 bg-white/20 flex-shrink-0"></div>
-                      <p className="text-white text-xs leading-tight flex-1">
+
+                      {/* Divider */}
+                      <div className="w-px h-10 bg-white/20 flex-shrink-0 mx-5"></div>
+
+                      {/* Description */}
+                      <p className="text-white text-sm leading-tight flex-1">
                         {step.description}
                       </p>
                     </div>
@@ -111,7 +185,7 @@ export default function ProfileAnalysisSection() {
                 </div>
 
                 {/* Button */}
-                <button className="w-full flex items-center justify-between bg-brand-green rounded-[10px] px-5 py-4 font-semibold text-white text-base hover:bg-opacity-90 transition group">
+                <button className="w-full flex items-center justify-between bg-brand-green rounded-[10px] px-6 py-5 font-semibold text-white text-base hover:bg-opacity-90 transition group">
                   <span>Fazer meu teste de Compatibilidade</span>
                   <div className="bg-white rounded-full p-2 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition">
                     <ArrowUpRight className="w-4 h-4 text-brand-green" />
@@ -149,7 +223,7 @@ export default function ProfileAnalysisSection() {
               <div className="space-y-7">
                 {analysisMetrics.map((metric) => (
                   <div key={metric.label}>
-                    <label className="text-brand-gray-text text-sm font-medium block mb-2.5">
+                    <label className="text-brand-gray-text text-base font-medium block mb-2.5">
                       {metric.label}
                     </label>
                     <div className="w-full h-3 bg-white rounded-full overflow-hidden">

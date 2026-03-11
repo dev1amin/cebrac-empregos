@@ -100,7 +100,7 @@ export default function ProfileAnalysisSection() {
                       key={step.number}
                       className="rounded-[20px] py-6 pr-6 flex items-center gap-0"
                       style={{
-                        background: "rgba(255,255,255,0.10)",
+                        background: "#2E4DCB",
                         backdropFilter: "blur(8px)",
                         WebkitBackdropFilter: "blur(8px)",
                         border: "1.5px solid transparent",

@@ -29,7 +29,7 @@ export default function ProfileAnalysisSection() {
   ];
 
   return (
-    <section className="pb-20">
+    <section className="pb-12 sm:pb-20">
       <div>
         {/* Color bars at top */}
         <div className="flex h-2.5">
@@ -39,18 +39,18 @@ export default function ProfileAnalysisSection() {
         </div>
 
         {/* Main content */}
-        <div className="bg-brand-gray-light rounded-b-[25px] pt-12 px-16 pb-0">
+        <div className="bg-brand-gray-light rounded-b-[25px] pt-8 sm:pt-12 px-4 sm:px-8 lg:px-16 pb-0">
           {/* Header */}
-          <div className="flex justify-between mb-12 gap-16 items-start">
+          <div className="flex flex-col sm:flex-row justify-between mb-8 sm:mb-12 gap-4 sm:gap-16 items-start">
             <div className="flex-1">
-              <h2 className="text-[2.75rem] font-extrabold text-brand-gray-text leading-tight tracking-tight">
+              <h2 className="text-2xl sm:text-3xl lg:text-[2.75rem] font-extrabold text-brand-gray-text leading-tight tracking-tight">
                 Descubra agora a vaga
                 <br />
                 perfeita para seu perfil!
               </h2>
             </div>
-            <div className="flex-1 flex items-center" style={{ minHeight: "4rem" }}>
-              <p className="text-brand-gray-text leading-relaxed" style={{ fontSize: "1.45rem" }}>
+            <div className="flex-1 flex items-center" style={{ minHeight: "2rem" }}>
+              <p className="text-brand-gray-text leading-relaxed text-sm sm:text-base lg:text-[1.45rem]">
                 Preencha um formulário simples e deixe a nossa IA fazer o resto.
                 Com um clique, descubra as oportunidades perfeitas para você.
               </p>
@@ -58,15 +58,15 @@ export default function ProfileAnalysisSection() {
           </div>
 
           {/* Two column layout */}
-          <div className="grid grid-cols-2 gap-8 pb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 pb-10 sm:pb-16">
             {/* Left Card - Steps */}
             <div className="rounded-3xl overflow-hidden relative flex flex-col">
               {/* Top light section with IA badge + title */}
               <div className="bg-[#E9EEFF] rounded-t-3xl flex items-stretch" style={{
-  borderRadius: "20px",
-  zIndex: 1
-}}>
-                <div className="flex-shrink-0 w-[150px] self-stretch">
+                borderRadius: "20px",
+                zIndex: 1
+              }}>
+                <div className="flex-shrink-0 w-[100px] sm:w-[150px] self-stretch">
                   <img
                     src="/Mask_group.png"
                     alt="IA"
@@ -74,8 +74,8 @@ export default function ProfileAnalysisSection() {
                     style={{ display: "block" }}
                   />
                 </div>
-                <div className="flex-1 px-7 py-7">
-                  <h3 className="text-[#25348F] text-xl font-extrabold leading-tight mb-3">
+                <div className="flex-1 px-4 sm:px-7 py-5 sm:py-7">
+                  <h3 className="text-[#25348F] text-lg sm:text-xl font-extrabold leading-tight mb-2 sm:mb-3">
                     Análise Inteligente de perfil
                   </h3>
                   <p className="text-[#25348F] text-xs leading-relaxed">
@@ -88,17 +88,17 @@ export default function ProfileAnalysisSection() {
 
               {/* Bottom dark section with steps + button */}
               <div
-                className="px-8 pt-8 pb-8 flex-1 flex flex-col rounded-b-3xl"
+                className="px-4 sm:px-8 pt-6 sm:pt-8 pb-6 sm:pb-8 flex-1 flex flex-col rounded-b-3xl"
                 style={{
                   background: "linear-gradient(to bottom, #193EE2 0%, #01085B 100%)", marginTop: "-16px", zIndex: 0
                 }}
               >
                 {/* Steps */}
-                <div className="space-y-4 mb-8 flex-1">
+                <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 flex-1">
                   {steps.map((step) => (
                     <div
                       key={step.number}
-                      className="rounded-[20px] py-6 pr-6 flex items-center gap-0"
+                      className="rounded-[20px] py-4 sm:py-6 pr-4 sm:pr-6 flex items-center gap-0"
                       style={{
                         background: "#2E4DCB",
                         backdropFilter: "blur(8px)",
@@ -119,9 +119,9 @@ export default function ProfileAnalysisSection() {
                       }}
                     >
                       {/* Number - half outside card */}
-                      <div className="flex-shrink-0 -ml-5 mr-5">
+                      <div className="flex-shrink-0 -ml-4 sm:-ml-5 mr-3 sm:mr-5">
                         <div
-                          className="w-11 h-11 rounded-full flex items-center justify-center"
+                          className="w-9 sm:w-11 h-9 sm:h-11 rounded-full flex items-center justify-center"
                           style={{
                             background: "rgba(255,255,255,0.15)",
                             backdropFilter: "blur(8px)",
@@ -141,7 +141,7 @@ export default function ProfileAnalysisSection() {
                             backgroundClip: "padding-box, border-box",
                           }}
                         >
-                          <span className="text-white text-base font-extrabold">
+                          <span className="text-white text-sm sm:text-base font-extrabold">
                             {step.number}
                           </span>
                         </div>
@@ -149,7 +149,7 @@ export default function ProfileAnalysisSection() {
 
                       {/* Title pill with yellow dot */}
                       <div
-                        className="flex items-center gap-3 flex-shrink-0 px-5 py-3"
+                        className="flex items-center gap-2 sm:gap-3 flex-shrink-0 px-3 sm:px-5 py-2 sm:py-3"
                         style={{
                           background: "rgba(255,255,255,0.15)",
                           backdropFilter: "blur(8px)",
@@ -170,17 +170,17 @@ export default function ProfileAnalysisSection() {
                           backgroundClip: "padding-box, border-box",
                         }}
                       >
-                        <div className="w-3 h-3 rounded-full bg-brand-yellow flex-shrink-0"></div>
-                        <h3 className="text-white font-semibold text-base whitespace-nowrap">
+                        <div className="w-2.5 sm:w-3 h-2.5 sm:h-3 rounded-full bg-brand-yellow flex-shrink-0"></div>
+                        <h3 className="text-white font-semibold text-xs sm:text-base whitespace-nowrap">
                           {step.title}
                         </h3>
                       </div>
 
                       {/* Divider */}
-                      <div className="w-px h-10 bg-white/20 flex-shrink-0 mx-5"></div>
+                      <div className="w-px h-6 sm:h-10 bg-white/20 flex-shrink-0 mx-2 sm:mx-5 hidden sm:block"></div>
 
                       {/* Description */}
-                      <p className="text-white text-sm leading-tight flex-1">
+                      <p className="text-white text-xs sm:text-sm leading-tight flex-1 hidden sm:block">
                         {step.description}
                       </p>
                     </div>
@@ -188,7 +188,7 @@ export default function ProfileAnalysisSection() {
                 </div>
 
                 {/* Button */}
-                <button className="w-full flex items-center justify-between bg-brand-green rounded-[10px] px-6 py-5 font-semibold text-white text-base hover:bg-opacity-90 transition group">
+                <button className="w-full flex items-center justify-between bg-brand-green rounded-[10px] px-4 sm:px-6 py-4 sm:py-5 font-semibold text-white text-sm sm:text-base hover:bg-opacity-90 transition group">
                   <span>Fazer meu teste de Compatibilidade</span>
                   <div className="bg-white rounded-full p-2 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition">
                     <ArrowUpRight className="w-4 h-4 text-brand-green" />
@@ -198,10 +198,10 @@ export default function ProfileAnalysisSection() {
             </div>
 
             {/* Right Card - Profile Analysis */}
-            <div className="rounded-3xl p-10 bg-[#E9EEFF]">
+            <div className="rounded-3xl p-6 sm:p-10 bg-[#E9EEFF]">
               {/* Header with icon */}
-              <div className="flex items-center gap-3 mb-10">
-                <div className="w-10 h-10 rounded-full bg-[#ECEFFF] border border-[#25348F] flex items-center justify-center flex-shrink-0">
+              <div className="flex items-center gap-3 mb-6 sm:mb-10">
+                <div className="w-8 sm:w-10 h-8 sm:h-10 rounded-full bg-[#ECEFFF] border border-[#25348F] flex items-center justify-center flex-shrink-0">
                   <svg
                     width="18"
                     height="18"
@@ -217,19 +217,19 @@ export default function ProfileAnalysisSection() {
                     </g>
                   </svg>
                 </div>
-                <h3 className="text-[#3A479A] text-2xl font-extrabold">
+                <h3 className="text-[#3A479A] text-xl sm:text-2xl font-extrabold">
                   Análise de perfil
                 </h3>
               </div>
 
               {/* Analysis Metrics */}
-              <div className="space-y-7">
+              <div className="space-y-5 sm:space-y-7">
                 {analysisMetrics.map((metric) => (
                   <div key={metric.label}>
-                    <label className="text-brand-gray-text text-base font-medium block mb-2.5">
+                    <label className="text-brand-gray-text text-sm sm:text-base font-medium block mb-2 sm:mb-2.5">
                       {metric.label}
                     </label>
-                    <div className="w-full h-3 bg-white rounded-full overflow-hidden">
+                    <div className="w-full h-2.5 sm:h-3 bg-white rounded-full overflow-hidden">
                       <div
                         className="h-full rounded-full bg-[#4058ED] transition-all duration-500"
                         style={{ width: `${metric.percentage}%` }}

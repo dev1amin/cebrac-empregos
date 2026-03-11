@@ -98,8 +98,7 @@ export default function ProfileAnalysisSection() {
                   {steps.map((step) => (
                     <div
                       key={step.number}
-                      className="rounded-[20px] py-4 sm:py-6 pr-4 sm:pr-6 flex items-center gap-0"
-                      style={{
+className="rounded-[20px] py-4 sm:py-6 pr-4 sm:pr-6 flex items-center gap-0 bg-[#2E4DCB]"                      style={{
                         background: "#2E4DCB !important",
                         backdropFilter: "blur(8px)",
                         WebkitBackdropFilter: "blur(8px)",

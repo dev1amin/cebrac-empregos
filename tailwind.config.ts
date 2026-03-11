@@ -65,6 +65,7 @@ export default {
           "green-light": "hsl(var(--brand-green-light))",
           yellow: "hsl(var(--brand-yellow))",
           gray: "hsl(var(--brand-gray))",
+          "gray-light": "hsl(var(--brand-gray-light))",
           "gray-text": "hsl(var(--brand-gray-text))",
           "gray-border": "hsl(var(--brand-gray-border))",
         },

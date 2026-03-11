@@ -62,7 +62,10 @@ export default function ProfileAnalysisSection() {
             {/* Left Card - Steps */}
             <div className="rounded-3xl overflow-hidden relative flex flex-col">
               {/* Top light section with IA badge + title */}
-              <div className="bg-[#E9EEFF] rounded-t-3xl flex items-stretch">
+              <div className="bg-[#E9EEFF] rounded-t-3xl flex items-stretch" style={{
+  borderRadius: "20px",
+  zIndex: 1
+}}>
                 <div className="flex-shrink-0 w-[150px] self-stretch">
                   <img
                     src="/Mask_group.png"
@@ -87,7 +90,7 @@ export default function ProfileAnalysisSection() {
               <div
                 className="px-8 pt-8 pb-8 flex-1 flex flex-col rounded-b-3xl"
                 style={{
-                  background: "linear-gradient(to bottom, #193EE2 0%, #01085B 100%)",
+                  background: "linear-gradient(to bottom, #193EE2 0%, #01085B 100%)", marginTop: "-16px", zIndex: 0
                 }}
               >
                 {/* Steps */}

@@ -1,6 +1,7 @@
 import { ArrowUpRight, Search, FileText, TrendingUp } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import ProfileAnalysisSection from "./ProfileAnalysisSection";
 
 export default function Index() {
   const [activeCard, setActiveCard] = useState(0);
@@ -190,6 +191,9 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      {/* Profile Analysis Section */}
+      <ProfileAnalysisSection />
 
       {/* Company Logos Section */}
       <section className="pb-20">

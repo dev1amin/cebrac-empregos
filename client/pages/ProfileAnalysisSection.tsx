@@ -58,73 +58,76 @@ export default function ProfileAnalysisSection() {
           {/* Two column layout */}
           <div className="grid grid-cols-2 gap-8 pb-0">
             {/* Left Card - Steps */}
-            <div className="rounded-3xl p-10 bg-gradient-to-b from-[#193EE2] to-[#010A5B] overflow-hidden relative">
-              {/* Light background section at top */}
-              <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#E9EEFF] to-transparent rounded-3xl"></div>
-
-              {/* AI Badge */}
-              <div className="relative mb-8 inline-block">
-                <div className="w-20 h-24 rounded-2xl bg-gradient-to-b from-[#4969EC] to-[#4969EC] flex items-center justify-center relative overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-white text-4xl font-bold tracking-tighter">
-                      IA
-                    </span>
-                  </div>
+            <div className="rounded-3xl overflow-hidden relative flex flex-col">
+              {/* Top light section with IA badge + title */}
+              <div className="bg-[#E9EEFF] rounded-t-3xl px-8 pt-8 pb-6 flex items-start gap-5">
+                <div className="flex-shrink-0 w-[90px] h-[90px] rounded-2xl overflow-hidden">
+                  <img
+                    src="/Mask_group.png"
+                    alt="IA"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="flex-1 pt-1">
+                  <h3 className="text-[#25348F] text-xl font-extrabold leading-tight mb-2">
+                    Análise Inteligente de perfil
+                  </h3>
+                  <p className="text-[#25348F] text-xs leading-relaxed">
+                    Nossa IA analisa seu perfil profissional e encontra as vagas mais
+                    compatíveis com suas habilidades, experiência e objetivos de
+                    carreira.
+                  </p>
                 </div>
               </div>
 
-              <p className="text-[#25348F] text-xs mb-8 max-w-xs leading-relaxed">
-                Nossa IA analisa seu perfil profissional e encontra as vagas mais
-                compatíveis com suas habilidades, experiência e objetivos de
-                carreira.
-              </p>
-
-              {/* Steps */}
-              <div className="space-y-4 mb-8">
-                {steps.map((step) => (
-                  <div
-                    key={step.number}
-                    className="bg-[#2E4DCB] rounded-2xl p-4 flex items-center gap-4"
-                  >
-                    <div className="flex-shrink-0">
-                      <div className="w-7 h-7 rounded-full border border-white/55 bg-white/15 flex items-center justify-center">
-                        <span className="text-white text-sm font-extrabold">
-                          {step.number}
-                        </span>
+              {/* Bottom dark section with steps + button */}
+              <div className="bg-gradient-to-b from-[#193EE2] to-[#010A5B] px-8 pt-6 pb-8 flex-1 flex flex-col rounded-b-3xl">
+                {/* Steps */}
+                <div className="space-y-4 mb-8 flex-1">
+                  {steps.map((step) => (
+                    <div
+                      key={step.number}
+                      className="bg-[#2E4DCB] rounded-2xl py-5 px-5 flex items-center gap-4"
+                    >
+                      <div className="flex-shrink-0">
+                        <div className="w-9 h-9 rounded-full border border-white/55 bg-white/15 flex items-center justify-center">
+                          <span className="text-white text-sm font-extrabold">
+                            {step.number}
+                          </span>
+                        </div>
                       </div>
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-3">
-                        <div className="w-2 h-2 rounded-full bg-brand-yellow flex-shrink-0"></div>
-                        <h3 className="text-white font-normal text-sm whitespace-nowrap">
+                      <div className="flex items-center gap-3 flex-shrink-0 bg-[#3A5AE8] rounded-xl px-4 py-2.5 min-w-[160px]">
+                        <div className="w-2.5 h-2.5 rounded-full bg-brand-yellow flex-shrink-0"></div>
+                        <h3 className="text-white font-semibold text-sm whitespace-nowrap">
                           {step.title}
                         </h3>
                       </div>
-                      <p className="text-white text-[10px] mt-1 leading-tight">
+                      <div className="w-px h-8 bg-white/20 flex-shrink-0"></div>
+                      <p className="text-white text-xs leading-tight flex-1">
                         {step.description}
                       </p>
                     </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Button */}
-              <button className="w-full flex items-center justify-between bg-brand-green rounded-[10px] px-5 py-3.5 font-semibold text-white text-base hover:bg-opacity-90 transition group">
-                <span>Fazer meu teste de Compatibilidade</span>
-                <div className="bg-white rounded-full p-2 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition">
-                  <ArrowUpRight className="w-4 h-4 text-brand-green" />
+                  ))}
                 </div>
-              </button>
+
+                {/* Button */}
+                <button className="w-full flex items-center justify-between bg-brand-green rounded-[10px] px-5 py-4 font-semibold text-white text-base hover:bg-opacity-90 transition group">
+                  <span>Fazer meu teste de Compatibilidade</span>
+                  <div className="bg-white rounded-full p-2 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition">
+                    <ArrowUpRight className="w-4 h-4 text-brand-green" />
+                  </div>
+                </button>
+              </div>
             </div>
 
             {/* Right Card - Profile Analysis */}
             <div className="rounded-3xl p-10 bg-[#E9EEFF]">
               {/* Header with icon */}
-              <div className="flex items-center gap-3 mb-8">
-                <div className="w-8 h-8 rounded-full bg-[#ECEFFF] border border-[#25348F] flex items-center justify-center flex-shrink-0">
+              <div className="flex items-center gap-3 mb-10">
+                <div className="w-10 h-10 rounded-full bg-[#ECEFFF] border border-[#25348F] flex items-center justify-center flex-shrink-0">
                   <svg
-                    width="16"
-                    height="16"
+                    width="18"
+                    height="18"
                     viewBox="0 0 16 16"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -143,13 +146,13 @@ export default function ProfileAnalysisSection() {
               </div>
 
               {/* Analysis Metrics */}
-              <div className="space-y-6">
+              <div className="space-y-7">
                 {analysisMetrics.map((metric) => (
                   <div key={metric.label}>
-                    <label className="text-brand-gray-text text-sm font-normal block mb-2">
+                    <label className="text-brand-gray-text text-sm font-medium block mb-2.5">
                       {metric.label}
                     </label>
-                    <div className="w-full h-2 bg-white rounded-full overflow-hidden">
+                    <div className="w-full h-3 bg-white rounded-full overflow-hidden">
                       <div
                         className="h-full rounded-full bg-[#4058ED] transition-all duration-500"
                         style={{ width: `${metric.percentage}%` }}

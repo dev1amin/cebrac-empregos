@@ -63,7 +63,7 @@ export default function ProfileAnalysisSection() {
             <div className="rounded-3xl overflow-hidden relative flex flex-col">
               {/* Top light section with IA badge + title */}
               <div className="bg-[#E9EEFF] rounded-t-3xl flex items-stretch">
-                <div className="flex-shrink-0 w-[130px] self-stretch">
+                <div className="flex-shrink-0 w-[150px] self-stretch">
                   <img
                     src="/Mask_group.png"
                     alt="IA"

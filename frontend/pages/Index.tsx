@@ -36,7 +36,7 @@ export default function Index() {
             <div className="flex items-center gap-4 sm:gap-6">
               <div className="flex items-center gap-2">
                 <img
-                  src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2Fefd6f08e8c3b4872bd6e38bdef2fc67d"
+                  src="/images/cebrac-logo-white.png"
                   alt="Cebrac Logo"
                   className="h-5 sm:h-6"
                 />
@@ -154,7 +154,7 @@ export default function Index() {
             <div className="absolute top-[10px] left-1/2 -translate-x-1/2">
               <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center shadow-lg">
                 <img
-                  src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2Fdb82e6e7b46b43df9803960450149299"
+                  src="/images/cebrac-icon.png"
                   alt="Cebrac Logo"
                   className="w-14 h-14 rounded-full object-cover"
                 />
@@ -226,7 +226,7 @@ export default function Index() {
             <div className="flex items-center justify-center gap-3 sm:gap-6 px-4 sm:px-8 lg:px-16 flex-wrap lg:flex-nowrap">
               <div className="w-[80px] h-[80px] sm:w-[110px] sm:h-[100px] lg:w-[138px] lg:h-[120px] bg-brand-gray rounded-full flex items-center justify-center flex-shrink-0">
                 <img
-                  src="https://api.builder.io/api/v1/image/assets/TEMP/a4a7e3655a7f431c460dea7ad9115310b287ec09?width=176"
+                  src="/images/partner-agrale.png"
                   alt="Agrale"
                   className="w-12 sm:w-16 lg:w-20 h-auto"
                 />
@@ -238,7 +238,7 @@ export default function Index() {
 
               <div className="w-[80px] h-[80px] sm:w-[110px] sm:h-[100px] lg:w-[138px] lg:h-[120px] bg-brand-gray rounded-full flex items-center justify-center flex-shrink-0">
                 <img
-                  src="https://api.builder.io/api/v1/image/assets/TEMP/51ce4c98fe83fe06e8728c248e7240eb171cd409?width=176"
+                  src="/images/partner-ambev.png"
                   alt="Ambev"
                   className="w-12 sm:w-16 lg:w-20 h-auto"
                 />
@@ -250,7 +250,7 @@ export default function Index() {
 
               <div className="w-[80px] h-[80px] sm:w-[110px] sm:h-[100px] lg:w-[138px] lg:h-[120px] bg-brand-gray rounded-full flex items-center justify-center flex-shrink-0">
                 <img
-                  src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2F009c2b4eb8114b6aae90e13b48fbb06d"
+                  src="/images/partner-3.png"
                   alt="Company 3"
                   className="w-12 sm:w-16 lg:w-20 h-auto"
                 />
@@ -262,7 +262,7 @@ export default function Index() {
 
               <div className="w-[80px] h-[80px] sm:w-[110px] sm:h-[100px] lg:w-[138px] lg:h-[120px] bg-brand-gray rounded-full flex items-center justify-center flex-shrink-0">
                 <img
-                  src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2F4c31880b8b44469380788aa76dc641cf"
+                  src="/images/partner-4.png"
                   alt="Company 4"
                   className="w-10 sm:w-12 lg:w-16 h-auto"
                 />
@@ -274,7 +274,7 @@ export default function Index() {
 
               <div className="w-[80px] h-[80px] sm:w-[110px] sm:h-[100px] lg:w-[138px] lg:h-[120px] bg-brand-gray rounded-full flex items-center justify-center flex-shrink-0">
                 <img
-                  src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2F559e8232c6804810870bac86d5747257"
+                  src="/images/partner-5.png"
                   alt="Company 5"
                   className="w-10 sm:w-12 lg:w-16 h-auto"
                 />
@@ -526,7 +526,7 @@ export default function Index() {
                 <div className="flex flex-col items-start">
                   <div className="w-full mb-4">
                     <img
-                      src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2F93805e6d58ab4ca38186bf95ac87ae0b"
+                      src="/images/learning-accelerated.png"
                       alt="Aprendizado Acelerado"
                       className="w-full h-24 sm:h-32 object-contain"
                     />
@@ -540,7 +540,7 @@ export default function Index() {
                 <div className="flex flex-col items-start">
                   <div className="w-full mb-4">
                     <img
-                      src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2F059f599bc32148b6bc570b39c5bca33a"
+                      src="/images/learning-market.png"
                       alt="Foco no Mercado"
                       className="w-full h-24 sm:h-32 object-contain"
                     />
@@ -554,7 +554,7 @@ export default function Index() {
                 <div className="flex flex-col items-start">
                   <div className="w-full mb-4">
                     <img
-                      src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2Ff4077626edde43f5977f8890fd728430"
+                      src="/images/learning-mentorship.png"
                       alt="Mentoria Personalizada"
                       className="w-full h-24 sm:h-32 object-contain"
                     />

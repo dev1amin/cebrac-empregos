@@ -13,7 +13,7 @@ export default function Vagas() {
         <div className="flex items-center gap-4 sm:gap-6">
           <Link to="/" className="flex items-center gap-2">
             <img
-              src="https://cdn.builder.io/api/v1/image/assets%2F800ecce2934e44f78371bc74f86175a9%2Fefd6f08e8c3b4872bd6e38bdef2fc67d"
+              src="/images/cebrac-logo-white.png"
               alt="Cebrac Logo"
               className="h-5 sm:h-6"
             />

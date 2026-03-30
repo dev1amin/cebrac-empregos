@@ -1,13 +1,39 @@
-import { Search, ArrowUpRight, Menu, X, ListFilter as Filter } from "lucide-react";
+import { Search, ArrowUpRight, Menu, X, ListFilter as Filter, Users } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useMemo } from "react";
+import { useVagas, useAreas } from "@/hooks/use-api";
+import type { Vaga } from "@shared/api";
+
+function getApplicantCount(vagaId: number): number {
+  const key = `vaga_applicants_${vagaId}`;
+  const stored = localStorage.getItem(key);
+  if (stored) return Number(stored);
+  const count = Math.floor(Math.random() * 36) + 15; // 15-50
+  localStorage.setItem(key, String(count));
+  return count;
+}
+
+const FALLBACK_VAGAS: Partial<Vaga>[] = [
+  { id: 1, titulo: "Assistente Administrativo | Compras - Vaga Afirmativa para PCD", area: "Administrativa", cidade: "Butantã, São Paulo", tipo_contrato: "Tempo integral", empresa_nome: "Fundação Butantan", empresa_confidencial: 0 },
+  { id: 2, titulo: "Auxiliar Administrativo Nível Pleno | Vaga Afirmativa para Mulheres", area: "Administrativa", cidade: "Florianópolis", estado: "SC", tipo_contrato: "Tempo integral", empresa_nome: "Localiza&Co", empresa_confidencial: 0 },
+  { id: 3, titulo: "Operador de Telemarketing - Vaga Afirmativa para PCD | Home Office", area: "Vendas", cidade: "São Paulo", estado: "SP", tipo_contrato: "Home Office", empresa_nome: "Confidencial", empresa_confidencial: 1 },
+];
 
 export default function Vagas() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [filtersOpen, setFiltersOpen] = useState(false);
+  const [busca, setBusca] = useState("");
+  const [area, setArea] = useState("");
+  const [page, setPage] = useState(1);
+
+  const { data: vagasData, isLoading } = useVagas({ busca, area, page, limit: 10 });
+  const vagas = vagasData && vagasData.vagas.length > 0 ? vagasData.vagas : FALLBACK_VAGAS;
+  const total = vagasData?.total ?? FALLBACK_VAGAS.length;
+
+  const { data: areas } = useAreas();
 
   return (
-    <div className="min-h-screen bg-white px-4 sm:px-6 md:px-10 lg:px-[100px]" style={{zoom: 0.7}}>
+    <div className="min-h-screen bg-white px-4 sm:px-6 md:px-10 lg:px-[100px]" style={{ zoom: 0.7 }}>
       {/* Navbar */}
       <nav className="bg-brand-blue rounded-[40px] mt-6 px-4 sm:px-8 py-3 sm:py-4 flex items-center justify-between">
         <div className="flex items-center gap-4 sm:gap-6">
@@ -228,83 +254,80 @@ export default function Vagas() {
 
             {/* Job Cards */}
             <div className="space-y-4">
-              {[
-                {
-                  id: 1,
-                  title: "Assistente Administrativo | Compras - Vaga Afirmativa para pessoa com Deficiência - PCD",
-                  company: "Fundação Butantan",
-                  location: "Butantã, São Paulo",
-                  type: "Tempo integral",
-                  match: "95%",
-                  tags: ["Administração", "Compras"],
-                  role: "Auxiliar Administrativo",
-                  applicants: 25,
-                },
-                {
-                  id: 2,
-                  title: "Auxiliar Administrativo Nível Pleno | Vaga Afirmativa para Mulheres - Presencial em Florianópolis/SC",
-                  company: "Localiza&Co",
-                  location: "Florianópolis, SC",
-                  type: "Tempo integral",
-                  match: "93%",
-                  tags: ["Administração", "Presencial"],
-                  role: "Auxiliar Administrativo",
-                  applicants: 32,
-                },
-                {
-                  id: 3,
-                  title: "Operador de Telemarketing - Vaga Afirmativa para pessoa com Deficiência - PCD | Home Office em São Paulo/SP",
-                  company: "Confidencial",
-                  location: "São Paulo, SP",
-                  type: "Home Office",
-                  match: "86%",
-                  tags: ["Vendas", "Home Office"],
-                  role: "Operador Telemarketing",
-                  applicants: 16,
-                },
-              ].map((job) => (
-                <div key={job.id} className="bg-white shadow-sm hover:shadow-md transition overflow-hidden rounded-b-2xl">
+              {isLoading ? (
+                Array.from({ length: 3 }).map((_, i) => (
+                  <div key={i} className="bg-white shadow-sm overflow-hidden rounded-b-2xl animate-pulse">
+                    <div className="h-2 flex">
+                      <div className="bg-gray-200" style={{ width: '65%' }}></div>
+                      <div className="bg-gray-200" style={{ width: '25%' }}></div>
+                      <div className="bg-gray-200" style={{ width: '10%' }}></div>
+                    </div>
+                    <div className="px-4 sm:px-8 py-4 sm:py-6">
+                      <div className="h-6 bg-gray-200 rounded w-3/4 mb-3"></div>
+                      <div className="h-4 bg-gray-200 rounded w-1/3 mb-3"></div>
+                      <div className="flex gap-4 mb-4">
+                        <div className="h-4 bg-gray-200 rounded w-28"></div>
+                        <div className="h-4 bg-gray-200 rounded w-24"></div>
+                        <div className="h-4 bg-gray-200 rounded w-20"></div>
+                      </div>
+                      <div className="border-t border-gray-200 my-4"></div>
+                      <div className="flex justify-between items-center">
+                        <div className="h-8 bg-gray-200 rounded-full w-24"></div>
+                        <div className="h-10 bg-gray-200 rounded-full w-48"></div>
+                      </div>
+                    </div>
+                  </div>
+                ))
+              ) : vagas.map((vaga) => (
+                <div key={vaga.id} className="bg-white shadow-sm hover:shadow-md transition overflow-hidden rounded-b-2xl">
                   <div className="h-2 flex">
-                    <div className="bg-brand-green" style={{width: '65%'}}></div>
-                    <div className="bg-brand-blue" style={{width: '25%'}}></div>
-                    <div className="bg-brand-yellow" style={{width: '10%'}}></div>
+                    <div className="bg-brand-green" style={{ width: '65%' }}></div>
+                    <div className="bg-brand-blue" style={{ width: '25%' }}></div>
+                    <div className="bg-brand-yellow" style={{ width: '10%' }}></div>
                   </div>
 
                   <div className="px-4 sm:px-8 py-4 sm:py-6">
                     <div className="flex flex-col sm:flex-row justify-between items-start mb-4 gap-2">
                       <div className="flex-1">
-                        <Link to={`/vagas/${job.id}`}>
+                        <Link to={`/vagas/${vaga.id}`}>
                           <h3 className="text-brand-blue text-lg sm:text-xl font-bold mb-3 hover:underline cursor-pointer">
-                            {job.title}
+                            {vaga.titulo}
                           </h3>
                         </Link>
 
                         <div className="flex items-center gap-1 text-sm text-gray-500 mb-3">
                           <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                            <circle cx="10" cy="10" r="8"/>
+                            <circle cx="10" cy="10" r="8" />
                           </svg>
-                          <span>{job.company}</span>
+                          <span>{vaga.empresa_confidencial ? "Confidencial" : vaga.empresa_nome}</span>
                         </div>
 
                         <div className="flex items-center gap-3 sm:gap-4 text-sm mb-4 flex-wrap">
                           <div className="flex items-center gap-1.5">
                             <svg className="w-3.5 h-3.5" fill="#51B84C" viewBox="0 0 20 20">
-                              <circle cx="10" cy="10" r="10"/>
+                              <circle cx="10" cy="10" r="10" />
                             </svg>
-                            <span className="text-gray-700">{job.location}</span>
+                            <span className="text-gray-700">{vaga.cidade}{vaga.estado ? `, ${vaga.estado}` : ""}</span>
                           </div>
                           <div className="flex items-center gap-1.5">
                             <svg className="w-3.5 h-3.5" fill="#51B84C" viewBox="0 0 20 20">
-                              <circle cx="10" cy="10" r="10"/>
+                              <circle cx="10" cy="10" r="10" />
                             </svg>
-                            <span className="text-gray-700">{job.type}</span>
+                            <span className="text-gray-700">{vaga.tipo_contrato || vaga.disponibilidade_horario || "—"}</span>
                           </div>
+                          {vaga.salario && (
+                            <div className="flex items-center gap-1.5">
+                              <svg className="w-3.5 h-3.5" fill="#51B84C" viewBox="0 0 20 20">
+                                <circle cx="10" cy="10" r="10" />
+                              </svg>
+                              <span className="text-gray-700">{vaga.salario}</span>
+                            </div>
+                          )}
                         </div>
                       </div>
 
                       <div className="text-left sm:text-right sm:ml-8">
                         <div className="text-xs text-brand-green font-semibold mb-0.5">Recrutador On-line</div>
-                        <div className="text-xs text-gray-500">{job.applicants} pessoas aplicaram nesta vaga</div>
                       </div>
                     </div>
 
@@ -312,24 +335,25 @@ export default function Vagas() {
 
                     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
                       <div className="flex flex-wrap gap-2">
-                        <span className="px-4 py-1.5 bg-brand-blue/10 text-brand-blue text-xs font-medium rounded-full border border-brand-blue">
-                          {job.match} match
-                        </span>
-                        {job.tags.map((tag) => (
-                          <span key={tag} className="px-4 py-1.5 border border-brand-blue text-brand-blue text-xs font-medium rounded-full">
-                            {tag}
+                        {vaga.area && (
+                          <span className="px-4 py-1.5 border border-brand-blue text-brand-blue text-xs font-medium rounded-full">
+                            {vaga.area}
                           </span>
-                        ))}
+                        )}
                       </div>
 
                       <div className="flex items-center">
-                        <div className="flex items-center rounded-full overflow-hidden" style={{backgroundColor: '#7D8ADF'}}>
+                        <div className="flex items-center gap-2 text-sm text-gray-500 mr-4">
+                          <Users className="w-4 h-4 text-brand-green" />
+                          <span>{getApplicantCount(vaga.id!)} candidatos</span>
+                        </div>
+                        <div className="flex items-center rounded-full overflow-hidden" style={{ backgroundColor: '#7D8ADF' }}>
                           <span className="px-3 sm:px-5 py-2 sm:py-2.5 text-white text-xs sm:text-sm font-semibold">
-                            {job.role}
+                            {vaga.titulo?.split(" ")[0]}
                           </span>
-                          <button className="px-3 sm:px-5 py-2 sm:py-2.5 text-white text-xs sm:text-sm font-semibold rounded-full hover:opacity-90 transition" style={{backgroundColor: '#25348F'}}>
+                          <Link to={`/vagas/${vaga.id}/candidatar`} className="px-3 sm:px-5 py-2 sm:py-2.5 text-white text-xs sm:text-sm font-semibold rounded-full hover:opacity-90 transition" style={{ backgroundColor: '#25348F' }}>
                             Candidatar-se
-                          </button>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -385,7 +409,7 @@ export default function Vagas() {
               <div className="flex items-start gap-4">
                 <div className="bg-blue-50 border-2 border-brand-blue rounded-2xl p-3 sm:p-4 flex-shrink-0">
                   <svg className="w-5 sm:w-6 h-5 sm:h-6 text-brand-blue" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
+                    <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z" />
                   </svg>
                 </div>
                 <div className="flex-1">
@@ -409,9 +433,9 @@ export default function Vagas() {
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-0 px-4 sm:px-0">
             <div className="flex items-center gap-4 sm:gap-6">
               <svg width="58" height="30" viewBox="0 0 58 30" fill="none" className="hidden sm:block">
-                <path d="M26.8526 27.6548H3.0879C1.38501 27.6548 0 26.4462 0 24.9602V4.88985C0 3.40389 1.38501 2.19531 3.0879 2.19531H26.8526V27.6482V27.6548Z" fill="#51B84C"/>
-                <path d="M33.7552 0.537425C32.514 -0.175836 30.5916 -0.18244 29.3428 0.537425L6.68311 13.6337C5.44189 14.3469 5.44189 15.5093 6.68311 16.2292L29.305 29.3188C30.5159 30.0189 32.5064 30.0189 33.7174 29.3188L56.3695 16.2226C57.6107 15.5093 57.6107 14.3469 56.3695 13.6271L33.7476 0.537425H33.7552Z" fill="#FFCA00"/>
-                <path d="M26.4598 2.20215L6.69116 13.6275C5.44995 14.3408 5.44995 15.5031 6.69116 16.223L26.4522 27.655C36.2684 21.1762 36.276 8.4696 26.4673 2.20215" fill="#25348F"/>
+                <path d="M26.8526 27.6548H3.0879C1.38501 27.6548 0 26.4462 0 24.9602V4.88985C0 3.40389 1.38501 2.19531 3.0879 2.19531H26.8526V27.6482V27.6548Z" fill="#51B84C" />
+                <path d="M33.7552 0.537425C32.514 -0.175836 30.5916 -0.18244 29.3428 0.537425L6.68311 13.6337C5.44189 14.3469 5.44189 15.5093 6.68311 16.2292L29.305 29.3188C30.5159 30.0189 32.5064 30.0189 33.7174 29.3188L56.3695 16.2226C57.6107 15.5093 57.6107 14.3469 56.3695 13.6271L33.7476 0.537425H33.7552Z" fill="#FFCA00" />
+                <path d="M26.4598 2.20215L6.69116 13.6275C5.44995 14.3408 5.44995 15.5031 6.69116 16.223L26.4522 27.655C36.2684 21.1762 36.276 8.4696 26.4673 2.20215" fill="#25348F" />
               </svg>
               <h3 className="text-gray-900 text-xl sm:text-2xl lg:text-3xl font-bold">Sua empresa pode estar aqui!</h3>
             </div>

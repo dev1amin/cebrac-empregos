@@ -2,10 +2,30 @@ import { ArrowUpRight, Search, FileText, TrendingUp, Menu, X } from "lucide-reac
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import ProfileAnalysisSection from "./ProfileAnalysisSection";
+import { useStats, useVagas } from "@/hooks/use-api";
+
+// Fallback estático caso o banco esteja vazio ou offline
+const FALLBACK_STATS = { vagas_ativas: 10, curriculos: 6, empresas: 5, encaminhamentos: 8 };
+const FALLBACK_VAGAS = [
+  { id: 1, titulo: "Assistente Administrativo", area: "Administrativa", cidade: "Petrolina", estado: "PE", salario: "R$ 1.621,00", tipo_contrato: "CLT", disponibilidade_horario: "Integral", empresa_nome: "Confidencial", empresa_confidencial: 1 },
+  { id: 2, titulo: "Vendedor Externo", area: "Comercial, Vendas", cidade: "Petrolina", estado: "PE", salario: "R$ 1.621,00", tipo_contrato: "CLT", disponibilidade_horario: "Integral", empresa_nome: "Confidencial", empresa_confidencial: 1 },
+  { id: 3, titulo: "Auxiliar Contábil", area: "Contábil", cidade: "Petrolina", estado: "PE", salario: "A Combinar", tipo_contrato: "CLT", disponibilidade_horario: "Integral", empresa_nome: "Confidencial", empresa_confidencial: 1 },
+];
+
+function formatNumber(n: number): string {
+  if (n >= 10000) return `+${(n / 1000).toFixed(1).replace('.0', '')}k`;
+  return n.toLocaleString("pt-BR");
+}
 
 export default function Index() {
   const [activeCard, setActiveCard] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const { data: statsData } = useStats();
+  const stats = statsData && statsData.vagas_ativas > 0 ? statsData : FALLBACK_STATS;
+
+  const { data: vagasData } = useVagas({ limit: 3, page: 1 });
+  const latestVagas = vagasData && vagasData.vagas.length > 0 ? vagasData.vagas : FALLBACK_VAGAS;
 
   const statsCards = [
     { num: "01.", value: "72h", title: "Tempo medio para conseguir emprego", desc: "Nossos alunos conseguem colocacao profissional em ate 3 dias." },
@@ -15,7 +35,7 @@ export default function Index() {
   ];
 
   return (
-    <div className="min-h-screen bg-white pt-[18px] px-4 sm:px-6 md:px-10 lg:px-[100px] pb-0 overflow-x-hidden flex flex-col" style={{zoom: 0.7}}>
+    <div className="min-h-screen bg-white pt-[18px] px-4 sm:px-6 md:px-10 lg:px-[100px] pb-0 overflow-x-hidden flex flex-col" style={{ zoom: 0.7 }}>
       {/* Hero Section */}
       <section className="relative h-[80vh] sm:h-[100vh] lg:h-[120vh]">
         <div className="relative rounded-[25px] overflow-hidden h-full flex flex-col">
@@ -170,7 +190,7 @@ export default function Index() {
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 items-center">
             <a href="https://www.cebrac.com.br/" target="_blank" rel="noopener noreferrer" className="text-center hover:scale-105 transition-transform duration-300 cursor-pointer">
               <h3 className="text-brand-blue-dark text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-2 sm:mb-4 tracking-tight">
-                5.172
+                {formatNumber(stats.vagas_ativas)}
               </h3>
               <div className="border border-brand-blue-dark rounded-full px-4 sm:px-6 py-1.5 sm:py-2 inline-block">
                 <p className="text-brand-blue-dark text-xs sm:text-sm whitespace-nowrap">Vagas Ativas</p>
@@ -179,7 +199,7 @@ export default function Index() {
 
             <a href="https://www.cebrac.com.br/" target="_blank" rel="noopener noreferrer" className="text-center hover:scale-105 transition-transform duration-300 cursor-pointer">
               <h3 className="text-brand-blue-dark text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-2 sm:mb-4 tracking-tight">
-                +3.9k
+                {formatNumber(stats.curriculos)}
               </h3>
               <div className="border border-brand-blue-dark rounded-full px-4 sm:px-6 py-1.5 sm:py-2 inline-block">
                 <p className="text-brand-blue-dark text-xs sm:text-sm whitespace-nowrap">Curriculos</p>
@@ -195,7 +215,7 @@ export default function Index() {
 
             <a href="https://www.cebrac.com.br/" target="_blank" rel="noopener noreferrer" className="text-center hover:scale-105 transition-transform duration-300 cursor-pointer">
               <h3 className="text-brand-blue-dark text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-2 sm:mb-4 tracking-tight">
-                +13.5k
+                {formatNumber(stats.empresas)}
               </h3>
               <div className="border border-brand-blue-dark rounded-full px-4 sm:px-6 py-1.5 sm:py-2 inline-block">
                 <p className="text-brand-blue-dark text-xs sm:text-sm whitespace-nowrap">
@@ -206,7 +226,7 @@ export default function Index() {
 
             <a href="https://www.cebrac.com.br/" target="_blank" rel="noopener noreferrer" className="text-center hover:scale-105 transition-transform duration-300 cursor-pointer">
               <h3 className="text-brand-blue-dark text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-2 sm:mb-4 tracking-tight">
-                +21k
+                {formatNumber(stats.encaminhamentos)}
               </h3>
               <div className="border border-brand-blue-dark rounded-full px-4 sm:px-6 py-1.5 sm:py-2 inline-block">
                 <p className="text-brand-blue-dark text-xs sm:text-sm whitespace-nowrap">Contratacoes</p>
@@ -300,12 +320,12 @@ export default function Index() {
                 Junte-se às mais de 500 empresas que confiam no Cebrac e
                 colabore para a empregabilidade!
               </p>
-              <button className="flex items-center gap-2 bg-brand-green text-white px-6 py-2.5 rounded-full font-semibold text-sm whitespace-nowrap flex-shrink-0">
+              <Link to="/para-empresas/registro" className="flex items-center gap-2 bg-brand-green text-white px-6 py-2.5 rounded-full font-semibold text-sm whitespace-nowrap flex-shrink-0">
                 Seja Parceiro
                 <div className="bg-white rounded-full p-1">
                   <ArrowUpRight className="w-3 h-3 text-brand-green" />
                 </div>
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -411,7 +431,7 @@ export default function Index() {
                     <span className="text-brand-green text-xs font-medium">Perfeito para seu perfil</span>
                   </div>
                   <div className="bg-white/60 rounded-full h-2">
-                    <div className="bg-brand-green h-2 rounded-full" style={{width: '95%'}}></div>
+                    <div className="bg-brand-green h-2 rounded-full" style={{ width: '95%' }}></div>
                   </div>
                 </div>
 
@@ -452,11 +472,11 @@ export default function Index() {
       {/* Professional Development Section */}
       <section className="pb-12 sm:pb-20">
         <div className="relative">
-          <div className="absolute -left-16 bottom-0 w-32 pointer-events-none overflow-hidden hidden lg:block" style={{top: '-130px'}}>
+          <div className="absolute -left-16 bottom-0 w-32 pointer-events-none overflow-hidden hidden lg:block" style={{ top: '-130px' }}>
             <div className="absolute top-10 -left-10 w-[300px] h-px bg-gray-200 origin-top-left rotate-[55deg]"></div>
             <div className="absolute top-40 -left-10 w-[300px] h-px bg-gray-200 origin-top-left rotate-[55deg]"></div>
           </div>
-          <div className="absolute -right-16 bottom-0 w-32 pointer-events-none overflow-hidden hidden lg:block" style={{top: '-130px'}}>
+          <div className="absolute -right-16 bottom-0 w-32 pointer-events-none overflow-hidden hidden lg:block" style={{ top: '-130px' }}>
             <div className="absolute top-10 -right-10 w-[300px] h-px bg-gray-200 origin-top-right -rotate-[55deg]"></div>
             <div className="absolute top-40 -right-10 w-[300px] h-px bg-gray-200 origin-top-right -rotate-[55deg]"></div>
           </div>
@@ -489,30 +509,24 @@ export default function Index() {
                     key={card.num}
                     onMouseEnter={() => setActiveCard(index)}
                     onClick={() => setActiveCard(index)}
-                    className={`rounded-2xl p-6 sm:p-8 cursor-pointer transition-all duration-500 ease-out ${
-                      isActive
+                    className={`rounded-2xl p-6 sm:p-8 cursor-pointer transition-all duration-500 ease-out ${isActive
                         ? "bg-brand-blue text-white shadow-xl scale-[1.04]"
                         : "bg-brand-gray border border-brand-blue text-brand-gray-text"
-                    }`}
+                      }`}
                   >
-                    <div className={`border rounded-full w-10 h-10 flex items-center justify-center mb-8 sm:mb-12 transition-colors duration-500 ${
-                      isActive ? "border-white" : "border-brand-gray-text"
-                    }`}>
-                      <span className={`text-sm font-medium transition-colors duration-500 ${
-                        isActive ? "text-white" : ""
-                      }`}>{card.num}</span>
+                    <div className={`border rounded-full w-10 h-10 flex items-center justify-center mb-8 sm:mb-12 transition-colors duration-500 ${isActive ? "border-white" : "border-brand-gray-text"
+                      }`}>
+                      <span className={`text-sm font-medium transition-colors duration-500 ${isActive ? "text-white" : ""
+                        }`}>{card.num}</span>
                     </div>
                     <div className="text-left">
-                      <h3 className={`text-3xl sm:text-4xl font-bold mb-4 transition-colors duration-500 ${
-                        isActive ? "text-white" : "text-brand-blue"
-                      }`}>{card.value}</h3>
-                      <p className={`text-sm font-bold mb-2 transition-colors duration-500 ${
-                        isActive ? "text-white" : ""
-                      }`}>{card.title}</p>
+                      <h3 className={`text-3xl sm:text-4xl font-bold mb-4 transition-colors duration-500 ${isActive ? "text-white" : "text-brand-blue"
+                        }`}>{card.value}</h3>
+                      <p className={`text-sm font-bold mb-2 transition-colors duration-500 ${isActive ? "text-white" : ""
+                        }`}>{card.title}</p>
                       {card.desc && (
-                        <p className={`text-xs transition-colors duration-500 ${
-                          isActive ? "text-white/90" : ""
-                        }`}>{card.desc}</p>
+                        <p className={`text-xs transition-colors duration-500 ${isActive ? "text-white/90" : ""
+                          }`}>{card.desc}</p>
                       )}
                     </div>
                   </div>

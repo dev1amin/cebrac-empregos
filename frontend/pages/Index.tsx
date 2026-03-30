@@ -510,8 +510,8 @@ export default function Index() {
                     onMouseEnter={() => setActiveCard(index)}
                     onClick={() => setActiveCard(index)}
                     className={`rounded-2xl p-6 sm:p-8 cursor-pointer transition-all duration-500 ease-out ${isActive
-                        ? "bg-brand-blue text-white shadow-xl scale-[1.04]"
-                        : "bg-brand-gray border border-brand-blue text-brand-gray-text"
+                      ? "bg-brand-blue text-white shadow-xl scale-[1.04]"
+                      : "bg-brand-gray border border-brand-blue text-brand-gray-text"
                       }`}
                   >
                     <div className={`border rounded-full w-10 h-10 flex items-center justify-center mb-8 sm:mb-12 transition-colors duration-500 ${isActive ? "border-white" : "border-brand-gray-text"

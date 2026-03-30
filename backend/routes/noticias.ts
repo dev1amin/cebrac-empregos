@@ -37,7 +37,7 @@ router.get("/:slug", async (req, res) => {
       .from("noticias")
       .update({ views: (data.views || 0) + 1 })
       .eq("id", data.id)
-      .then(() => {});
+      .then(() => { });
 
     res.json(data);
   } catch (err: any) {

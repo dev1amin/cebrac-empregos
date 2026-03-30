@@ -9,7 +9,7 @@ export default function ParaEmpresas() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-white px-4 sm:px-6 md:px-10 lg:px-[100px]" style={{zoom: 0.7}}>
+    <div className="min-h-screen bg-white px-4 sm:px-6 md:px-10 lg:px-[100px]" style={{ zoom: 0.7 }}>
       {/* Navbar */}
       <nav className="bg-brand-blue rounded-[40px] mt-6 px-4 sm:px-8 py-3 sm:py-4 flex items-center justify-between">
         <div className="flex items-center gap-4 sm:gap-6">
@@ -102,10 +102,10 @@ export default function ParaEmpresas() {
           </div>
         </div>
 
-        <div className="flex h-2 sm:h-3 relative z-[999]" style={{zIndex: '999'}}>
-          <div className="bg-brand-yellow" style={{width: '33.33%'}}></div>
-          <div className="bg-brand-blue" style={{width: '33.33%'}}></div>
-          <div className="bg-brand-green" style={{width: '33.34%'}}></div>
+        <div className="flex h-2 sm:h-3 relative z-[999]" style={{ zIndex: '999' }}>
+          <div className="bg-brand-yellow" style={{ width: '33.33%' }}></div>
+          <div className="bg-brand-blue" style={{ width: '33.33%' }}></div>
+          <div className="bg-brand-green" style={{ width: '33.34%' }}></div>
         </div>
       </section>
 
@@ -114,9 +114,9 @@ export default function ParaEmpresas() {
         <div className="bg-gray-50 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div className="flex items-center gap-4 sm:gap-6">
             <svg width="58" height="30" viewBox="0 0 58 30" fill="none" className="hidden sm:block flex-shrink-0">
-              <path d="M26.8526 27.6548H3.0879C1.38501 27.6548 0 26.4462 0 24.9602V4.88985C0 3.40389 1.38501 2.19531 3.0879 2.19531H26.8526V27.6482V27.6548Z" fill="#51B84C"/>
-              <path d="M33.7552 0.537425C32.514 -0.175836 30.5916 -0.18244 29.3428 0.537425L6.68311 13.6337C5.44189 14.3469 5.44189 15.5093 6.68311 16.2292L29.305 29.3188C30.5159 30.0189 32.5064 30.0189 33.7174 29.3188L56.3695 16.2226C57.6107 15.5093 57.6107 14.3469 56.3695 13.6271L33.7476 0.537425H33.7552Z" fill="#FFCA00"/>
-              <path d="M26.4598 2.20215L6.69116 13.6275C5.44995 14.3408 5.44995 15.5031 6.69116 16.223L26.4522 27.655C36.2684 21.1762 36.276 8.4696 26.4673 2.20215" fill="#25348F"/>
+              <path d="M26.8526 27.6548H3.0879C1.38501 27.6548 0 26.4462 0 24.9602V4.88985C0 3.40389 1.38501 2.19531 3.0879 2.19531H26.8526V27.6482V27.6548Z" fill="#51B84C" />
+              <path d="M33.7552 0.537425C32.514 -0.175836 30.5916 -0.18244 29.3428 0.537425L6.68311 13.6337C5.44189 14.3469 5.44189 15.5093 6.68311 16.2292L29.305 29.3188C30.5159 30.0189 32.5064 30.0189 33.7174 29.3188L56.3695 16.2226C57.6107 15.5093 57.6107 14.3469 56.3695 13.6271L33.7476 0.537425H33.7552Z" fill="#FFCA00" />
+              <path d="M26.4598 2.20215L6.69116 13.6275C5.44995 14.3408 5.44995 15.5031 6.69116 16.223L26.4522 27.655C36.2684 21.1762 36.276 8.4696 26.4673 2.20215" fill="#25348F" />
             </svg>
             <h3 className="text-gray-900 text-xl sm:text-2xl lg:text-3xl font-bold">Sua empresa pode estar aqui!</h3>
           </div>
@@ -148,25 +148,21 @@ export default function ParaEmpresas() {
                 key={card.id}
                 onMouseEnter={() => setActiveFeature(card.id)}
                 onClick={() => setActiveFeature(card.id)}
-                className={`rounded-2xl sm:rounded-3xl p-6 sm:p-8 cursor-pointer flex flex-col justify-end overflow-hidden transition-all duration-500 ease-out ${
-                  isActive
+                className={`rounded-2xl sm:rounded-3xl p-6 sm:p-8 cursor-pointer flex flex-col justify-end overflow-hidden transition-all duration-500 ease-out ${isActive
                     ? "lg:flex-[2] bg-brand-green text-white shadow-xl"
                     : "lg:flex-1 bg-white border-2 border-gray-100 shadow-sm"
-                }`}
+                  }`}
               >
-                <div className={`w-10 sm:w-12 h-10 sm:h-12 rounded-full border-2 border-gray-300 flex items-center justify-center mb-4 transition-all duration-500 ${
-                  isActive ? "opacity-0 h-0 mb-0" : "opacity-100"
-                }`}>
+                <div className={`w-10 sm:w-12 h-10 sm:h-12 rounded-full border-2 border-gray-300 flex items-center justify-center mb-4 transition-all duration-500 ${isActive ? "opacity-0 h-0 mb-0" : "opacity-100"
+                  }`}>
                   <span className="text-gray-600 font-bold text-sm">{card.num}</span>
                 </div>
-                <h3 className={`font-bold mb-3 sm:mb-4 transition-all duration-500 ${
-                  isActive ? "text-white text-2xl sm:text-3xl lg:text-4xl" : "text-brand-blue text-xl sm:text-2xl lg:text-3xl"
-                }`}>
+                <h3 className={`font-bold mb-3 sm:mb-4 transition-all duration-500 ${isActive ? "text-white text-2xl sm:text-3xl lg:text-4xl" : "text-brand-blue text-xl sm:text-2xl lg:text-3xl"
+                  }`}>
                   {card.title}
                 </h3>
-                <p className={`text-xs sm:text-sm leading-relaxed transition-colors duration-500 ${
-                  isActive ? "text-white/90" : "text-gray-600"
-                }`}>
+                <p className={`text-xs sm:text-sm leading-relaxed transition-colors duration-500 ${isActive ? "text-white/90" : "text-gray-600"
+                  }`}>
                   {card.desc}
                 </p>
               </div>
@@ -205,24 +201,20 @@ export default function ParaEmpresas() {
                   onMouseEnter={() => setOpenStep(step.id)}
                 >
                   <motion.div
-                    className={`rounded-xl sm:rounded-2xl cursor-pointer transition-all duration-500 ease-out ${
-                      isOpen ? 'bg-brand-blue scale-[1.02] shadow-lg' : 'bg-gray-100 hover:scale-[1.02]'
-                    }`}
+                    className={`rounded-xl sm:rounded-2xl cursor-pointer transition-all duration-500 ease-out ${isOpen ? 'bg-brand-blue scale-[1.02] shadow-lg' : 'bg-gray-100 hover:scale-[1.02]'
+                      }`}
                     layout
                   >
                     <button
                       onClick={() => setOpenStep(isOpen ? null : step.id)}
                       className="w-full p-4 sm:p-6 flex items-center justify-between"
                     >
-                      <h3 className={`text-lg sm:text-xl font-bold transition-colors duration-500 ${
-                        isOpen ? 'text-white' : 'text-gray-900'
-                      }`}>{step.title}</h3>
-                      <div className={`w-8 sm:w-10 h-8 sm:h-10 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors duration-500 ${
-                        isOpen ? 'bg-white/20' : 'bg-gray-300'
-                      }`}>
-                        <span className={`font-bold text-xs sm:text-sm transition-colors duration-500 ${
-                          isOpen ? 'text-white' : 'text-gray-700'
-                        }`}>{step.id}</span>
+                      <h3 className={`text-lg sm:text-xl font-bold transition-colors duration-500 ${isOpen ? 'text-white' : 'text-gray-900'
+                        }`}>{step.title}</h3>
+                      <div className={`w-8 sm:w-10 h-8 sm:h-10 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors duration-500 ${isOpen ? 'bg-white/20' : 'bg-gray-300'
+                        }`}>
+                        <span className={`font-bold text-xs sm:text-sm transition-colors duration-500 ${isOpen ? 'text-white' : 'text-gray-700'
+                          }`}>{step.id}</span>
                       </div>
                     </button>
                     <AnimatePresence>
@@ -270,9 +262,9 @@ export default function ParaEmpresas() {
 
             <a href="https://www.cebrac.com.br/" target="_blank" rel="noopener noreferrer" className="w-20 h-20 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-full bg-white flex items-center justify-center border-4 border-brand-blue shadow-xl hover:scale-105 transition-transform duration-300 cursor-pointer">
               <svg width="40" height="22" viewBox="0 0 58 30" fill="none" className="sm:w-[58px] sm:h-[30px]">
-                <path d="M26.8526 27.6548H3.0879C1.38501 27.6548 0 26.4462 0 24.9602V4.88985C0 3.40389 1.38501 2.19531 3.0879 2.19531H26.8526V27.6482V27.6548Z" fill="#51B84C"/>
-                <path d="M33.7552 0.537425C32.514 -0.175836 30.5916 -0.18244 29.3428 0.537425L6.68311 13.6337C5.44189 14.3469 5.44189 15.5093 6.68311 16.2292L29.305 29.3188C30.5159 30.0189 32.5064 30.0189 33.7174 29.3188L56.3695 16.2226C57.6107 15.5093 57.6107 14.3469 56.3695 13.6271L33.7476 0.537425H33.7552Z" fill="#FFCA00"/>
-                <path d="M26.4598 2.20215L6.69116 13.6275C5.44995 14.3408 5.44995 15.5031 6.69116 16.223L26.4522 27.655C36.2684 21.1762 36.276 8.4696 26.4673 2.20215" fill="#25348F"/>
+                <path d="M26.8526 27.6548H3.0879C1.38501 27.6548 0 26.4462 0 24.9602V4.88985C0 3.40389 1.38501 2.19531 3.0879 2.19531H26.8526V27.6482V27.6548Z" fill="#51B84C" />
+                <path d="M33.7552 0.537425C32.514 -0.175836 30.5916 -0.18244 29.3428 0.537425L6.68311 13.6337C5.44189 14.3469 5.44189 15.5093 6.68311 16.2292L29.305 29.3188C30.5159 30.0189 32.5064 30.0189 33.7174 29.3188L56.3695 16.2226C57.6107 15.5093 57.6107 14.3469 56.3695 13.6271L33.7476 0.537425H33.7552Z" fill="#FFCA00" />
+                <path d="M26.4598 2.20215L6.69116 13.6275C5.44995 14.3408 5.44995 15.5031 6.69116 16.223L26.4522 27.655C36.2684 21.1762 36.276 8.4696 26.4673 2.20215" fill="#25348F" />
               </svg>
             </a>
 

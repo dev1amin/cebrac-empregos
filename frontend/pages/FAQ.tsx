@@ -53,7 +53,7 @@ export default function FAQ() {
   const categories = Object.keys(grouped);
 
   return (
-    <div className="min-h-screen bg-white px-4 sm:px-6 md:px-10 lg:px-[100px]" style={{zoom: 0.7}}>
+    <div className="min-h-screen bg-white px-4 sm:px-6 md:px-10 lg:px-[100px]" style={{ zoom: 0.7 }}>
       <nav className="bg-brand-blue rounded-[25px] sm:rounded-[40px] mx-0 sm:mx-6 mt-4 sm:mt-6 px-4 sm:px-8 py-3 sm:py-4 flex items-center justify-between">
         <div className="flex items-center gap-4 sm:gap-6">
           <Link to="/" className="flex items-center gap-2">
@@ -157,25 +157,25 @@ export default function FAQ() {
             ))}
           </div>
         ) : (
-        <>
-        {categories.map((cat, i) => (
-          <div key={cat} className={`bg-gray-200 border border-gray-300 rounded-2xl px-4 sm:px-10 py-4 sm:py-6 ${i < categories.length - 1 ? "mb-8 sm:mb-12" : ""}`}>
-            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">{cat}</h2>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8">
-              <div className="space-y-3">
-                {grouped[cat].filter((_: any, idx: number) => idx % 2 === 0).map((item: any, idx: number) => (
-                  <FAQItem key={idx} question={item.pergunta} answer={item.resposta} />
-                ))}
+          <>
+            {categories.map((cat, i) => (
+              <div key={cat} className={`bg-gray-200 border border-gray-300 rounded-2xl px-4 sm:px-10 py-4 sm:py-6 ${i < categories.length - 1 ? "mb-8 sm:mb-12" : ""}`}>
+                <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">{cat}</h2>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8">
+                  <div className="space-y-3">
+                    {grouped[cat].filter((_: any, idx: number) => idx % 2 === 0).map((item: any, idx: number) => (
+                      <FAQItem key={idx} question={item.pergunta} answer={item.resposta} />
+                    ))}
+                  </div>
+                  <div className="space-y-3">
+                    {grouped[cat].filter((_: any, idx: number) => idx % 2 === 1).map((item: any, idx: number) => (
+                      <FAQItem key={idx} question={item.pergunta} answer={item.resposta} />
+                    ))}
+                  </div>
+                </div>
               </div>
-              <div className="space-y-3">
-                {grouped[cat].filter((_: any, idx: number) => idx % 2 === 1).map((item: any, idx: number) => (
-                  <FAQItem key={idx} question={item.pergunta} answer={item.resposta} />
-                ))}
-              </div>
-            </div>
-          </div>
-        ))}
-        </>
+            ))}
+          </>
         )}
       </section>
 

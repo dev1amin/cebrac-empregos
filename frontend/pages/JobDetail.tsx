@@ -152,372 +152,372 @@ export default function JobDetail() {
           </div>
         </div>
       ) : (
-      <div className="mx-6">
-        <div className="grid grid-cols-12 gap-8">
-          {/* Main Job Content */}
-          <main className="col-span-8">
-            {/* Job Card - Redesigned to match Vagas page exactly */}
-            <div className="bg-white shadow-sm overflow-hidden rounded-b-2xl mb-6">
-              {/* Gradient stripe: 65% green, 25% blue, 10% yellow */}
-              <div className="h-2 flex">
-                <div className="bg-brand-green" style={{ width: '65%' }}></div>
-                <div className="bg-brand-blue" style={{ width: '25%' }}></div>
-                <div className="bg-brand-yellow" style={{ width: '10%' }}></div>
-              </div>
+        <div className="mx-6">
+          <div className="grid grid-cols-12 gap-8">
+            {/* Main Job Content */}
+            <main className="col-span-8">
+              {/* Job Card - Redesigned to match Vagas page exactly */}
+              <div className="bg-white shadow-sm overflow-hidden rounded-b-2xl mb-6">
+                {/* Gradient stripe: 65% green, 25% blue, 10% yellow */}
+                <div className="h-2 flex">
+                  <div className="bg-brand-green" style={{ width: '65%' }}></div>
+                  <div className="bg-brand-blue" style={{ width: '25%' }}></div>
+                  <div className="bg-brand-yellow" style={{ width: '10%' }}></div>
+                </div>
 
-              <div className="px-8 py-6">
-                <div className="mb-4">
-                  <h1 className="text-2xl font-bold text-brand-blue mb-3">
-                    {vaga.titulo}
-                  </h1>
+                <div className="px-8 py-6">
+                  <div className="mb-4">
+                    <h1 className="text-2xl font-bold text-brand-blue mb-3">
+                      {vaga.titulo}
+                    </h1>
 
-                  <div className="flex items-center gap-1 text-sm text-gray-500 mb-3">
-                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                      <circle cx="10" cy="10" r="8" />
-                    </svg>
-                    <span>{vaga.empresa_confidencial ? "Confidencial" : vaga.empresa_nome}</span>
-                  </div>
-
-                  <div className="flex items-center gap-6 text-sm mb-4">
-                    <div className="flex items-center gap-1.5">
-                      <svg className="w-3.5 h-3.5" fill="#51B84C" viewBox="0 0 20 20">
-                        <circle cx="10" cy="10" r="10" />
+                    <div className="flex items-center gap-1 text-sm text-gray-500 mb-3">
+                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <circle cx="10" cy="10" r="8" />
                       </svg>
-                      <span className="text-gray-700">{vaga.cidade}{vaga.estado ? `, ${vaga.estado}` : ""}</span>
+                      <span>{vaga.empresa_confidencial ? "Confidencial" : vaga.empresa_nome}</span>
                     </div>
-                    <div className="flex items-center gap-1.5">
-                      <svg className="w-3.5 h-3.5" fill="#51B84C" viewBox="0 0 20 20">
-                        <circle cx="10" cy="10" r="10" />
-                      </svg>
-                      <span className="text-gray-700">{vaga.tipo_contrato || vaga.disponibilidade_horario || "—"}</span>
-                    </div>
-                    {vaga.area && (
-                      <span className="px-4 py-1.5 border border-brand-blue text-brand-blue text-xs font-medium rounded-full">
-                        {vaga.area}
-                      </span>
-                    )}
-                    {vaga.salario && (
-                      <span className="px-4 py-1.5 border border-brand-blue text-brand-blue text-xs font-medium rounded-full">
-                        {vaga.salario}
-                      </span>
-                    )}
-                  </div>
-                </div>
 
-                {/* Separator line */}
-                <div className="border-t border-gray-200 my-4"></div>
-
-                {/* Bottom row with button */}
-                <div className="flex items-center gap-3">
-                  <Link to={`/vagas/${id}/candidatar`} className="flex-1 py-3 bg-brand-blue text-white text-sm font-bold rounded-full hover:opacity-90 transition text-center">
-                    Quero essa vaga
-                  </Link>
-                  <button className="w-10 h-10 rounded-full bg-white border-2 border-brand-blue flex items-center justify-center hover:opacity-90 transition">
-                    <Bookmark className="w-4 h-4 text-brand-blue" />
-                  </button>
-                  <button className="w-10 h-10 rounded-full bg-white border-2 border-brand-blue flex items-center justify-center hover:opacity-90 transition">
-                    <Share2 className="w-4 h-4 text-brand-blue" />
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            {/* Job Description */}
-            <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
-              <div className="flex items-center justify-between mb-4">
-                <h2 className="text-xl font-bold text-brand-blue">Descrição da Vaga</h2>
-                <svg className="w-5 h-5 text-brand-yellow flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
-              </div>
-              <p className="text-gray-700 text-sm leading-relaxed">
-                {vaga.descricao || "Descrição não disponível."}
-              </p>
-            </div>
-
-            {/* Requirements */}
-            <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
-              <div className="flex items-center justify-between mb-4">
-                <h2 className="text-xl font-bold text-brand-blue">Requisitos</h2>
-                <svg className="w-5 h-5 text-brand-yellow flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
-              </div>
-              <p className="text-gray-700 text-sm leading-relaxed">
-                Cursando último ano de Administração, Economia, Contabilidade, Comunicação Social, Marketing ou Farmácia.
-                Experiência comprovada em compras, preferencialmente com foco em serviços e produtos para viagens.
-              </p>
-            </div>
-
-            {/* Responsibilities */}
-            <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
-              <div className="flex items-center justify-between mb-4">
-                <h2 className="text-xl font-bold text-brand-blue">Responsabilidades</h2>
-                <svg className="w-5 h-5 text-brand-yellow flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
-              </div>
-              <p className="text-gray-700 text-sm leading-relaxed">
-                Realizar compras de serviços e produtos para viagens corporativas. Emitir pedidos de compra e acompanhar o ciclo de vida dos pedidos
-                até a entrega. Auxiliar em negociações de preços com fornecedores. Garantir conformidade com a legislação vigente. Apoiar em
-                pesquisas de mercado. Monitorar e fazer follow-up dos pedidos. Manter registros e relatórios de compras atualizados. Apoiar na
-                elaboração e revisão de contratos.
-              </p>
-            </div>
-
-            {/* Benefits */}
-            <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
-              <div className="flex items-center justify-between mb-4">
-                <h2 className="text-xl font-bold text-brand-blue">Benefícios</h2>
-                <svg className="w-5 h-5 text-brand-yellow flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
-              </div>
-
-              <div className="grid grid-cols-2 gap-x-12 gap-y-6">
-                <div>
-                  <h3 className="text-sm font-bold text-gray-900 mb-3">Desenvolvimento Humano</h3>
-                  <div className="space-y-2">
-                    <div className="flex items-start gap-2">
-                      <div className="w-5 h-5 border-2 border-brand-green bg-brand-green/10 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <svg className="w-3 h-3 text-brand-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                    <div className="flex items-center gap-6 text-sm mb-4">
+                      <div className="flex items-center gap-1.5">
+                        <svg className="w-3.5 h-3.5" fill="#51B84C" viewBox="0 0 20 20">
+                          <circle cx="10" cy="10" r="10" />
                         </svg>
+                        <span className="text-gray-700">{vaga.cidade}{vaga.estado ? `, ${vaga.estado}` : ""}</span>
                       </div>
-                      <span className="text-sm text-gray-700">Oportunidade de carreira e desenvolvimento</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <div className="w-5 h-5 border-2 border-brand-green bg-brand-green/10 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <svg className="w-3 h-3 text-brand-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                      <div className="flex items-center gap-1.5">
+                        <svg className="w-3.5 h-3.5" fill="#51B84C" viewBox="0 0 20 20">
+                          <circle cx="10" cy="10" r="10" />
                         </svg>
+                        <span className="text-gray-700">{vaga.tipo_contrato || vaga.disponibilidade_horario || "—"}</span>
                       </div>
-                      <span className="text-sm text-gray-700">Parcerias na área Educacional e Entretenimento</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <div className="w-5 h-5 border-2 border-brand-green bg-brand-green/10 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <svg className="w-3 h-3 text-brand-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                        </svg>
-                      </div>
-                      <span className="text-sm text-gray-700">Acesso aos museus do Instituto Butantan</span>
+                      {vaga.area && (
+                        <span className="px-4 py-1.5 border border-brand-blue text-brand-blue text-xs font-medium rounded-full">
+                          {vaga.area}
+                        </span>
+                      )}
+                      {vaga.salario && (
+                        <span className="px-4 py-1.5 border border-brand-blue text-brand-blue text-xs font-medium rounded-full">
+                          {vaga.salario}
+                        </span>
+                      )}
                     </div>
                   </div>
-                </div>
 
-                <div>
-                  <h3 className="text-sm font-bold text-gray-900 mb-3">Saúde e Bem-estar</h3>
-                  <div className="space-y-2">
-                    <div className="flex items-start gap-2">
-                      <div className="w-5 h-5 border-2 border-brand-green bg-brand-green/10 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <svg className="w-3 h-3 text-brand-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                        </svg>
-                      </div>
-                      <span className="text-sm text-gray-700">Convênio Médico e convênio odontológico</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <div className="w-5 h-5 border-2 border-brand-green bg-brand-green/10 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <svg className="w-3 h-3 text-brand-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                        </svg>
-                      </div>
-                      <span className="text-sm text-gray-700">Seguro de Vida em Grupo</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <div className="w-5 h-5 border-2 border-brand-green bg-brand-green/10 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <svg className="w-3 h-3 text-brand-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                        </svg>
-                      </div>
-                      <span className="text-sm text-gray-700">TotalPass e Subsídio de medicamentos</span>
-                    </div>
-                  </div>
-                </div>
+                  {/* Separator line */}
+                  <div className="border-t border-gray-200 my-4"></div>
 
-                <div>
-                  <h3 className="text-sm font-bold text-gray-900 mb-3">Alimentação e Transporte</h3>
-                  <div className="space-y-2">
-                    <div className="flex items-start gap-2">
-                      <div className="w-5 h-5 border-2 border-brand-green bg-brand-green/10 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <svg className="w-3 h-3 text-brand-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                        </svg>
-                      </div>
-                      <span className="text-sm text-gray-700">Cartão (food) Benefícios</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <div className="w-5 h-5 border-2 border-brand-green bg-brand-green/10 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <svg className="w-3 h-3 text-brand-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                        </svg>
-                      </div>
-                      <span className="text-sm text-gray-700">Refeitório no local</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <div className="w-5 h-5 border-2 border-brand-green bg-brand-green/10 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <svg className="w-3 h-3 text-brand-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                        </svg>
-                      </div>
-                      <span className="text-sm text-gray-700">Vale transporte</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <div className="w-5 h-5 border-2 border-brand-green bg-brand-green/10 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <svg className="w-3 h-3 text-brand-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                        </svg>
-                      </div>
-                      <span className="text-sm text-gray-700">Ônibus fretado</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div>
-                  <h3 className="text-sm font-bold text-gray-900 mb-3">Demais auxílios e benefícios</h3>
-                  <div className="space-y-2">
-                    <div className="flex items-start gap-2">
-                      <div className="w-5 h-5 border-2 border-brand-green bg-brand-green/10 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <svg className="w-3 h-3 text-brand-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                        </svg>
-                      </div>
-                      <span className="text-sm text-gray-700">Auxílio creche</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <div className="w-5 h-5 border-2 border-brand-green bg-brand-green/10 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <svg className="w-3 h-3 text-brand-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                        </svg>
-                      </div>
-                      <span className="text-sm text-gray-700">Auxílio para filho excepcional</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <div className="w-5 h-5 border-2 border-brand-green bg-brand-green/10 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <svg className="w-3 h-3 text-brand-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                        </svg>
-                      </div>
-                      <span className="text-sm text-gray-700">Auxílio para compra de material escolar</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <div className="w-5 h-5 border-2 border-brand-green bg-brand-green/10 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <svg className="w-3 h-3 text-brand-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                        </svg>
-                      </div>
-                      <span className="text-sm text-gray-700">Day Off de aniversário</span>
-                    </div>
+                  {/* Bottom row with button */}
+                  <div className="flex items-center gap-3">
+                    <Link to={`/vagas/${id}/candidatar`} className="flex-1 py-3 bg-brand-blue text-white text-sm font-bold rounded-full hover:opacity-90 transition text-center">
+                      Quero essa vaga
+                    </Link>
+                    <button className="w-10 h-10 rounded-full bg-white border-2 border-brand-blue flex items-center justify-center hover:opacity-90 transition">
+                      <Bookmark className="w-4 h-4 text-brand-blue" />
+                    </button>
+                    <button className="w-10 h-10 rounded-full bg-white border-2 border-brand-blue flex items-center justify-center hover:opacity-90 transition">
+                      <Share2 className="w-4 h-4 text-brand-blue" />
+                    </button>
                   </div>
                 </div>
               </div>
-            </div>
-          </main>
 
-          {/* Right Sidebar - Redesigned */}
-          <aside className="col-span-4">
-            {/* Candidate CTA - Split in two parts */}
-            <div className="bg-brand-blue rounded-3xl overflow-hidden mb-6">
-              {/* Top Part */}
-              <div className="p-8 text-center border-b border-white/20">
-                <h3 className="text-white text-2xl font-bold mb-4">Candidate-se</h3>
-                <p className="text-white text-sm">
-                  Não perca tempo, as vagas se esgotam rapidamente, se  seu perfil deu match, manda ver!
+              {/* Job Description */}
+              <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
+                <div className="flex items-center justify-between mb-4">
+                  <h2 className="text-xl font-bold text-brand-blue">Descrição da Vaga</h2>
+                  <svg className="w-5 h-5 text-brand-yellow flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
+                </div>
+                <p className="text-gray-700 text-sm leading-relaxed">
+                  {vaga.descricao || "Descrição não disponível."}
                 </p>
               </div>
 
-              {/* Bottom Part */}
-              <div className="p-3">
-                <div className="bg-white rounded-2xl border border-gray-200 px-4 py-3 flex items-center gap-3">
-                  <svg className="w-5 h-5 text-brand-blue flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-                  </svg>
-                  <span className="text-brand-blue text-sm font-bold">Seja um dos primeiros a se candidatar</span>
+              {/* Requirements */}
+              <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
+                <div className="flex items-center justify-between mb-4">
+                  <h2 className="text-xl font-bold text-brand-blue">Requisitos</h2>
+                  <svg className="w-5 h-5 text-brand-yellow flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
+                </div>
+                <p className="text-gray-700 text-sm leading-relaxed">
+                  Cursando último ano de Administração, Economia, Contabilidade, Comunicação Social, Marketing ou Farmácia.
+                  Experiência comprovada em compras, preferencialmente com foco em serviços e produtos para viagens.
+                </p>
+              </div>
+
+              {/* Responsibilities */}
+              <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
+                <div className="flex items-center justify-between mb-4">
+                  <h2 className="text-xl font-bold text-brand-blue">Responsabilidades</h2>
+                  <svg className="w-5 h-5 text-brand-yellow flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
+                </div>
+                <p className="text-gray-700 text-sm leading-relaxed">
+                  Realizar compras de serviços e produtos para viagens corporativas. Emitir pedidos de compra e acompanhar o ciclo de vida dos pedidos
+                  até a entrega. Auxiliar em negociações de preços com fornecedores. Garantir conformidade com a legislação vigente. Apoiar em
+                  pesquisas de mercado. Monitorar e fazer follow-up dos pedidos. Manter registros e relatórios de compras atualizados. Apoiar na
+                  elaboração e revisão de contratos.
+                </p>
+              </div>
+
+              {/* Benefits */}
+              <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
+                <div className="flex items-center justify-between mb-4">
+                  <h2 className="text-xl font-bold text-brand-blue">Benefícios</h2>
+                  <svg className="w-5 h-5 text-brand-yellow flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
+                </div>
+
+                <div className="grid grid-cols-2 gap-x-12 gap-y-6">
+                  <div>
+                    <h3 className="text-sm font-bold text-gray-900 mb-3">Desenvolvimento Humano</h3>
+                    <div className="space-y-2">
+                      <div className="flex items-start gap-2">
+                        <div className="w-5 h-5 border-2 border-brand-green bg-brand-green/10 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <svg className="w-3 h-3 text-brand-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                        <span className="text-sm text-gray-700">Oportunidade de carreira e desenvolvimento</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <div className="w-5 h-5 border-2 border-brand-green bg-brand-green/10 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <svg className="w-3 h-3 text-brand-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                        <span className="text-sm text-gray-700">Parcerias na área Educacional e Entretenimento</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <div className="w-5 h-5 border-2 border-brand-green bg-brand-green/10 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <svg className="w-3 h-3 text-brand-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                        <span className="text-sm text-gray-700">Acesso aos museus do Instituto Butantan</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h3 className="text-sm font-bold text-gray-900 mb-3">Saúde e Bem-estar</h3>
+                    <div className="space-y-2">
+                      <div className="flex items-start gap-2">
+                        <div className="w-5 h-5 border-2 border-brand-green bg-brand-green/10 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <svg className="w-3 h-3 text-brand-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                        <span className="text-sm text-gray-700">Convênio Médico e convênio odontológico</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <div className="w-5 h-5 border-2 border-brand-green bg-brand-green/10 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <svg className="w-3 h-3 text-brand-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                        <span className="text-sm text-gray-700">Seguro de Vida em Grupo</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <div className="w-5 h-5 border-2 border-brand-green bg-brand-green/10 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <svg className="w-3 h-3 text-brand-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                        <span className="text-sm text-gray-700">TotalPass e Subsídio de medicamentos</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h3 className="text-sm font-bold text-gray-900 mb-3">Alimentação e Transporte</h3>
+                    <div className="space-y-2">
+                      <div className="flex items-start gap-2">
+                        <div className="w-5 h-5 border-2 border-brand-green bg-brand-green/10 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <svg className="w-3 h-3 text-brand-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                        <span className="text-sm text-gray-700">Cartão (food) Benefícios</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <div className="w-5 h-5 border-2 border-brand-green bg-brand-green/10 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <svg className="w-3 h-3 text-brand-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                        <span className="text-sm text-gray-700">Refeitório no local</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <div className="w-5 h-5 border-2 border-brand-green bg-brand-green/10 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <svg className="w-3 h-3 text-brand-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                        <span className="text-sm text-gray-700">Vale transporte</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <div className="w-5 h-5 border-2 border-brand-green bg-brand-green/10 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <svg className="w-3 h-3 text-brand-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                        <span className="text-sm text-gray-700">Ônibus fretado</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h3 className="text-sm font-bold text-gray-900 mb-3">Demais auxílios e benefícios</h3>
+                    <div className="space-y-2">
+                      <div className="flex items-start gap-2">
+                        <div className="w-5 h-5 border-2 border-brand-green bg-brand-green/10 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <svg className="w-3 h-3 text-brand-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                        <span className="text-sm text-gray-700">Auxílio creche</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <div className="w-5 h-5 border-2 border-brand-green bg-brand-green/10 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <svg className="w-3 h-3 text-brand-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                        <span className="text-sm text-gray-700">Auxílio para filho excepcional</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <div className="w-5 h-5 border-2 border-brand-green bg-brand-green/10 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <svg className="w-3 h-3 text-brand-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                        <span className="text-sm text-gray-700">Auxílio para compra de material escolar</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <div className="w-5 h-5 border-2 border-brand-green bg-brand-green/10 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <svg className="w-3 h-3 text-brand-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                        <span className="text-sm text-gray-700">Day Off de aniversário</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </main>
+
+            {/* Right Sidebar - Redesigned */}
+            <aside className="col-span-4">
+              {/* Candidate CTA - Split in two parts */}
+              <div className="bg-brand-blue rounded-3xl overflow-hidden mb-6">
+                {/* Top Part */}
+                <div className="p-8 text-center border-b border-white/20">
+                  <h3 className="text-white text-2xl font-bold mb-4">Candidate-se</h3>
+                  <p className="text-white text-sm">
+                    Não perca tempo, as vagas se esgotam rapidamente, se  seu perfil deu match, manda ver!
+                  </p>
+                </div>
+
+                {/* Bottom Part */}
+                <div className="p-3">
+                  <div className="bg-white rounded-2xl border border-gray-200 px-4 py-3 flex items-center gap-3">
+                    <svg className="w-5 h-5 text-brand-blue flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-brand-blue text-sm font-bold">Seja um dos primeiros a se candidatar</span>
+                  </div>
+                </div>
+
+                {/* Applicant count */}
+                <div className="px-6 pb-4">
+                  <div className="flex items-center gap-2 justify-center text-sm text-gray-500">
+                    <Users className="w-4 h-4 text-brand-green" />
+                    <span>{getApplicantCount(vaga.id || Number(id))} pessoas já se candidataram</span>
+                  </div>
                 </div>
               </div>
 
-              {/* Applicant count */}
-              <div className="px-6 pb-4">
-                <div className="flex items-center gap-2 justify-center text-sm text-gray-500">
-                  <Users className="w-4 h-4 text-brand-green" />
-                  <span>{getApplicantCount(vaga.id || Number(id))} pessoas já se candidataram</span>
+              {/* Company Info - Redesigned with arrow and company name next to photo */}
+              <div className="bg-white rounded-3xl border-2 border-gray-100 p-6 mb-6">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-brand-blue text-lg font-bold">Sobre a Empresa</h3>
+                  <div className="flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full">
+                    <ArrowUpRight className="w-4 h-4 text-brand-blue" />
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 rounded-full bg-gray-200 flex-shrink-0"></div>
+                  <div>
+                    <h4 className="text-brand-blue font-bold">Fundação Butantan</h4>
+                    <p className="text-gray-500 text-xs">Empresa de Tecnologia</p>
+                  </div>
+                </div>
+
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Empresa brasileira e inovadora, focada em soluções tecnológicas de ponta para o país.
+                </p>
+              </div>
+
+              {/* Similar Jobs - White background with gray border */}
+              <div className="bg-white rounded-3xl border border-gray-200 p-6">
+                <h3 className="text-brand-blue text-xl font-bold mb-4">Vagas Similares</h3>
+
+                <div className="space-y-3">
+                  <a href="#" className="flex items-center justify-between p-4 rounded-xl bg-gray-100 hover:shadow-md transition group">
+                    <div className="flex-1">
+                      <h4 className="text-brand-blue font-bold text-sm mb-1 group-hover:underline">Auxiliar de Produção</h4>
+                      <p className="text-gray-500 text-xs">Londrina/PR</p>
+                    </div>
+                    <button className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center group-hover:bg-brand-blue group-hover:text-white transition">
+                      <ArrowUpRight className="w-4 h-4" />
+                    </button>
+                  </a>
+
+                  <a href="#" className="flex items-center justify-between p-4 rounded-xl bg-gray-100 hover:shadow-md transition group">
+                    <div className="flex-1">
+                      <h4 className="text-brand-blue font-bold text-sm mb-1 group-hover:underline">Telemarketing Pleno</h4>
+                      <p className="text-gray-500 text-xs">São Paulo/SP</p>
+                    </div>
+                    <button className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center group-hover:bg-brand-blue group-hover:text-white transition">
+                      <ArrowUpRight className="w-4 h-4" />
+                    </button>
+                  </a>
+
+                  <a href="#" className="flex items-center justify-between p-4 rounded-xl bg-gray-100 hover:shadow-md transition group">
+                    <div className="flex-1">
+                      <h4 className="text-brand-blue font-bold text-sm mb-1 group-hover:underline">Comercial & Vendas</h4>
+                      <p className="text-gray-500 text-xs">Curitiba/PR</p>
+                    </div>
+                    <button className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center group-hover:bg-brand-blue group-hover:text-white transition">
+                      <ArrowUpRight className="w-4 h-4" />
+                    </button>
+                  </a>
+
+                  <a href="#" className="flex items-center justify-between p-4 rounded-xl bg-gray-100 hover:shadow-md transition group">
+                    <div className="flex-1">
+                      <h4 className="text-brand-blue font-bold text-sm mb-1 group-hover:underline">Designer Gráfico Sênior</h4>
+                      <p className="text-gray-500 text-xs">Fortaleza/CE</p>
+                    </div>
+                    <button className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center group-hover:bg-brand-blue group-hover:text-white transition">
+                      <ArrowUpRight className="w-4 h-4" />
+                    </button>
+                  </a>
+
+                  <a href="#" className="flex items-center justify-between p-4 rounded-xl bg-gray-100 hover:shadow-md transition group">
+                    <div className="flex-1">
+                      <h4 className="text-brand-blue font-bold text-sm mb-1 group-hover:underline">Designer Gráfico Pleno</h4>
+                      <p className="text-gray-500 text-xs">Fortaleza/CE</p>
+                    </div>
+                    <button className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center group-hover:bg-brand-blue group-hover:text-white transition">
+                      <ArrowUpRight className="w-4 h-4" />
+                    </button>
+                  </a>
                 </div>
               </div>
-            </div>
-
-            {/* Company Info - Redesigned with arrow and company name next to photo */}
-            <div className="bg-white rounded-3xl border-2 border-gray-100 p-6 mb-6">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-brand-blue text-lg font-bold">Sobre a Empresa</h3>
-                <div className="flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full">
-                  <ArrowUpRight className="w-4 h-4 text-brand-blue" />
-                </div>
-              </div>
-
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 rounded-full bg-gray-200 flex-shrink-0"></div>
-                <div>
-                  <h4 className="text-brand-blue font-bold">Fundação Butantan</h4>
-                  <p className="text-gray-500 text-xs">Empresa de Tecnologia</p>
-                </div>
-              </div>
-
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Empresa brasileira e inovadora, focada em soluções tecnológicas de ponta para o país.
-              </p>
-            </div>
-
-            {/* Similar Jobs - White background with gray border */}
-            <div className="bg-white rounded-3xl border border-gray-200 p-6">
-              <h3 className="text-brand-blue text-xl font-bold mb-4">Vagas Similares</h3>
-
-              <div className="space-y-3">
-                <a href="#" className="flex items-center justify-between p-4 rounded-xl bg-gray-100 hover:shadow-md transition group">
-                  <div className="flex-1">
-                    <h4 className="text-brand-blue font-bold text-sm mb-1 group-hover:underline">Auxiliar de Produção</h4>
-                    <p className="text-gray-500 text-xs">Londrina/PR</p>
-                  </div>
-                  <button className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center group-hover:bg-brand-blue group-hover:text-white transition">
-                    <ArrowUpRight className="w-4 h-4" />
-                  </button>
-                </a>
-
-                <a href="#" className="flex items-center justify-between p-4 rounded-xl bg-gray-100 hover:shadow-md transition group">
-                  <div className="flex-1">
-                    <h4 className="text-brand-blue font-bold text-sm mb-1 group-hover:underline">Telemarketing Pleno</h4>
-                    <p className="text-gray-500 text-xs">São Paulo/SP</p>
-                  </div>
-                  <button className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center group-hover:bg-brand-blue group-hover:text-white transition">
-                    <ArrowUpRight className="w-4 h-4" />
-                  </button>
-                </a>
-
-                <a href="#" className="flex items-center justify-between p-4 rounded-xl bg-gray-100 hover:shadow-md transition group">
-                  <div className="flex-1">
-                    <h4 className="text-brand-blue font-bold text-sm mb-1 group-hover:underline">Comercial & Vendas</h4>
-                    <p className="text-gray-500 text-xs">Curitiba/PR</p>
-                  </div>
-                  <button className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center group-hover:bg-brand-blue group-hover:text-white transition">
-                    <ArrowUpRight className="w-4 h-4" />
-                  </button>
-                </a>
-
-                <a href="#" className="flex items-center justify-between p-4 rounded-xl bg-gray-100 hover:shadow-md transition group">
-                  <div className="flex-1">
-                    <h4 className="text-brand-blue font-bold text-sm mb-1 group-hover:underline">Designer Gráfico Sênior</h4>
-                    <p className="text-gray-500 text-xs">Fortaleza/CE</p>
-                  </div>
-                  <button className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center group-hover:bg-brand-blue group-hover:text-white transition">
-                    <ArrowUpRight className="w-4 h-4" />
-                  </button>
-                </a>
-
-                <a href="#" className="flex items-center justify-between p-4 rounded-xl bg-gray-100 hover:shadow-md transition group">
-                  <div className="flex-1">
-                    <h4 className="text-brand-blue font-bold text-sm mb-1 group-hover:underline">Designer Gráfico Pleno</h4>
-                    <p className="text-gray-500 text-xs">Fortaleza/CE</p>
-                  </div>
-                  <button className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center group-hover:bg-brand-blue group-hover:text-white transition">
-                    <ArrowUpRight className="w-4 h-4" />
-                  </button>
-                </a>
-              </div>
-            </div>
-          </aside>
+            </aside>
+          </div>
         </div>
-      </div>
       )}
 
       {/* "Isso é tudo" Section */}

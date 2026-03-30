@@ -1,5 +1,5 @@
 {
-  "buildCommand": "pnpm run build:client",
+  "buildCommand": "pnpm run build:client && pnpm run build:api",
   "outputDirectory": "dist/spa",
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api" },

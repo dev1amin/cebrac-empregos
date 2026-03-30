@@ -1,3 +1,3 @@
-import { createServer } from "../backend/index.js";
+import { createServer } from "../dist/api/index.mjs";
 
 export default createServer();

@@ -124,12 +124,12 @@ export default function ParaEmpresas() {
             <p className="text-gray-600 text-sm max-w-md">
               Junte-se às mais de 500 empresas que confiam no Cebrac e colabore para a empregabilidade!
             </p>
-            <button className="flex items-center gap-2 bg-brand-green text-white px-6 sm:px-8 py-3 rounded-full font-bold hover:opacity-90 transition whitespace-nowrap text-sm">
+            <Link to="/para-empresas/registro" className="flex items-center gap-2 bg-brand-green text-white px-6 sm:px-8 py-3 rounded-full font-bold hover:opacity-90 transition whitespace-nowrap text-sm">
               Seja Parceiro
               <div className="bg-white rounded-full p-1.5">
                 <ArrowUpRight className="w-4 h-4 text-brand-green" />
               </div>
-            </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -185,10 +185,10 @@ export default function ParaEmpresas() {
             <p className="text-gray-600 text-sm sm:text-base mb-6 sm:mb-8 leading-relaxed">
               É muito simples, em apenas 3 passos muito rápidos, você e sua empresa já podem começar a receber candidaturas qualificadas, o resto é com a gente!
             </p>
-            <button className="flex items-center gap-3 bg-brand-blue text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold hover:opacity-90 transition text-sm sm:text-base">
+            <Link to="/para-empresas/registro" className="flex items-center gap-3 bg-brand-blue text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold hover:opacity-90 transition text-sm sm:text-base">
               <TrendingUp className="w-4 sm:w-5 h-4 sm:h-5" />
               Quero cadastrar minha empresa
-            </button>
+            </Link>
           </div>
 
           <div className="space-y-3 sm:space-y-4">

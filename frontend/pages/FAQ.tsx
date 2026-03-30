@@ -1,6 +1,7 @@
 import { ArrowUpRight, ChevronDown, MessageCircle, Mail, Search, Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useFaq } from "@/hooks/use-api";
 
 interface FAQItemProps {
   question: string;
@@ -32,6 +33,24 @@ function FAQItem({ question, answer }: FAQItemProps) {
 
 export default function FAQ() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { data: faqItems, isLoading: faqLoading } = useFaq();
+
+  // Group by category
+  const FALLBACK_FAQ = [
+    { pergunta: "O que e o Cebrac?", resposta: "O CEBRAC e uma instituicao de ensino profissionalizante com mais de 30 anos de experiencia.", categoria: "Cursos e Certificações" },
+    { pergunta: "Como funciona a plataforma de empregos?", resposta: "Nossa plataforma conecta profissionais qualificados com empresas parceiras.", categoria: "Cursos e Certificações" },
+    { pergunta: "Como criar meu perfil de candidato?", resposta: "Clique em 'Criar meu Perfil', preencha seus dados pessoais, experiencias profissionais e qualificacoes.", categoria: "Para Candidatos" },
+    { pergunta: "Como minha empresa pode usar a plataforma?", resposta: "Cadastre sua empresa, escolha o plano adequado e comece a publicar vagas.", categoria: "Para Empresas" },
+  ];
+
+  const items = faqItems && faqItems.length > 0 ? faqItems : FALLBACK_FAQ;
+  const grouped = items.reduce((acc: Record<string, any[]>, item: any) => {
+    const cat = item.categoria || "Geral";
+    if (!acc[cat]) acc[cat] = [];
+    acc[cat].push(item);
+    return acc;
+  }, {} as Record<string, any[]>);
+  const categories = Object.keys(grouped);
 
   return (
     <div className="min-h-screen bg-white px-4 sm:px-6 md:px-10 lg:px-[100px]" style={{zoom: 0.7}}>
@@ -119,104 +138,45 @@ export default function FAQ() {
       </section>
 
       <section className="mx-0 sm:mx-6 mb-12 sm:mb-20">
-        <div className="bg-gray-200 border border-gray-300 rounded-2xl px-4 sm:px-10 py-4 sm:py-6 mb-8 sm:mb-12">
-          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Cursos e Certificacoes</h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8">
-            <div className="space-y-3">
-              <FAQItem
-                question="O que e o Cebrac?"
-                answer="O CEBRAC e uma instituicao de ensino profissionalizante com mais de 30 anos de experiencia, oferecendo cursos tecnicos e profissionalizantes reconhecidos pelo mercado."
-              />
-              <FAQItem
-                question="Como funciona a plataforma de empregos?"
-                answer="Nossa plataforma conecta profissionais qualificados com empresas parceiras. Voce pode criar seu perfil, buscar vagas e se candidatar diretamente atraves da plataforma."
-              />
-              <FAQItem
-                question="A plataforma e gratuita?"
-                answer="Sim, o cadastro e acesso as vagas e completamente gratuito para candidatos. Empresas tem planos especificos para publicacao de vagas."
-              />
-              <FAQItem
-                question="Em quais regioes voces atuam?"
-                answer="Estamos presentes em todo o territorio nacional, com unidades fisicas e cursos online que atendem todas as regioes do Brasil."
-              />
-            </div>
-
-            <div className="space-y-3">
-              <FAQItem
-                question="Que cursos o CEBRAC oferece?"
-                answer="Oferecemos uma ampla gama de cursos profissionalizantes nas areas de tecnologia, administracao, design, idiomas e muito mais. Consulte nosso catalogo completo no site."
-              />
-              <FAQItem
-                question="Os certificados sao reconhecidos pelo mercado?"
-                answer="Sim, todos os nossos certificados sao reconhecidos nacionalmente e valorizados pelas principais empresas do mercado de trabalho."
-              />
-              <FAQItem
-                question="Posso fazer cursos online?"
-                answer="Sim, oferecemos diversos cursos na modalidade online e hibrida, permitindo que voce estude no seu proprio ritmo."
-              />
-              <FAQItem
-                question="Voces oferecem suporte para colocacao profissional?"
-                answer="Sim, nossa plataforma de empregos conecta alunos formados com empresas parceiras, facilitando sua insercao no mercado de trabalho."
-              />
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-gray-200 border border-gray-300 rounded-2xl px-4 sm:px-10 py-4 sm:py-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
-            <div>
-              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Para Candidatos</h2>
-              <div className="space-y-3">
-                <FAQItem
-                  question="Como criar meu perfil de candidato?"
-                  answer="Clique em 'Criar meu Perfil', preencha seus dados pessoais, experiencias profissionais e qualificacoes. Quanto mais completo seu perfil, maiores as chances de match com vagas."
-                />
-                <FAQItem
-                  question="Como buscar vagas?"
-                  answer="Use nossa ferramenta de busca com filtros por area, localizacao, tipo de contrato e senioridade. Voce tambem pode salvar buscas para receber alertas de novas vagas."
-                />
-                <FAQItem
-                  question="Como me candidatar a uma vaga?"
-                  answer="Acesse a vaga de interesse, leia atentamente os requisitos e clique em 'Candidatar-se'. Seu perfil sera enviado automaticamente para o recrutador."
-                />
-                <FAQItem
-                  question="Posso acompanhar o status das minhas candidaturas?"
-                  answer="Sim, em seu painel voce pode visualizar todas as candidaturas enviadas e acompanhar o status de cada processo seletivo."
-                />
-                <FAQItem
-                  question="Que tipo de suporte voces oferecem aos candidatos?"
-                  answer="Oferecemos suporte via chat, email e telefone para auxiliar em qualquer duvida sobre cadastro, vagas ou processo seletivo."
-                />
+        {faqLoading ? (
+          <div className="space-y-8 sm:space-y-12">
+            {Array.from({ length: 2 }).map((_, i) => (
+              <div key={i} className="bg-gray-200 border border-gray-300 rounded-2xl px-4 sm:px-10 py-4 sm:py-6 animate-pulse">
+                <div className="h-7 bg-gray-300 rounded w-48 mb-4 sm:mb-6"></div>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8">
+                  {Array.from({ length: 4 }).map((_, j) => (
+                    <div key={j} className="bg-white rounded-2xl p-4 sm:p-5">
+                      <div className="flex items-center justify-between">
+                        <div className="h-5 bg-gray-200 rounded w-3/4"></div>
+                        <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gray-200 rounded-full"></div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-
-            <div>
-              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Para Empresas</h2>
+            ))}
+          </div>
+        ) : (
+        <>
+        {categories.map((cat, i) => (
+          <div key={cat} className={`bg-gray-200 border border-gray-300 rounded-2xl px-4 sm:px-10 py-4 sm:py-6 ${i < categories.length - 1 ? "mb-8 sm:mb-12" : ""}`}>
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">{cat}</h2>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8">
               <div className="space-y-3">
-                <FAQItem
-                  question="Como minha empresa pode usar a plataforma?"
-                  answer="Cadastre sua empresa, escolha o plano adequado e comece a publicar vagas. Nossa IA ajuda a filtrar os melhores candidatos para suas necessidades."
-                />
-                <FAQItem
-                  question="Que tipo de profissionais posso encontrar?"
-                  answer="Nossa base tem profissionais de diversas areas e niveis de senioridade, todos com formacao qualificada pelo CEBRAC ou experiencia comprovada."
-                />
-                <FAQItem
-                  question="Como funciona o processo de selecao?"
-                  answer="Voce publica a vaga, recebe candidaturas qualificadas pela nossa IA, analisa perfis e agenda entrevistas diretamente pela plataforma."
-                />
-                <FAQItem
-                  question="Voces oferecem suporte na selecao?"
-                  answer="Sim, nossa equipe de RH especializada pode auxiliar em todo o processo seletivo, desde a triagem ate a contratacao."
-                />
-                <FAQItem
-                  question="Qual o prazo medio para preenchimento de vagas?"
-                  answer="Em media, nossas vagas sao preenchidas em ate 72 horas, gracas ao nosso sistema de match inteligente e base qualificada de candidatos."
-                />
+                {grouped[cat].filter((_: any, idx: number) => idx % 2 === 0).map((item: any, idx: number) => (
+                  <FAQItem key={idx} question={item.pergunta} answer={item.resposta} />
+                ))}
+              </div>
+              <div className="space-y-3">
+                {grouped[cat].filter((_: any, idx: number) => idx % 2 === 1).map((item: any, idx: number) => (
+                  <FAQItem key={idx} question={item.pergunta} answer={item.resposta} />
+                ))}
               </div>
             </div>
           </div>
-        </div>
+        ))}
+        </>
+        )}
       </section>
 
       <section className="mx-0 sm:mx-6 mb-12 sm:mb-20">

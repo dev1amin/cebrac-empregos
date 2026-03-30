@@ -35,6 +35,9 @@ export default defineConfig({
         "child_process",
         // External dependencies that should not be bundled
         "express",
+        "mysql2",
+        "mysql2/promise",
+        "@supabase/supabase-js",
       ],
       output: {
         format: "es",

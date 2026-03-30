@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { supabaseAuth } from "../supabase";
 
+const auth = supabaseAuth.auth as any;
 const router = Router();
 
 // ─── Login ─────────────────────────────────────────────────
@@ -12,7 +13,7 @@ router.post("/login", async (req, res) => {
             return;
         }
 
-        const { data, error } = await supabaseAuth.auth.signInWithPassword({
+        const { data, error } = await auth.signInWithPassword({
             email,
             password,
         });
@@ -55,7 +56,7 @@ router.get("/me", async (req, res) => {
             return;
         }
 
-        const { data, error } = await supabaseAuth.auth.getUser(token);
+        const { data, error } = await auth.getUser(token);
         if (error || !data.user) {
             res.status(401).json({ error: "Token inválido" });
             return;
@@ -83,7 +84,7 @@ router.post("/refresh", async (req, res) => {
             return;
         }
 
-        const { data, error } = await supabaseAuth.auth.refreshSession({ refresh_token });
+        const { data, error } = await auth.refreshSession({ refresh_token });
         if (error || !data.session) {
             res.status(401).json({ error: "Refresh token inválido" });
             return;
@@ -110,7 +111,7 @@ export async function requireAdmin(req: any, res: any, next: any) {
             return;
         }
 
-        const { data, error } = await supabaseAuth.auth.getUser(token);
+        const { data, error } = await auth.getUser(token);
         if (error || !data.user) {
             res.status(401).json({ error: "Token inválido ou expirado" });
             return;

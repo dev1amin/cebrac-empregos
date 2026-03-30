@@ -1,10 +1,10 @@
-import { Router, Request, Response, NextFunction } from "express";
+import { Router } from "express";
 import { supabaseAuth } from "../supabase";
 
 const router = Router();
 
 // ─── Login ─────────────────────────────────────────────────
-router.post("/login", async (req: Request, res: Response) => {
+router.post("/login", async (req, res) => {
     try {
         const { email, password } = req.body;
         if (!email || !password) {
@@ -47,7 +47,7 @@ router.post("/login", async (req: Request, res: Response) => {
 });
 
 // ─── Verify / Me ───────────────────────────────────────────
-router.get("/me", async (req: Request, res: Response) => {
+router.get("/me", async (req, res) => {
     try {
         const token = req.headers.authorization?.replace("Bearer ", "");
         if (!token) {
@@ -75,7 +75,7 @@ router.get("/me", async (req: Request, res: Response) => {
 });
 
 // ─── Refresh Token ─────────────────────────────────────────
-router.post("/refresh", async (req: Request, res: Response) => {
+router.post("/refresh", async (req, res) => {
     try {
         const { refresh_token } = req.body;
         if (!refresh_token) {
@@ -102,7 +102,7 @@ router.post("/refresh", async (req: Request, res: Response) => {
 export default router;
 
 // ─── Auth Middleware (for protecting admin routes) ──────────
-export async function requireAdmin(req: Request, res: Response, next: NextFunction) {
+export async function requireAdmin(req: any, res: any, next: any) {
     try {
         const token = req.headers.authorization?.replace("Bearer ", "");
         if (!token) {
@@ -121,8 +121,7 @@ export async function requireAdmin(req: Request, res: Response, next: NextFuncti
             return;
         }
 
-        // Attach user to request
-        (req as any).adminUser = data.user;
+        req.adminUser = data.user;
         next();
     } catch (err: any) {
         console.error("Auth middleware error:", err.message);
